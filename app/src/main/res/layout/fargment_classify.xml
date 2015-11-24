@@ -5,7 +5,7 @@
     android:orientation="vertical">
 
     <!-- 顶部标题 -->
-    <com.topad.view.customviews.TitleView
+    <com.xianyi.customviews.TitleView
         android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -21,20 +21,210 @@
         android:background="@color/app_bg"
         android:layout_below="@id/title">
 
-    <LinearLayout
-        android:id="@+id/scroll_layout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <com.ucfwallet.view.customviews.CycleImageLayout
-            android:id="@+id/ad_view"
+        <LinearLayout
+            android:id="@+id/scroll_layout"
             android:layout_width="match_parent"
-            android:layout_height="157dp"
-            android:background="#11000000"
-            />
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-    </LinearLayout>
+            <com.xianyi.customviews.CycleImageLayout
+                android:id="@+id/ad_view"
+                android:layout_width="match_parent"
+                android:layout_height="157dp"
+                android:background="#11000000"
+                />
+
+            <!-- 婴童服饰 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/iv_baby_clothes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/baby_clothes"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <!-- 新生儿礼盒 -->
+                        <LinearLayout
+                            android:id="@+id/rl_gift_box"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:padding="5dp">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/classify_gift_box"
+                                />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="新生儿礼盒"
+                                android:textColor="@color/gray"
+                                android:textSize="@dimen/dimen_15"
+                                android:gravity="center"/>
+
+                        </LinearLayout>
+
+                        <!-- 哈衣 -->
+                        <LinearLayout
+                            android:id="@+id/rl_ha_yi"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:padding="5dp">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/classify_ha_yi"/>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="哈衣"
+                                android:textColor="@color/gray"
+                                android:textSize="@dimen/dimen_15"
+                                android:gravity="center"/>
+
+                        </LinearLayout>
+
+                        <!-- 外衣 -->
+                        <LinearLayout
+                            android:id="@+id/rl_coat"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:padding="5dp">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/classify_coat"/>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="外衣"
+                                android:textColor="@color/gray"
+                                android:textSize="@dimen/dimen_15"
+                                android:gravity="center"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <!-- 羽绒 -->
+                        <LinearLayout
+                            android:id="@+id/rl_eiderdown"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:padding="5dp">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/classify_eiderdown"
+                                />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="外衣"
+                                android:textColor="@color/gray"
+                                android:textSize="@dimen/dimen_15"
+                                android:gravity="center"/>
+
+                        </LinearLayout>
+
+                        <!-- 套装 -->
+                        <LinearLayout
+                            android:id="@+id/rl_suit"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:padding="5dp">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/classify_suit"
+                                />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="外衣"
+                                android:textColor="@color/gray"
+                                android:textSize="@dimen/dimen_15"
+                                android:gravity="center"/>
+
+                        </LinearLayout>
+
+                        <!-- 童鞋 -->
+                        <LinearLayout
+                            android:id="@+id/rl_children_shoes"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:padding="5dp">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/classify_children_shoes"
+                                />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="外衣"
+                                android:textColor="@color/gray"
+                                android:textSize="@dimen/dimen_15"
+                                android:gravity="center"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
 
     </ScrollView>
 

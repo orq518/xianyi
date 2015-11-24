@@ -11,6 +11,7 @@ import android.view.Window;
 import com.xianyi.R;
 import com.xianyi.customviews.residelayout.SlidingMenu;
 import com.xianyi.fragment.BaseFragment;
+import com.xianyi.fragment.ClassifyFragment;
 import com.xianyi.fragment.FindFragment;
 
 public class MainActivity extends BaseActivity {
@@ -27,7 +28,7 @@ public class MainActivity extends BaseActivity {
     // 积分
     public static final int HOME_TAB_INDEX_3 = 3;
 
-    private FindFragment mHomeFragment0;
+    private ClassifyFragment mHomeFragment0;
     private FindFragment mHomeFragment1;
     private FindFragment mHomeFragment2;
     private FindFragment mHomeFragment3;
@@ -56,7 +57,7 @@ public class MainActivity extends BaseActivity {
             case HOME_TAB_INDEX_3:
                 hideFragments(transaction);
                 if (null == mHomeFragment0) {
-                    mHomeFragment0 = new FindFragment();
+                    mHomeFragment0 = new ClassifyFragment();
                     transaction.add(R.id.center_layout, mHomeFragment0, "0");
                 } else {
                     transaction.show(mHomeFragment0);
