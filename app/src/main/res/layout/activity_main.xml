@@ -1,44 +1,88 @@
-<com.xianyi.residelayout.ResideLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:id="@+id/reside_layout"
-    >
+<com.xianyi.residelayout.SlidingMenu android:id="@+id/id_menu"
+                                     xmlns:android="http://schemas.android.com/apk/res/android"
+                                     xmlns:tools="http://schemas.android.com/tools"
+                                     android:layout_width="wrap_content"
+                                     android:layout_height="fill_parent"
+                                     android:background="@drawable/stars"
+                                     android:scrollbars="none">
 
-    <FrameLayout android:layout_width="match_parent"
-                 android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:orientation="horizontal">
 
-        <ImageView
+        <include layout="@layout/layout_menu"/>
+
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:src="@drawable/stars"
-            android:scaleType="centerCrop"/>
+            android:background="@color/white"
+            android:layout_height="match_parent">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="toggleMenu"
+                android:text="切换菜单"/>
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="62dp"
+                android:layout_alignParentBottom="true">
+                <TextView android:layout_width="match_parent"
+                          android:layout_height="match_parent"
+                          android:background="@drawable/tab_pulish_bg"/>
 
-        <ListView
-            android:id="@+id/menu"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+                <LinearLayout
+                    android:id="@+id/tab_text_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="5dp"
+                    android:orientation="horizontal">
+                    <TextView android:layout_width="0dp"
+                              android:layout_height="wrap_content"
+                              android:layout_weight="1"
+                              android:drawablePadding="3dp"
+                              android:drawableTop="@drawable/tab_sort_normal"
+                              android:gravity="center_horizontal"
+                              android:text="分类"
+                              android:textColor="@color/title_gray"/>
 
-    </FrameLayout>
+                    <TextView android:layout_width="0dp"
+                              android:layout_height="wrap_content"
+                              android:layout_weight="1"
+                              android:drawablePadding="3dp"
+                              android:drawableTop="@drawable/tab_find_normal"
+                              android:gravity="center_horizontal"
+                              android:text="发现"
+                              android:textColor="@color/title_gray"/>
+                    <TextView android:layout_width="0dp"
+                              android:layout_height="wrap_content"
+                              android:layout_alignParentBottom="true"
+                              android:layout_weight="1"
+                              android:drawablePadding="3dp"
+                              android:drawableTop="@drawable/tab_publish"
+                              android:gravity="center_horizontal"
+                              android:text="发布"
+                              android:textColor="@color/title_gray"/>
+                    <TextView android:layout_width="0dp"
+                              android:layout_height="wrap_content"
+                              android:layout_weight="1"
+                              android:drawablePadding="3dp"
+                              android:drawableTop="@drawable/tab_message_normal"
+                              android:gravity="center_horizontal"
+                              android:text="消息"
+                              android:textColor="@color/title_gray"/>
+                    <TextView android:layout_width="0dp"
+                              android:layout_height="wrap_content"
+                              android:layout_weight="1"
+                              android:drawablePadding="3dp"
+                              android:drawableTop="@drawable/tab_score_normal"
+                              android:gravity="center_horizontal"
+                              android:text="积分"
+                              android:textColor="@color/title_gray"/>
+                </LinearLayout>
+            </RelativeLayout>
+        </RelativeLayout>
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    </LinearLayout>
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="centerCrop"
-            android:src="@drawable/balloon"/>
-
-        <android.support.v4.view.ViewPager
-            android:id="@+id/pager"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:layout_margin="32dp"
-            android:layout_centerInParent="true"
-            />
-
-    </RelativeLayout>
-
-</com.xianyi.residelayout.ResideLayout>
+</com.xianyi.residelayout.SlidingMenu>
