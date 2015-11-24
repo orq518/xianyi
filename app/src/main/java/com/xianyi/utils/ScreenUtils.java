@@ -1,4 +1,4 @@
-package com.xianyi.customviews.residelayout;
+package com.xianyi.utils;
 
 import android.app.Activity;
 import android.content.Context;

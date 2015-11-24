@@ -5,8 +5,7 @@ import android.util.Log;
 public class LogUtil {
 
 	public static final boolean showDebug = true;
-
-	private static final String TAG = "xiaoyi";
+	private static final String TAG = "xianyi";
 
 
 	/**

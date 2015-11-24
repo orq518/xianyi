@@ -78,7 +78,6 @@ public class ClassifyFragment extends BaseFragment implements CycleImageLayout.I
 		// 设置顶部布局
 		mTitle.setTitle(getString(R.string.classify_title));
 		mTitle.setLeftVisiable(true);
-		mTitle.setLeftIcon(R.drawable.stars);
 		mTitle.setLeftClickListener(new TitleLeftOnClickListener());
 
 		initData();

@@ -11,16 +11,20 @@
         android:background="@color/white"
         android:gravity="top">
 
-        <ImageView
+        <TextView
             android:id="@+id/tv_back"
             android:layout_width="wrap_content"
             android:layout_height="@dimen/title_height"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
             android:clickable="true"
+            android:drawableLeft="@drawable/left_back_selector"
+            android:drawablePadding="5dp"
             android:gravity="center_vertical"
-            android:paddingLeft="@dimen/dimen_10"
-            android:paddingRight="@dimen/dimen_10"
+            android:paddingLeft="5dp"
+            android:paddingRight="2dp"
+            android:text="返回"
+            android:textColor="@color/dark_gray"
             android:textSize="15sp"/>
 
 
@@ -47,7 +51,7 @@
                 android:paddingRight="2dp"
                 android:singleLine="true"
                 android:text="这是标题"
-                android:textColor="@color/white"
+                android:textColor="@color/dark_gray"
                 android:textSize="@dimen/textsize_18"/>
 
         </LinearLayout>
@@ -59,23 +63,25 @@
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="8dp"
+            android:background="@drawable/right_title_selector"
             android:paddingBottom="3dp"
             android:paddingLeft="8dp"
             android:paddingRight="8dp"
             android:paddingTop="3dp"
-            android:textColor="@color/white"
+            android:textColor="@color/dark_gray"
             android:textSize="15sp"
             android:visibility="gone"/>
 
         <ImageView
             android:id="@+id/mRightImage"
-            android:layout_width="@dimen/dimen_25"
-            android:layout_height="@dimen/dimen_25"
+            android:layout_width="@dimen/dimen_30"
+            android:layout_height="@dimen/dimen_30"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:layout_marginRight="@dimen/dimen_10"
-            android:visibility="gone" />
-
+            android:layout_marginRight="8dp"
+            android:visibility="gone"
+            android:background="@drawable/ic_launcher"
+            />
     </RelativeLayout>
 
     <View
