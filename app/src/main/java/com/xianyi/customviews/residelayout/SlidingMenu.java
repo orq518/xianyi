@@ -1,15 +1,12 @@
-package com.xianyi.residelayout;
+package com.xianyi.customviews.residelayout;
 import android.content.Context;
-import android.content.res.TypedArray;
 import android.util.AttributeSet;
-import android.util.TypedValue;
 import android.view.MotionEvent;
 import android.view.ViewGroup;
 import android.widget.HorizontalScrollView;
 import android.widget.LinearLayout;
 
 import com.nineoldandroids.view.ViewHelper;
-import com.xianyi.R;
 
 public class SlidingMenu extends HorizontalScrollView
 {

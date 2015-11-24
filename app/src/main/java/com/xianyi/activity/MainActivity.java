@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.Window;
 
 import com.xianyi.R;
-import com.xianyi.residelayout.SlidingMenu;
+import com.xianyi.customviews.residelayout.SlidingMenu;
 
 public class MainActivity extends Activity
 {
