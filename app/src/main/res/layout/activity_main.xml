@@ -19,12 +19,9 @@
             android:layout_width="match_parent"
             android:background="@color/white"
             android:layout_height="match_parent">
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:onClick="toggleMenu"
-                android:text="切换菜单"/>
+
             <RelativeLayout
+                android:id="@+id/bottom"
                 android:layout_width="wrap_content"
                 android:layout_height="62dp"
                 android:layout_alignParentBottom="true">
@@ -46,6 +43,9 @@
                               android:drawableTop="@drawable/tab_sort_normal"
                               android:gravity="center_horizontal"
                               android:text="分类"
+                              android:tag="tab0"
+                              android:clickable="true"
+                              android:onClick="onClick"
                               android:textColor="@color/title_gray"/>
 
                     <TextView android:layout_width="0dp"
@@ -55,6 +55,9 @@
                               android:drawableTop="@drawable/tab_find_normal"
                               android:gravity="center_horizontal"
                               android:text="发现"
+                              android:tag="tab1"
+                              android:clickable="true"
+                              android:onClick="onClick"
                               android:textColor="@color/title_gray"/>
                     <TextView android:layout_width="0dp"
                               android:layout_height="wrap_content"
@@ -64,6 +67,9 @@
                               android:drawableTop="@drawable/tab_publish"
                               android:gravity="center_horizontal"
                               android:text="发布"
+                              android:tag="tab2"
+                              android:clickable="true"
+                              android:onClick="onClick"
                               android:textColor="@color/title_gray"/>
                     <TextView android:layout_width="0dp"
                               android:layout_height="wrap_content"
@@ -72,6 +78,9 @@
                               android:drawableTop="@drawable/tab_message_normal"
                               android:gravity="center_horizontal"
                               android:text="消息"
+                              android:tag="tab3"
+                              android:clickable="true"
+                              android:onClick="onClick"
                               android:textColor="@color/title_gray"/>
                     <TextView android:layout_width="0dp"
                               android:layout_height="wrap_content"
@@ -80,9 +89,24 @@
                               android:drawableTop="@drawable/tab_score_normal"
                               android:gravity="center_horizontal"
                               android:text="积分"
+                              android:tag="tab4"
+                              android:clickable="true"
+                              android:onClick="onClick"
                               android:textColor="@color/title_gray"/>
                 </LinearLayout>
             </RelativeLayout>
+
+            <FrameLayout
+                android:id="@+id/center_layout"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_above="@id/bottom">
+            </FrameLayout>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="toggleMenu"
+                android:text="切换菜单"/>
         </RelativeLayout>
 
     </LinearLayout>
