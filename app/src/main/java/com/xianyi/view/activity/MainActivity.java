@@ -1,4 +1,4 @@
-package com.xianyi.residelayout;
+package com.xianyi.view.activity;
 
 import android.graphics.Color;
 import android.os.Bundle;
@@ -18,6 +18,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.xianyi.R;
+import com.xianyi.view.customviews.ResideLayout;
 
 
 public class MainActivity extends FragmentActivity {
