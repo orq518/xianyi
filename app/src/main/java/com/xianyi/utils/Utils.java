@@ -419,16 +419,16 @@ public class Utils {
                 .getApplicationContext().getSystemService(
                         Context.CONNECTIVITY_SERVICE);
         if (manager == null) {
-			Toast.makeText(
-					context,
-					context.getString(R.string.no_connection), Toast.LENGTH_SHORT).show();
+            Toast.makeText(
+                    context,
+                    context.getString(R.string.no_connection), Toast.LENGTH_SHORT).show();
             return false;
         }
         NetworkInfo networkinfo = manager.getActiveNetworkInfo();
         if (networkinfo == null || !networkinfo.isAvailable()) {
-			Toast.makeText(
-					context,
-					context.getString(R.string.no_connection), Toast.LENGTH_SHORT).show();
+            Toast.makeText(
+                    context,
+                    context.getString(R.string.no_connection), Toast.LENGTH_SHORT).show();
 //            UcfToast.makeText(context, context.getString(R.string.no_connection));
             return false;
         }

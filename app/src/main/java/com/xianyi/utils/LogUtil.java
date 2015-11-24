@@ -4,9 +4,8 @@ import android.util.Log;
 
 public class LogUtil {
 
-	public static final boolean showDebug = false;
-
-	private static final String TAG = "wallet";
+	public static final boolean showDebug = true;
+	private static final String TAG = "xianyi";
 
 
 	/**
