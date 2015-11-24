@@ -23,7 +23,7 @@ import com.xianyi.utils.LogUtil;
  */
 public class ClassifyFragment extends BaseFragment implements CycleImageLayout.ImageCycleViewListener{
 	private static final String LTAG = ClassifyFragment.class.getSimpleName();
-	/** 上下文 **/
+	/** 上下文 test**/
 	private Context mContext;
 	/** 根view布局 **/
 	private View mRootView;
