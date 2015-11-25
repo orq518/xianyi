@@ -85,7 +85,7 @@ public class ClassifyFragment extends BaseFragment implements CycleImageLayout.I
 
 	@Override
 	public void setVisible(boolean isVisibleToUser) {
-		super.setUserVisibleHint(isVisibleToUser);
+//		super.setUserVisibleHint(isVisibleToUser);
 
 		LogUtil.d("是否显示：" + isVisibleToUser + "    isNeedRefresh:" + isNeedRefresh);
 		if (isVisibleToUser && isNeedRefresh) {

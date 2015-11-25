@@ -1,37 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:background="@color/white"
-              android:orientation="vertical">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:orientation="vertical">
 
     <com.xianyi.customviews.TitleView
         android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
-    <RelativeLayout
-        android:id="@+id/rootlayout"
+    <FrameLayout
+        android:id="@+id/animation_rootlayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_below="@id/title">
 
-        <ImageView
-            android:id="@+id/im_top"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_alignParentRight="true"
-            android:padding="1dp"
-            android:scaleType="centerInside"
-            android:src="@drawable/ic_launcher"/>
-        <TextView
-            android:id="@+id/im_Bottom"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_alignParentBottom="true"
-            android:background="@color/black"
-            android:gravity="center"
-            android:text="点击我的任何区域"
-            android:textColor="#ffffff"/>
-    </RelativeLayout>
+    </FrameLayout>
+    <ImageView
+        android:id="@+id/im_top"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:padding="1dp"
+        android:layout_below="@id/title"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_launcher"/>
 
-
-</LinearLayout>
+</RelativeLayout>
