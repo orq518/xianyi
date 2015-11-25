@@ -2,7 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/white">
 
     <!-- 顶部标题 -->
     <com.xianyi.customviews.TitleView
@@ -39,7 +40,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:gravity="center">
+                android:gravity="center"
+                android:layout_marginTop="10dp">
 
                 <ImageView
                     android:id="@+id/iv_baby_clothes"
@@ -65,7 +67,10 @@
                             android:layout_weight="1"
                             android:orientation="vertical"
                             android:gravity="center"
-                            android:padding="5dp">
+                            android:background="@color/classify_gray"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_marginBottom="3dp">
 
                             <ImageView
                                 android:layout_width="wrap_content"
@@ -91,7 +96,8 @@
                             android:layout_weight="1"
                             android:orientation="vertical"
                             android:gravity="center"
-                            android:padding="5dp">
+                            android:background="@color/classify_gray"
+                            android:layout_marginBottom="3dp">
 
                             <ImageView
                                 android:layout_width="wrap_content"
@@ -116,7 +122,10 @@
                             android:layout_weight="1"
                             android:orientation="vertical"
                             android:gravity="center"
-                            android:padding="5dp">
+                            android:background="@color/classify_gray"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_marginBottom="3dp">
 
                             <ImageView
                                 android:layout_width="wrap_content"
@@ -148,7 +157,9 @@
                             android:layout_weight="1"
                             android:orientation="vertical"
                             android:gravity="center"
-                            android:padding="5dp">
+                            android:background="@color/classify_gray"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp">
 
                             <ImageView
                                 android:layout_width="wrap_content"
@@ -174,7 +185,7 @@
                             android:layout_weight="1"
                             android:orientation="vertical"
                             android:gravity="center"
-                            android:padding="5dp">
+                            android:background="@color/classify_gray">
 
                             <ImageView
                                 android:layout_width="wrap_content"
@@ -200,7 +211,9 @@
                             android:layout_weight="1"
                             android:orientation="vertical"
                             android:gravity="center"
-                            android:padding="5dp">
+                            android:background="@color/classify_gray"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp">
 
                             <ImageView
                                 android:layout_width="wrap_content"
@@ -212,6 +225,815 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="外衣"
+                                android:textColor="@color/gray"
+                                android:textSize="@dimen/dimen_15"
+                                android:gravity="center"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- 起居用品 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginTop="10dp">
+
+                <ImageView
+                    android:id="@+id/iv_living_things"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/classify_living_things"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <!-- 婴儿推车 -->
+                        <LinearLayout
+                            android:id="@+id/rl_baby_stroller"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:background="@color/classify_gray"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_marginBottom="3dp">
+
+                            <ImageView
+                                android:layout_width="90dp"
+                                android:layout_height="48dp"
+                                android:src="@drawable/classify_baby_bed"
+                                />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="婴儿推车"
+                                android:textColor="@color/gray"
+                                android:textSize="@dimen/dimen_15"
+                                android:gravity="center"/>
+
+                        </LinearLayout>
+
+                        <!-- 奶瓶 -->
+                        <LinearLayout
+                            android:id="@+id/rl_feeder"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:background="@color/classify_gray"
+                            android:layout_marginBottom="3dp">
+
+                            <ImageView
+                                android:layout_width="90dp"
+                                android:layout_height="48dp"
+                                android:src="@drawable/classify_baby_bed"/>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="奶瓶"
+                                android:textColor="@color/gray"
+                                android:textSize="@dimen/dimen_15"
+                                android:gravity="center"/>
+
+                        </LinearLayout>
+
+                        <!-- 婴儿床 -->
+                        <LinearLayout
+                            android:id="@+id/rl_baby_bed"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:background="@color/classify_gray"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_marginBottom="3dp">
+
+                            <ImageView
+                                android:layout_width="90dp"
+                                android:layout_height="48dp"
+                                android:src="@drawable/classify_baby_bed"/>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="婴儿床"
+                                android:textColor="@color/gray"
+                                android:textSize="@dimen/dimen_15"
+                                android:gravity="center"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <!-- 纸尿布 -->
+                        <LinearLayout
+                            android:id="@+id/rl_diapers"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:background="@color/classify_gray"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp">
+
+                            <ImageView
+                                android:layout_width="90dp"
+                                android:layout_height="48dp"
+                                android:src="@drawable/classify_baby_bed"
+                                />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="纸尿布"
+                                android:textColor="@color/gray"
+                                android:textSize="@dimen/dimen_15"
+                                android:gravity="center"/>
+
+                        </LinearLayout>
+
+                        <!-- 沐浴毛毯 -->
+                        <LinearLayout
+                            android:id="@+id/rl_bath_blanket"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:background="@color/classify_gray">
+
+                            <ImageView
+                                android:layout_width="90dp"
+                                android:layout_height="48dp"
+                                android:src="@drawable/classify_baby_bed"
+                                />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="沐浴毛毯"
+                                android:textColor="@color/gray"
+                                android:textSize="@dimen/dimen_15"
+                                android:gravity="center"/>
+
+                        </LinearLayout>
+
+                        <!-- 儿童座椅 -->
+                        <LinearLayout
+                            android:id="@+id/rl_child_seat"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:background="@color/classify_gray"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp">
+
+                            <ImageView
+                                android:layout_width="90dp"
+                                android:layout_height="48dp"
+                                android:src="@drawable/classify_baby_bed"
+                                />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="儿童座椅"
+                                android:textColor="@color/gray"
+                                android:textSize="@dimen/dimen_15"
+                                android:gravity="center"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- 童趣玩具 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginTop="10dp">
+
+                <ImageView
+                    android:id="@+id/iv_toy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/classify_toy"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <!-- 游泳池 -->
+                        <LinearLayout
+                            android:id="@+id/rl_swimming_pool"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:background="@color/classify_gray"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_marginBottom="3dp">
+
+                            <ImageView
+                                android:layout_width="90dp"
+                                android:layout_height="48dp"
+                                android:src="@drawable/classify_baby_bed"
+                                />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="游泳池"
+                                android:textColor="@color/gray"
+                                android:textSize="@dimen/dimen_15"
+                                android:gravity="center"/>
+
+                        </LinearLayout>
+
+                        <!-- 积木 -->
+                        <LinearLayout
+                            android:id="@+id/rl_building_blocks"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:background="@color/classify_gray"
+                            android:layout_marginBottom="3dp">
+
+                            <ImageView
+                                android:layout_width="90dp"
+                                android:layout_height="48dp"
+                                android:src="@drawable/classify_baby_bed"/>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="积木"
+                                android:textColor="@color/gray"
+                                android:textSize="@dimen/dimen_15"
+                                android:gravity="center"/>
+
+                        </LinearLayout>
+
+                        <!-- 摇铃 -->
+                        <LinearLayout
+                            android:id="@+id/rl_bell"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:background="@color/classify_gray"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_marginBottom="3dp">
+
+                            <ImageView
+                                android:layout_width="90dp"
+                                android:layout_height="48dp"
+                                android:src="@drawable/classify_baby_bed"/>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="摇铃"
+                                android:textColor="@color/gray"
+                                android:textSize="@dimen/dimen_15"
+                                android:gravity="center"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <!-- 毛绒玩具 -->
+                        <LinearLayout
+                            android:id="@+id/rl_plush_toys"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:background="@color/classify_gray"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp">
+
+                            <ImageView
+                                android:layout_width="90dp"
+                                android:layout_height="48dp"
+                                android:src="@drawable/classify_baby_bed"
+                                />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="毛绒玩具"
+                                android:textColor="@color/gray"
+                                android:textSize="@dimen/dimen_15"
+                                android:gravity="center"/>
+
+                        </LinearLayout>
+
+                        <!-- 电动玩具 -->
+                        <LinearLayout
+                            android:id="@+id/rl_electric_toy"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:background="@color/classify_gray">
+
+                            <ImageView
+                                android:layout_width="90dp"
+                                android:layout_height="48dp"
+                                android:src="@drawable/classify_baby_bed"
+                                />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="电动玩具"
+                                android:textColor="@color/gray"
+                                android:textSize="@dimen/dimen_15"
+                                android:gravity="center"/>
+
+                        </LinearLayout>
+
+                        <!-- 智能玩具 -->
+                        <LinearLayout
+                            android:id="@+id/rl_intelligent_toy"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:background="@color/classify_gray"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp">
+
+                            <ImageView
+                                android:layout_width="90dp"
+                                android:layout_height="48dp"
+                                android:src="@drawable/classify_baby_bed"
+                                />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="智能玩具"
+                                android:textColor="@color/gray"
+                                android:textSize="@dimen/dimen_15"
+                                android:gravity="center"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- 文体教具 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginTop="10dp">
+
+                <ImageView
+                    android:id="@+id/iv_teaching"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/classify_teaching"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <!-- 自行车 -->
+                        <LinearLayout
+                            android:id="@+id/rl_bicycle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:background="@color/classify_gray"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_marginBottom="3dp">
+
+                            <ImageView
+                                android:layout_width="90dp"
+                                android:layout_height="48dp"
+                                android:src="@drawable/classify_baby_bed"
+                                />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="自行车"
+                                android:textColor="@color/gray"
+                                android:textSize="@dimen/dimen_15"
+                                android:gravity="center"/>
+
+                        </LinearLayout>
+
+                        <!-- 旱冰鞋 -->
+                        <LinearLayout
+                            android:id="@+id/rl_roller_skates"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:background="@color/classify_gray"
+                            android:layout_marginBottom="3dp">
+
+                            <ImageView
+                                android:layout_width="90dp"
+                                android:layout_height="48dp"
+                                android:src="@drawable/classify_baby_bed"/>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="旱冰鞋"
+                                android:textColor="@color/gray"
+                                android:textSize="@dimen/dimen_15"
+                                android:gravity="center"/>
+
+                        </LinearLayout>
+
+                        <!-- 滑板车 -->
+                        <LinearLayout
+                            android:id="@+id/rl_scooter"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:background="@color/classify_gray"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_marginBottom="3dp">
+
+                            <ImageView
+                                android:layout_width="90dp"
+                                android:layout_height="48dp"
+                                android:src="@drawable/classify_baby_bed"/>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="滑板车"
+                                android:textColor="@color/gray"
+                                android:textSize="@dimen/dimen_15"
+                                android:gravity="center"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <!-- 幼教卡/盘 -->
+                        <LinearLayout
+                            android:id="@+id/rl_preschool_education"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:background="@color/classify_gray"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp">
+
+                            <ImageView
+                                android:layout_width="90dp"
+                                android:layout_height="48dp"
+                                android:src="@drawable/classify_baby_bed"
+                                />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="幼教卡/盘"
+                                android:textColor="@color/gray"
+                                android:textSize="@dimen/dimen_15"
+                                android:gravity="center"/>
+
+                        </LinearLayout>
+
+                        <!-- 绘本/图书 -->
+                        <LinearLayout
+                            android:id="@+id/rl_book"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:background="@color/classify_gray">
+
+                            <ImageView
+                                android:layout_width="90dp"
+                                android:layout_height="48dp"
+                                android:src="@drawable/classify_baby_bed"
+                                />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="绘本/图书"
+                                android:textColor="@color/gray"
+                                android:textSize="@dimen/dimen_15"
+                                android:gravity="center"/>
+
+                        </LinearLayout>
+
+                        <!-- 跳绳 -->
+                        <LinearLayout
+                            android:id="@+id/rl_skip"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:background="@color/classify_gray"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp">
+
+                            <ImageView
+                                android:layout_width="90dp"
+                                android:layout_height="48dp"
+                                android:src="@drawable/classify_baby_bed"
+                                />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="跳绳"
+                                android:textColor="@color/gray"
+                                android:textSize="@dimen/dimen_15"
+                                android:gravity="center"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- 妈咪专享 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp">
+
+                <ImageView
+                    android:id="@+id/iv_mommy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/classify_mommy"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <!-- 防辐射服 -->
+                        <LinearLayout
+                            android:id="@+id/rl_radiation_proof_clothes"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:background="@color/classify_gray"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_marginBottom="3dp">
+
+                            <ImageView
+                                android:layout_width="90dp"
+                                android:layout_height="48dp"
+                                android:src="@drawable/classify_baby_bed"
+                                />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="防辐射服"
+                                android:textColor="@color/gray"
+                                android:textSize="@dimen/dimen_15"
+                                android:gravity="center"/>
+
+                        </LinearLayout>
+
+                        <!-- 孕妇装 -->
+                        <LinearLayout
+                            android:id="@+id/rl_maternity_dress"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:background="@color/classify_gray"
+                            android:layout_marginBottom="3dp">
+
+                            <ImageView
+                                android:layout_width="90dp"
+                                android:layout_height="48dp"
+                                android:src="@drawable/classify_baby_bed"/>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="孕妇装"
+                                android:textColor="@color/gray"
+                                android:textSize="@dimen/dimen_15"
+                                android:gravity="center"/>
+
+                        </LinearLayout>
+
+                        <!-- 洗护保养 -->
+                        <LinearLayout
+                            android:id="@+id/rl_maintain"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:background="@color/classify_gray"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_marginBottom="3dp">
+
+                            <ImageView
+                                android:layout_width="90dp"
+                                android:layout_height="48dp"
+                                android:src="@drawable/classify_baby_bed"/>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="洗护保养"
+                                android:textColor="@color/gray"
+                                android:textSize="@dimen/dimen_15"
+                                android:gravity="center"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <!-- 营养保险 -->
+                        <LinearLayout
+                            android:id="@+id/rl_insurance"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:background="@color/classify_gray"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp">
+
+                            <ImageView
+                                android:layout_width="90dp"
+                                android:layout_height="48dp"
+                                android:src="@drawable/classify_baby_bed"
+                                />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="营养保险"
+                                android:textColor="@color/gray"
+                                android:textSize="@dimen/dimen_15"
+                                android:gravity="center"/>
+
+                        </LinearLayout>
+
+                        <!-- 待产包 -->
+                        <LinearLayout
+                            android:id="@+id/rl_prepartal_bag"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:background="@color/classify_gray">
+
+                            <ImageView
+                                android:layout_width="90dp"
+                                android:layout_height="48dp"
+                                android:src="@drawable/classify_baby_bed"
+                                />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="待产包"
+                                android:textColor="@color/gray"
+                                android:textSize="@dimen/dimen_15"
+                                android:gravity="center"/>
+
+                        </LinearLayout>
+
+                        <!-- 妈咪包 -->
+                        <LinearLayout
+                            android:id="@+id/rl_mami_bag"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:background="@color/classify_gray"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp">
+
+                            <ImageView
+                                android:layout_width="90dp"
+                                android:layout_height="48dp"
+                                android:src="@drawable/classify_baby_bed"
+                                />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="妈咪包"
                                 android:textColor="@color/gray"
                                 android:textSize="@dimen/dimen_15"
                                 android:gravity="center"/>
