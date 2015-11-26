@@ -25,9 +25,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="62dp"
                 android:layout_alignParentBottom="true">
-                <TextView android:layout_width="match_parent"
-                          android:layout_height="match_parent"
-                          android:background="@drawable/tab_pulish_bg"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/tab_pulish_bg"/>
 
                 <LinearLayout
                     android:id="@+id/tab_text_layout"
@@ -36,64 +38,75 @@
                     android:layout_alignParentBottom="true"
                     android:layout_marginBottom="5dp"
                     android:orientation="horizontal">
-                    <TextView android:layout_width="0dp"
-                              android:layout_height="wrap_content"
-                              android:layout_weight="1"
-                              android:drawablePadding="3dp"
-                              android:drawableTop="@drawable/tab_sort_normal"
-                              android:gravity="center_horizontal"
-                              android:text="分类"
-                              android:tag="tab0"
-                              android:clickable="true"
-                              android:onClick="onClick"
-                              android:textColor="@color/title_gray"/>
 
-                    <TextView android:layout_width="0dp"
-                              android:layout_height="wrap_content"
-                              android:layout_weight="1"
-                              android:drawablePadding="3dp"
-                              android:drawableTop="@drawable/tab_find_normal"
-                              android:gravity="center_horizontal"
-                              android:text="发现"
-                              android:tag="tab1"
-                              android:clickable="true"
-                              android:onClick="onClick"
-                              android:textColor="@color/title_gray"/>
-                    <TextView android:layout_width="0dp"
-                              android:layout_height="wrap_content"
-                              android:layout_alignParentBottom="true"
-                              android:layout_weight="1"
-                              android:drawablePadding="3dp"
-                              android:drawableTop="@drawable/tab_publish"
-                              android:gravity="center_horizontal"
-                              android:text="发布"
-                              android:tag="tab2"
-                              android:clickable="true"
-                              android:onClick="onClick"
-                              android:textColor="@color/title_gray"/>
-                    <TextView android:layout_width="0dp"
-                              android:layout_height="wrap_content"
-                              android:layout_weight="1"
-                              android:drawablePadding="3dp"
-                              android:drawableTop="@drawable/tab_message_normal"
-                              android:gravity="center_horizontal"
-                              android:text="消息"
-                              android:tag="tab3"
-                              android:clickable="true"
-                              android:onClick="onClick"
-                              android:textColor="@color/title_gray"/>
-                    <TextView android:layout_width="0dp"
-                              android:layout_height="wrap_content"
-                              android:layout_weight="1"
-                              android:drawablePadding="3dp"
-                              android:drawableTop="@drawable/tab_score_normal"
-                              android:gravity="center_horizontal"
-                              android:text="积分"
-                              android:tag="tab4"
-                              android:clickable="true"
-                              android:onClick="onClick"
-                              android:textColor="@color/title_gray"/>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawablePadding="3dp"
+                        android:drawableTop="@drawable/tab_sort_normal"
+                        android:gravity="center_horizontal"
+                        android:text="分类"
+                        android:tag="tab0"
+                        android:clickable="true"
+                        android:onClick="onClick"
+                        android:textColor="@color/title_gray"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawablePadding="3dp"
+                        android:drawableTop="@drawable/tab_find_normal"
+                        android:gravity="center_horizontal"
+                        android:text="发现"
+                        android:tag="tab1"
+                        android:clickable="true"
+                        android:onClick="onClick"
+                        android:textColor="@color/title_gray"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_weight="1"
+                        android:drawablePadding="3dp"
+                        android:drawableTop="@drawable/tab_publish"
+                        android:gravity="center_horizontal"
+                        android:text="发布"
+                        android:tag="tab2"
+                        android:clickable="true"
+                        android:onClick="onClick"
+                        android:textColor="@color/title_gray"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawablePadding="3dp"
+                        android:drawableTop="@drawable/tab_message_normal"
+                        android:gravity="center_horizontal"
+                        android:text="消息"
+                        android:tag="tab3"
+                        android:clickable="true"
+                        android:onClick="onClick"
+                        android:textColor="@color/title_gray"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawablePadding="3dp"
+                        android:drawableTop="@drawable/tab_score_normal"
+                        android:gravity="center_horizontal"
+                        android:text="积分"
+                        android:tag="tab4"
+                        android:clickable="true"
+                        android:onClick="onClick"
+                        android:textColor="@color/title_gray"/>
+
                 </LinearLayout>
+
             </RelativeLayout>
 
             <FrameLayout
@@ -102,12 +115,15 @@
                 android:layout_height="fill_parent"
                 android:layout_above="@id/bottom">
             </FrameLayout>
+
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:onClick="toggleMenu"
                 android:text="切换菜单"/>
+
         </RelativeLayout>
 
     </LinearLayout>
+
 </com.xianyi.customviews.residelayout.SlidingMenu>
