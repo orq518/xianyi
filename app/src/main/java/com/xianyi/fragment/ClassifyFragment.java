@@ -3,6 +3,7 @@ package com.xianyi.fragment;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.xianyi.R;
+import com.xianyi.activity.BigClassifyActivity;
 import com.xianyi.customviews.CycleImageLayout;
 import com.xianyi.customviews.TitleView;
 import com.xianyi.utils.BannerManager;
@@ -21,7 +23,8 @@ import com.xianyi.utils.LogUtil;
  * @author lht
  * @data: on 15/11/24 11:21
  */
-public class ClassifyFragment extends BaseFragment implements CycleImageLayout.ImageCycleViewListener{
+public class ClassifyFragment extends BaseFragment implements CycleImageLayout.ImageCycleViewListener,
+		View.OnClickListener{
 	private static final String LTAG = ClassifyFragment.class.getSimpleName();
 	/** 上下文 **/
 	private Context mContext;
@@ -33,6 +36,8 @@ public class ClassifyFragment extends BaseFragment implements CycleImageLayout.I
 	private CycleImageLayout mBannerView;
 	/** 广告轮播布局banner管理对象 **/
 	private BannerManager mBannerManager;
+	/** 婴童服饰 **/
+	private ImageView mImBabyClothes;
 
 	@Override
 	public String getFragmentName() {
@@ -74,6 +79,7 @@ public class ClassifyFragment extends BaseFragment implements CycleImageLayout.I
 		// 顶部布局
 		mTitle = (TitleView) mRootView.findViewById(R.id.title);
 		mBannerView = (CycleImageLayout) mRootView.findViewById(R.id.ad_view);
+		mImBabyClothes = (ImageView) mRootView.findViewById(R.id.iv_baby_clothes);
 
 		// 设置顶部布局
 		mTitle.setTitle(getString(R.string.classify_title));
@@ -81,6 +87,8 @@ public class ClassifyFragment extends BaseFragment implements CycleImageLayout.I
 		mTitle.setLeftClickListener(new TitleLeftOnClickListener());
 
 		initData();
+
+		mImBabyClothes.setOnClickListener(this);
 	}
 
 	@Override
@@ -109,6 +117,23 @@ public class ClassifyFragment extends BaseFragment implements CycleImageLayout.I
 	@Override
 	public void onImageClick(int position, View imageView) {
 		mBannerManager.clickImage(position, imageView);
+	}
+
+	@Override
+	public void onClick(View v) {
+		Intent intent;
+		switch (v.getId()) {
+			// 婴童服饰
+			case R.id.iv_baby_clothes:
+				intent = new Intent(mContext, BigClassifyActivity.class);
+				intent.putExtra("searchtype", 0);
+				startActivity(intent);
+				break;
+
+
+			default:
+				break;
+		}
 	}
 
 	/**

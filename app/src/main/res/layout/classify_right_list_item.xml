@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/my_tab_background"
+    android:orientation="vertical"
+    android:paddingBottom="0dp"
+    android:paddingLeft="10dp" >
+
+    <LinearLayout
+        android:id="@+id/right_item_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/my_list_txt_background"
+        android:gravity="center_vertical"
+        android:paddingBottom="0dp" >
+
+        <TextView
+            android:id="@+id/right_item_txt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:paddingBottom="16dp"
+            android:paddingTop="16dp"
+            android:text="全部分类"
+            android:textColor="#666666"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+</LinearLayout>
