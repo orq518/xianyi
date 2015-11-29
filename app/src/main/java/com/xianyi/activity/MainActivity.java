@@ -14,6 +14,8 @@ import com.xianyi.fragment.BaseFragment;
 import com.xianyi.fragment.ClassifyFragment;
 import com.xianyi.fragment.FindFragment;
 
+import java.util.ArrayList;
+
 public class MainActivity extends BaseActivity {
     private SlidingMenu mMenu;
     Handler mHandler = new Handler() {
@@ -38,9 +40,17 @@ public class MainActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
         mMenu = (SlidingMenu) findViewById(R.id.id_menu);
         mFragmentManager = getSupportFragmentManager();
         onTabSelected(0);
+    }
+
+    public void initFragment() {
+        mHomeFragment0 = new ClassifyFragment();
+        mHomeFragment1 = new FindFragment();
+
     }
 
     public void toggleMenu(View view) {
@@ -52,9 +62,6 @@ public class MainActivity extends BaseActivity {
         FragmentTransaction transaction = mFragmentManager.beginTransaction();
         switch (index) {
             case HOME_TAB_INDEX_0:
-            case HOME_TAB_INDEX_1:
-            case HOME_TAB_INDEX_2:
-            case HOME_TAB_INDEX_3:
                 hideFragments(transaction);
                 if (null == mHomeFragment0) {
                     mHomeFragment0 = new ClassifyFragment();
@@ -62,9 +69,21 @@ public class MainActivity extends BaseActivity {
                 } else {
                     transaction.show(mHomeFragment0);
                 }
-                setFragmentVerisiable(mHomeFragment0);
+                setFragmentVerisiable(mHomeFragment0, 0);
 
                 break;
+            case HOME_TAB_INDEX_1:
+                hideFragments(transaction);
+                if (null == mHomeFragment1) {
+                    mHomeFragment1 = new FindFragment();
+                    transaction.add(R.id.center_layout, mHomeFragment1, "1");
+                } else {
+                    transaction.show(mHomeFragment1);
+                }
+                setFragmentVerisiable(mHomeFragment1, 1);
+                break;
+            case HOME_TAB_INDEX_2:
+            case HOME_TAB_INDEX_3:
             default:
                 break;
         }
@@ -85,8 +104,7 @@ public class MainActivity extends BaseActivity {
             transaction.hide(mHomeFragment3);
         }
     }
-
-    public void setFragmentVerisiable(final BaseFragment fagment) {
+    public void setFragmentVerisiable(final BaseFragment fagment, final int index) {
         if (mHandler == null) {
             mHandler = new Handler() {
             };
@@ -94,10 +112,67 @@ public class MainActivity extends BaseActivity {
         mHandler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                if (fagment != null) {
-                    fagment.setVisible(true);
-                }
-
+//                if (fagment != null) {
+//                    fagment.setVisible(true);
+//                }
+                    switch(index){
+                        case 0:
+                            if(mHomeFragment0!=null) {
+                                mHomeFragment0.setVisible(true);
+                            }
+                            if(mHomeFragment1!=null) {
+                                mHomeFragment1.setVisible(false);
+                            }
+                            if(mHomeFragment2!=null) {
+                                mHomeFragment1.setVisible(false);
+                            }
+                            if(mHomeFragment3!=null) {
+                                mHomeFragment1.setVisible(false);
+                            }
+                            break;
+                        case 1:
+                            if(mHomeFragment0!=null) {
+                                mHomeFragment0.setVisible(false);
+                            }
+                            if(mHomeFragment1!=null) {
+                                mHomeFragment1.setVisible(true);
+                            }
+                            if(mHomeFragment2!=null) {
+                                mHomeFragment2.setVisible(false);
+                            }
+                            if(mHomeFragment3!=null) {
+                                mHomeFragment3.setVisible(false);
+                            }
+                            break;
+                        case 2:
+                            if(mHomeFragment0!=null) {
+                                mHomeFragment0.setVisible(false);
+                            }
+                            if(mHomeFragment1!=null) {
+                                mHomeFragment1.setVisible(false);
+                            }
+                            if(mHomeFragment2!=null) {
+                                mHomeFragment2.setVisible(true);
+                            }
+                            if(mHomeFragment3!=null) {
+                                mHomeFragment3.setVisible(false);
+                            }
+                            break;
+                        case 3:
+                            if(mHomeFragment0!=null) {
+                                mHomeFragment0.setVisible(false);
+                            }
+                            if(mHomeFragment1!=null) {
+                                mHomeFragment1.setVisible(false);
+                            }
+                            if(mHomeFragment2!=null) {
+                                mHomeFragment2.setVisible(false);
+                            }
+                            if(mHomeFragment3!=null) {
+                                mHomeFragment3.setVisible(true);
+                            }
+                            break;
+                    }
             }
         }, 400);
     }
