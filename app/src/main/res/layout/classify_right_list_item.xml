@@ -2,10 +2,11 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/my_tab_background"
+    android:background="@drawable/classify_all_class_right_listselect"
     android:orientation="vertical"
     android:paddingBottom="0dp"
-    android:paddingLeft="10dp" >
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp">
 
     <LinearLayout
         android:id="@+id/right_item_list"
@@ -19,11 +20,12 @@
             android:id="@+id/right_item_txt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_vertical"
+            android:gravity="center"
             android:paddingBottom="16dp"
             android:paddingTop="16dp"
+
             android:text="全部分类"
-            android:textColor="#666666"
+            android:textColor="@color/classify_text_gray"
             android:textSize="18sp" />
     </LinearLayout>
 

@@ -58,11 +58,11 @@ public class ClassifyAllRightAdapter extends BaseAdapter {
 		}
 		hold.txt.setText(text[arg0]);
 		hold.layout.setBackgroundResource(R.drawable.my_list_txt_background);
-		hold.txt.setTextColor(Color.parseColor("#FF666666"));
-		if (arg0 == position) {
-			hold.layout.setBackgroundResource(R.drawable.search_more_morelisttop_bkg);
-			hold.txt.setTextColor(Color.parseColor("#FFFF8C00"));
-		}
+//		hold.txt.setTextColor(Color.parseColor("#FF666666"));
+//		if (arg0 == position) {
+//			hold.layout.setBackgroundResource(R.drawable.search_more_morelisttop_bkg);
+//			hold.txt.setTextColor(Color.parseColor("#FFFF8C00"));
+//		}
 		return arg1;
 	}
 

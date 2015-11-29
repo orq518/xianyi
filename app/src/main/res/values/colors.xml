@@ -17,8 +17,13 @@
     <color name="loading_transparent">#01000000</color>
     <color name="stay_tuned">#cecece</color>
     <color name="common_item_pass">#d9d9d9</color>
-    <color name="classify_gray">#f7f3f0</color>
 
+    <color name="title_bg_color">#eb986e</color>
+
+    <color name="classify_title_class_bg_color">#ead8c2</color>
+    <color name="classify_text_gray">#707070</color>
+    <color name="classify_gray">#f7f3f0</color>
+    <color name="classify_divide_line_color">#d2c2ae</color>
 
     <!-- 透明色 -->
     <color name="fuxk_settle_black_mark">#55000000</color>

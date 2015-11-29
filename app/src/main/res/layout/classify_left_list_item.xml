@@ -9,7 +9,7 @@
         android:id="@+id/right_item_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/search_more_mainlistselect"
+        android:background="@drawable/classify_all_class_left_listselect"
         android:gravity="center_vertical"
         android:orientation="horizontal"
         android:padding="0dp" >
@@ -19,7 +19,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingBottom="11dp"
-            android:paddingLeft="10dp"
+            android:paddingLeft="30dp"
             android:paddingTop="11dp"
             android:src="@drawable/classify_all_left_clothes" />
 
@@ -32,8 +32,9 @@
             android:paddingBottom="9dp"
             android:paddingTop="9dp"
             android:text="热门分类"
-            android:textColor="#666666"
+            android:textColor="@color/classify_text_gray"
             android:textSize="18sp" />
+
     </LinearLayout>
 
 </LinearLayout>
