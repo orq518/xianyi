@@ -22,6 +22,8 @@
 
     <color name="classify_title_class_bg_color">#ead8c2</color>
     <color name="classify_text_gray">#707070</color>
+    <color name="classify_text_orange">#eb986e</color>
+    <color name="classify_all_beijing_bg_color">#f7f3f0</color>
     <color name="classify_gray">#f7f3f0</color>
     <color name="classify_divide_line_color">#d2c2ae</color>
 

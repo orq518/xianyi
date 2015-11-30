@@ -2,16 +2,23 @@ package com.xianyi.activity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.GridView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import com.xianyi.R;
+import com.xianyi.adapter.ClassifyAllBeiJingAdapter;
 import com.xianyi.adapter.ClassifyAllLeftListAdapter;
 import com.xianyi.adapter.ClassifyAllRightAdapter;
+import com.xianyi.customviews.ClassifyAllBeiJingPageControlView;
+import com.xianyi.customviews.ClassifyAllBeiJingScrollLayout;
+import com.xianyi.utils.LogUtil;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -29,12 +36,13 @@ public class BigClassifyActivity extends BaseActivity implements View.OnClickLis
     /** 上下文 **/
     private Context mContext;
 
+    /*************** 全部分类布局 ***************/
     /** 全部分类布局 **/
     private LinearLayout mLyAllClass;
     /** 全部分类 **/
     private TextView mTvALLClassify;
     /** 是否显示全部分类布局 **/
-    private boolean mAllListview = false;
+    private boolean mAllClassListview = false;
     /** 全部分类，左列表 **/
     private ListView mLeftlist;
     /** 全部分类，右列表 **/
@@ -61,21 +69,44 @@ public class BigClassifyActivity extends BaseActivity implements View.OnClickLis
             { "它它它它它", "它它它它它", "它它它它它", "它它它它它", "它它它它它" },
             { "她她她她她", "她她她她她", "她她她她她", "她她她她她", "她她她她她" } };
 
+    /*************** 北京分类布局 ***************/
+    /** 北京分类布局 **/
+    private LinearLayout mLyAllBeiJing;
+    /** 北京分类 **/
+    private TextView mTvALLBeijing;
+    /** 是否显示全部分类布局 **/
+    private boolean mAllBeiJingListview = false;
+    /** 左右滑动切换屏幕的类 **/
+    private ClassifyAllBeiJingScrollLayout mScrollLayout;
+    /** 页面控制类 **/
+    private ClassifyAllBeiJingPageControlView pageControl;
+    /** 页面数 **/
+    private static final float APP_PAGE_SIZE = 6.0f;
+    /** 分页数据 **/
+    private DataLoading dataLoad;
+    /** Adapter **/
+    private ClassifyAllBeiJingAdapter classifyAllBeiJingAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_big_classify);
+        mContext = this;
 
         initViews();
     }
 
     public void initViews() {
         mLyAllClass = (LinearLayout) findViewById(R.id.ly_all_class);
+        mLyAllBeiJing = (LinearLayout) findViewById(R.id.ly_all_beiing);
         mTvALLClassify = (TextView)findViewById(R.id.tv_all_classify);
+        mTvALLBeijing = (TextView)findViewById(R.id.tv_all_beijing);
 
         initAllClassList();
+        initAllBeiJingGradView();
 
         mTvALLClassify.setOnClickListener(this);
+        mTvALLBeijing.setOnClickListener(this);
     }
 
     /**
@@ -155,41 +186,140 @@ public class BigClassifyActivity extends BaseActivity implements View.OnClickLis
             int position = leftAdapter.getSelectItem();
             mTvALLClassify.setText(rightListviewText[position][arg2]);
             mLyAllClass.setVisibility(View.GONE);
-            mAllListview = false;
+            mAllClassListview = false;
         }
     }
+
+    /**
+     * 初始化全北京布局类别
+     */
+    private void initAllBeiJingGradView() {
+        dataLoad = new DataLoading();
+        mScrollLayout = (ClassifyAllBeiJingScrollLayout)findViewById(R.id.ScrollLayout);
+//        myHandler = new MyHandler(this,1);
+//
+//        //起一个线程更新数据
+//        MyThread m = new MyThread();
+//        new Thread(m).start();
+
+        // 初始化数据－全北京
+        List<Map> list = new ArrayList<Map>();
+        for(int i = 0; i < 16; i++){
+            Map map = new HashMap();
+            map.put("name", "青年湖西里");
+            map.put("pop", "15");
+            map.put("enthusiasm", "12");
+            list.add(map);
+        }
+
+        int pageNo = (int)Math.ceil( list.size() / APP_PAGE_SIZE);
+        for (int i = 0; i < pageNo; i++) {
+            /** gridview **/
+            GridView allBeiJingPage = new GridView(mContext);
+            // get the "i" page data
+            ClassifyAllBeiJingAdapter classifyAllBeiJingAdapter = new ClassifyAllBeiJingAdapter(mContext, list, i);
+            allBeiJingPage.setAdapter(classifyAllBeiJingAdapter);
+            allBeiJingPage.setNumColumns(2);
+            allBeiJingPage.setVerticalSpacing(20);
+            allBeiJingPage.setOnItemClickListener(listener);
+            allBeiJingPage.setSelector(new ColorDrawable(Color.TRANSPARENT));
+            mScrollLayout.addView(allBeiJingPage);
+        }
+        //加载分页
+        pageControl = (ClassifyAllBeiJingPageControlView) findViewById(R.id.pageControl);// 取消被选中色
+        pageControl.bindScrollViewGroup(mScrollLayout);
+        //加载分页数据
+        dataLoad.bindScrollViewGroup(mScrollLayout);
+
+    }
+
+    /**
+     * 分页数据
+     */
+    class DataLoading {
+        private int count;
+        public void bindScrollViewGroup(ClassifyAllBeiJingScrollLayout scrollViewGroup) {
+            this.count=scrollViewGroup.getChildCount();
+            scrollViewGroup.setOnScreenChangeListenerDataLoad(new ClassifyAllBeiJingScrollLayout.OnScreenChangeListenerDataLoad() {
+                public void onScreenChange(int currentIndex) {
+                    // TODO Auto-generated method stub
+                    generatePageControl(currentIndex);
+                }
+            });
+        }
+
+        private void generatePageControl(int currentIndex){
+            //如果到最后一页，就加载16条记录
+//            if(count==currentIndex + 1){
+//
+//            }
+        }
+    }
+
+    /**
+     * gridView的onItemLick响应事件
+     */
+    public AdapterView.OnItemClickListener listener = new AdapterView.OnItemClickListener() {
+
+        public void onItemClick(AdapterView<?> parent, View view, int position,
+                                long id) {
+            LogUtil.d("position = " + position);
+        }
+
+    };
 
     @Override
     public void onClick(View v) {
         super.onClick(v);
         Intent intent;
-        switch (v.getId()) {
-            // 全部分类
-            case R.id.tv_all_classify:
-                Drawable drawable = null;
-                if (!mAllListview) {
-                    drawable = getResources().getDrawable(R.drawable.ic_arrow_up_black);
-                    mLyAllClass.setVisibility(View.VISIBLE);
-                    leftAdapter.notifyDataSetChanged();
-                    mAllListview = true;
-                }
-                else {
-                    drawable = getResources().getDrawable(R.drawable.ic_arrow_down_black);
-                    mLyAllClass.setVisibility(View.GONE);
-                    mAllListview = false;
-                }
-                //
-                drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight());
-                mTvALLClassify.setCompoundDrawables(null, null, drawable, null);
-                break;
 
-            // 全北京
-            case R.id.tv_all_beijing:
+        int mID = v.getId();
+        // 全部分类
+        if (mID == R.id.tv_all_classify) {
+            Drawable drawable = null;
+            if (!mAllClassListview) {
+                drawable = getResources().getDrawable(R.drawable.ic_arrow_up_black);
+                mLyAllClass.setVisibility(View.VISIBLE);
+                leftAdapter.notifyDataSetChanged();
+                mAllClassListview = true;
+            }
+            else {
+                drawable = getResources().getDrawable(R.drawable.ic_arrow_down_black);
+                mLyAllClass.setVisibility(View.GONE);
+                mAllClassListview = false;
+            }
+            //
+            drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight());
+            mTvALLClassify.setCompoundDrawables(null, null, drawable, null);
+        }else{
+            Drawable drawable = getResources().getDrawable( R.drawable.ic_arrow_down_black);
+            drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight());
+            mTvALLClassify.setCompoundDrawables(null, null, drawable, null);
+            mLyAllClass.setVisibility(View.GONE);
+            mAllClassListview = false;
+        }
 
-                break;
+        // 全北京
+        if (mID == R.id.tv_all_beijing) {
+            Drawable drawableBJ = null;
+            if (!mAllBeiJingListview) {
+                drawableBJ = getResources().getDrawable(R.drawable.ic_arrow_up_black);
+                mLyAllBeiJing.setVisibility(View.VISIBLE);
+                mAllBeiJingListview = true;
+            } else {
+                drawableBJ = getResources().getDrawable(R.drawable.ic_arrow_down_black);
+                mLyAllBeiJing.setVisibility(View.GONE);
+                mAllBeiJingListview = false;
+            }
 
-            default:
-                break;
+            drawableBJ.setBounds(0, 0, drawableBJ.getMinimumWidth(), drawableBJ.getMinimumHeight());
+            mTvALLBeijing.setCompoundDrawables(null, null, drawableBJ, null);
+        }else{
+            Drawable drawable = getResources().getDrawable( R.drawable.ic_arrow_down_black);
+            drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight());
+            mTvALLBeijing.setCompoundDrawables(null, null, drawable, null);
+            mLyAllBeiJing.setVisibility(View.GONE);
+            mAllBeiJingListview = false;
         }
     }
 
