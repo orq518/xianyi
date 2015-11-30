@@ -68,7 +68,7 @@ public class ClassifyAllLeftListAdapter extends BaseAdapter {
 			hold.img.setImageResource(Integer.parseInt(list.get(arg0).get("img").toString()));
 		}
 		hold.txt.setText(list.get(arg0).get("txt").toString());
-		hold.layout.setBackgroundResource(R.drawable.search_more_mainlistselect);
+		hold.layout.setBackgroundResource(R.drawable.classify_all_class_left_listselect);
 		if (arg0 == position) {
 			hold.layout.setBackgroundResource(R.drawable.list_bkg_line_u);
 		}
