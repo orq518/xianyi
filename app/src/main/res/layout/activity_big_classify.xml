@@ -99,11 +99,36 @@
         android:background="@color/classify_divide_line_color" />
 
     <!-- 页面主列表 -->
-    <ListView
-        android:id="@+id/ShopListView"
+    <com.xianyi.customviews.PullToRefreshView
+        android:id="@+id/main_pull_refresh_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/dividing_title" />
+        android:layout_weight="1"
+        android:background="@color/gray_bg"
+        android:layout_below="@+id/dividing_title">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="false">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical" >
+
+                <com.xianyi.customviews.PTRListView
+                    android:id="@+id/listview"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:divider="@null" >
+                </com.xianyi.customviews.PTRListView>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </com.xianyi.customviews.PullToRefreshView>
 
     <!-- 全部分类列表 -->
     <LinearLayout
