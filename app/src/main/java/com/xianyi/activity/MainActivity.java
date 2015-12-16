@@ -13,6 +13,7 @@ import com.xianyi.customviews.residelayout.SlidingMenu;
 import com.xianyi.fragment.BaseFragment;
 import com.xianyi.fragment.ClassifyFragment;
 import com.xianyi.fragment.FindFragment;
+import com.xianyi.utils.LogUtil;
 
 import java.util.ArrayList;
 
@@ -35,7 +36,7 @@ public class MainActivity extends BaseActivity {
     private FindFragment mHomeFragment2;
     private FindFragment mHomeFragment3;
     private FragmentManager mFragmentManager;
-
+BaseFragment curFragment;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,7 +71,7 @@ public class MainActivity extends BaseActivity {
                     transaction.show(mHomeFragment0);
                 }
                 setFragmentVerisiable(mHomeFragment0, 0);
-
+                curFragment=mHomeFragment0;
                 break;
             case HOME_TAB_INDEX_1:
                 hideFragments(transaction);
@@ -81,6 +82,7 @@ public class MainActivity extends BaseActivity {
                     transaction.show(mHomeFragment1);
                 }
                 setFragmentVerisiable(mHomeFragment1, 1);
+                curFragment=mHomeFragment1;
                 break;
             case HOME_TAB_INDEX_2:
             case HOME_TAB_INDEX_3:
@@ -195,5 +197,12 @@ public class MainActivity extends BaseActivity {
         }
 
     }
-
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        LogUtil.d("main--onDestroy");
+        if(curFragment!=null){
+            curFragment.setVisible(false);
+        }
+    }
 }
