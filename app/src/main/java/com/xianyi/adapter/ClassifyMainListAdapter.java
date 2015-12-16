@@ -6,10 +6,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 import com.xianyi.R;
 import com.xianyi.bean.ClassifyMainListBean;
+import com.xianyi.customviews.CircleImageView;
+import com.xianyi.customviews.CustomImageView;
 
 import java.util.ArrayList;
 
@@ -56,7 +57,7 @@ public class ClassifyMainListAdapter extends BaseAdapter {
             if("01".equals(bankList.get(position).type)){
                 convertView = mInflater.inflate((R.layout.classify_main_list_one_img_item), null);
                 holder = new ViewHolder();
-                holder.icon = (ImageView) convertView.findViewById(R.id.im_main_list_one_icon);
+                holder.icon = (CircleImageView) convertView.findViewById(R.id.im_main_list_one_icon);
                 holder.price_now = (TextView) convertView .findViewById(R.id.gv_main_list_one_price_now);
                 holder.price_old = (TextView) convertView .findViewById(R.id.gv_main_list_one_price_old);
                 holder.time = (TextView) convertView .findViewById(R.id.gv_main_list_one_time);
@@ -70,7 +71,7 @@ public class ClassifyMainListAdapter extends BaseAdapter {
             else if("02".equals(bankList.get(position).type)){
                 convertView = mInflater.inflate((R.layout.classify_main_list_more_img_item), null);
                 holder = new ViewHolder();
-                holder.icon = (ImageView) convertView.findViewById(R.id.im_main_list_one_icon);
+                holder.icon = (CircleImageView) convertView.findViewById(R.id.im_main_list_one_icon);
                 holder.price_now = (TextView) convertView .findViewById(R.id.gv_main_list_one_price_now);
                 holder.price_old = (TextView) convertView .findViewById(R.id.gv_main_list_one_price_old);
                 holder.time = (TextView) convertView .findViewById(R.id.gv_main_list_one_time);
@@ -90,7 +91,6 @@ public class ClassifyMainListAdapter extends BaseAdapter {
         } else {
             holder = (ViewHolder) convertView.getTag();
         }
-
 //        // 一个图片
 //        if("01".equals(bankList.get(position).type)){
 //            holder.price_now.setText(bankList.get(position).price_now);
@@ -123,7 +123,7 @@ public class ClassifyMainListAdapter extends BaseAdapter {
     }
 
     class ViewHolder {
-        ImageView icon;
+        CircleImageView icon;
         TextView price_now;
         TextView price_old;
         TextView time;
