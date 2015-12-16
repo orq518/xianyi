@@ -372,4 +372,6 @@ public class MyListView extends ListView implements OnScrollListener {
 
 		public void onLoadMore();
 	}
+
+
 }

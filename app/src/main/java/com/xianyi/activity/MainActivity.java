@@ -36,7 +36,9 @@ public class MainActivity extends BaseActivity {
     private FindFragment mHomeFragment2;
     private FindFragment mHomeFragment3;
     private FragmentManager mFragmentManager;
-BaseFragment curFragment;
+
+    BaseFragment curFragment;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

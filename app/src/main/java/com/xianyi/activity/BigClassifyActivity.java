@@ -1,17 +1,24 @@
 package com.xianyi.activity;
 
+import android.animation.Animator;
+import android.animation.ObjectAnimator;
+import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Message;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,8 +30,6 @@ import com.xianyi.adapter.ClassifyMainListAdapter;
 import com.xianyi.bean.ClassifyMainListBean;
 import com.xianyi.customviews.ClassifyAllBeiJingPageControlView;
 import com.xianyi.customviews.ClassifyAllBeiJingScrollLayout;
-import com.xianyi.customviews.PTRListView;
-import com.xianyi.customviews.PullToRefreshView;
 import com.xianyi.customviews.TitleView;
 import com.xianyi.customviews.mylist.MyListView;
 import com.xianyi.utils.LogUtil;
@@ -40,12 +45,15 @@ import java.util.Map;
  * @author lht
  * @data: on 15/11/25 14:52
  */
-public class BigClassifyActivity extends BaseActivity implements View.OnClickListener {
+
+public class BigClassifyActivity extends BaseActivity implements Animator.AnimatorListener {
     private static final String LTAG = BigClassifyActivity.class.getSimpleName();
     /** 上下文 **/
     private Context mContext;
     /** 顶部布局 **/
     private TitleView mTitleView;
+    /** 隐藏布局 **/
+    private LinearLayout mLyClass;
 
     /*************** 全部分类布局 ***************/
     /** 全部分类布局 **/
@@ -106,6 +114,15 @@ public class BigClassifyActivity extends BaseActivity implements View.OnClickLis
     /** 数据源 **/
     private ArrayList<ClassifyMainListBean> bankList = new ArrayList<ClassifyMainListBean>();
 
+    /** 滑动隐藏监听 **/
+    private MyOnTouchListener myOnTouchListener;
+    private boolean mIsTitleHide = false;
+    private boolean mIsAnim = false;
+    private boolean mIsRoll = true;
+    private float lastX = 0;
+    private float lastY = 0;
+    private boolean isDown = false;
+    private boolean isUp = false;
 
     private final int MSG_REFRESH = 1000;
     private final int MSG_LOADMORE = 2000;
@@ -134,6 +151,7 @@ public class BigClassifyActivity extends BaseActivity implements View.OnClickLis
 
     public void initViews() {
         mTitleView = (TitleView) findViewById(R.id.title);
+        mLyClass = (LinearLayout) findViewById(R.id.layout);
         mLyAllClass = (LinearLayout) findViewById(R.id.ly_all_class);
         mLyAllBeiJing = (LinearLayout) findViewById(R.id.ly_all_beiing);
         mTvALLClassify = (TextView) findViewById(R.id.tv_all_classify);
@@ -148,6 +166,8 @@ public class BigClassifyActivity extends BaseActivity implements View.OnClickLis
         mTvALLBeijing.setOnClickListener(this);
         mLyAllClass.setOnClickListener(this);
         mLyAllBeiJing.setOnClickListener(this);
+
+        initListener();
     }
 
 
@@ -410,12 +430,16 @@ public class BigClassifyActivity extends BaseActivity implements View.OnClickLis
             //
             drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight());
             mTvALLClassify.setCompoundDrawables(null, null, drawable, null);
+            mListView.setEnabled(false);
+            mIsRoll = false;
         } else {
             Drawable drawable = getResources().getDrawable(R.drawable.ic_arrow_down_black);
             drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight());
             mTvALLClassify.setCompoundDrawables(null, null, drawable, null);
             mLyAllClass.setVisibility(View.GONE);
             mAllClassListview = false;
+            mListView.setEnabled(true);
+            mIsRoll = true;
         }
 
         // 隐藏全部分类
@@ -425,8 +449,9 @@ public class BigClassifyActivity extends BaseActivity implements View.OnClickLis
             mTvALLClassify.setCompoundDrawables(null, null, drawable, null);
             mLyAllClass.setVisibility(View.GONE);
             mAllClassListview = false;
+            mListView.setEnabled(true);
+            mIsRoll = true;
         }
-
 
         // 全北京
         if (mID == R.id.tv_all_beijing) {
@@ -443,12 +468,16 @@ public class BigClassifyActivity extends BaseActivity implements View.OnClickLis
 
             drawableBJ.setBounds(0, 0, drawableBJ.getMinimumWidth(), drawableBJ.getMinimumHeight());
             mTvALLBeijing.setCompoundDrawables(null, null, drawableBJ, null);
+            mListView.setEnabled(false);
+            mIsRoll = false;
         } else {
             Drawable drawable = getResources().getDrawable(R.drawable.ic_arrow_down_black);
             drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight());
             mTvALLBeijing.setCompoundDrawables(null, null, drawable, null);
             mLyAllBeiJing.setVisibility(View.GONE);
             mAllBeiJingListview = false;
+            mListView.setEnabled(true);
+            mIsRoll = true;
         }
 
         // 隐藏全部分类
@@ -458,6 +487,8 @@ public class BigClassifyActivity extends BaseActivity implements View.OnClickLis
             mTvALLBeijing.setCompoundDrawables(null, null, drawable, null);
             mLyAllBeiJing.setVisibility(View.GONE);
             mAllBeiJingListview = false;
+            mListView.setEnabled(true);
+            mIsRoll = true;
         }
 
     }
@@ -472,6 +503,141 @@ public class BigClassifyActivity extends BaseActivity implements View.OnClickLis
             finish();
         }
 
+    }
+
+    /**
+     * 隐藏布局事件监听
+     */
+    private void initListener() {
+        myOnTouchListener = new MyOnTouchListener() {
+            @Override
+            public boolean dispatchTouchEvent(MotionEvent ev) {
+                return dispathTouchEvent(ev);
+            }
+        };
+        registerMyOnTouchListener(myOnTouchListener);
+    }
+
+    private ArrayList<MyOnTouchListener> onTouchListeners = new ArrayList<MyOnTouchListener>(10);
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent ev) {
+        for (MyOnTouchListener listener : onTouchListeners) {
+            listener.dispatchTouchEvent(ev);
+        }
+        return super.dispatchTouchEvent(ev);
+    }
+
+    public void registerMyOnTouchListener(MyOnTouchListener myOnTouchListener) {
+        onTouchListeners.add(myOnTouchListener);
+    }
+
+    public void unregisterMyOnTouchListener(MyOnTouchListener myOnTouchListener) {
+        onTouchListeners.remove(myOnTouchListener);
+    }
+
+    public interface MyOnTouchListener {
+        public boolean dispatchTouchEvent(MotionEvent ev);
+    }
+
+    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
+    private boolean dispathTouchEvent(MotionEvent event){
+
+        if (!mIsRoll) {
+            return false;
+        }
+        if (mIsAnim) {
+            return false;
+        }
+        final int action = event.getAction();
+
+        float x = event.getX();
+        float y = event.getY();
+
+        switch (action) {
+            case MotionEvent.ACTION_DOWN:
+                lastY = y;
+                lastX = x;
+                return false;
+            case MotionEvent.ACTION_MOVE:
+                float dY = Math.abs(y - lastY);
+                float dX = Math.abs(x - lastX);
+                boolean down = y > lastY ? true : false;
+                lastY = y;
+                lastX = x;
+                isUp = dX < 8 && dY > 8 && !mIsTitleHide && !down ;
+                isDown = dX < 8 && dY > 8 && mIsTitleHide && down;
+                   if (isUp) {
+                    View view = this.mLyClass;
+                    float[] f = new float[2];
+                    f[0] = 0.0F;
+                    f[1] = -mTitleView.getHeight();
+                    ObjectAnimator animator1 = ObjectAnimator.ofFloat(view, "translationY", f);
+                    animator1.setInterpolator(new AccelerateDecelerateInterpolator());
+                    animator1.setDuration(200);
+                    animator1.start();
+                    animator1.addListener(this);
+                    setMarginTop(mLyClass.getHeight() - mTitleView.getHeight());
+                } else if (isDown) {
+                    View view = this.mLyClass;
+                    float[] f = new float[2];
+                    f[0] = -mTitleView.getHeight();
+                    f[1] = 0F;
+                    ObjectAnimator animator1 = ObjectAnimator.ofFloat(view, "translationY", f);
+                    animator1.setDuration(200);
+                    animator1.setInterpolator(new AccelerateDecelerateInterpolator());
+                    animator1.start();
+                    animator1.addListener(this);
+                } else {
+                    return false;
+                }
+                mIsTitleHide = !mIsTitleHide;
+                mIsAnim = true;
+                break;
+            default:
+                return false;
+        }
+        return false;
+
+    }
+
+    @Override
+    public void onAnimationCancel(Animator arg0) {
+
+    }
+
+
+    @Override
+    public void onAnimationEnd(Animator arg0) {
+        if(isDown){
+            setMarginTop(mLyClass.getHeight());
+        }
+        mIsAnim = false;
+    }
+
+
+    @Override
+    public void onAnimationRepeat(Animator arg0) {
+
+    }
+
+
+    @Override
+    public void onAnimationStart(Animator arg0) {
+
+    }
+
+    public void setMarginTop(int page){
+        RelativeLayout.LayoutParams layoutParam = new RelativeLayout.LayoutParams(
+                RelativeLayout.LayoutParams.FILL_PARENT, RelativeLayout.LayoutParams.FILL_PARENT);
+        layoutParam.setMargins(0, page, 0, 0);
+        mListView.setLayoutParams(layoutParam);
+        mListView.invalidate();
+
+        mLyAllClass.setLayoutParams(layoutParam);
+        mLyAllClass.invalidate();
+
+        mLyAllBeiJing.setLayoutParams(layoutParam);
+        mLyAllBeiJing.invalidate();
     }
 
     /**
