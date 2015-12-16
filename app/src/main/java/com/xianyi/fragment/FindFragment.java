@@ -56,12 +56,18 @@ public class FindFragment extends BaseFragment implements View.OnClickListener {
     private ViewGroup anim_mask_layout;//动画层
 //    private BadgeView buyNumView;//显示购买数量的控件
 
+    int boomTime = 3000;//动画时间
 
     int AnimationTime = 30000;//动画时间
     int AnimationTime1 = 800;//动画时间
     ImageView shopTop;
     FrameLayout animation_rootlayout;
     int width, height;
+    /**
+     * 气球最大
+     */
+    int maxWidth = 100;
+    int qiqiuID[] = new int[5];
 
     @Override
     public String getFragmentName() {
@@ -87,6 +93,11 @@ public class FindFragment extends BaseFragment implements View.OnClickListener {
 
         }
         WindowManager wm = (WindowManager) mContext.getSystemService(Context.WINDOW_SERVICE);
+        qiqiuID[0] = R.drawable.pic_bubble1;
+        qiqiuID[1] = R.drawable.pic_bubble2;
+        qiqiuID[2] = R.drawable.pic_bubble3;
+        qiqiuID[3] = R.drawable.pic_bubble4;
+        qiqiuID[4] = R.drawable.pic_bubble5;
         return mRootView;
     }
 
@@ -122,14 +133,17 @@ public class FindFragment extends BaseFragment implements View.OnClickListener {
                     start_location[0] = result;
                     if (start_location[0] < 80) {
                         start_location[0] = 80;
-                    } else if (start_location[0] > width) {
+                    } else if (start_location[0] + 160 > width) {
                         start_location[0] = width - 160;
                     }
                     start_location[1] = height - 80;
                     ImageView qiqiu = new ImageView(mContext);// buyImg是动画的图片，我的是一个小球（R.drawable.sign）
-                    qiqiu.setImageResource(R.drawable.balloon);// 设置buyImg的图片
+                    int index = result % 5;
+                    qiqiu.setImageResource(qiqiuID[index]);// 设置buyImg的图片
                     setAnim(qiqiu, start_location);// 开始执行动画
-                    mHandler.sendEmptyMessageDelayed(1, 10000);
+                    FrameLayout.LayoutParams params = (FrameLayout.LayoutParams) qiqiu.getLayoutParams();
+                    maxWidth = 2 * params.width + 30;
+                    mHandler.sendEmptyMessageDelayed(1, boomTime);
                     break;
                 case 2:
                     if (animation_rootlayout != null && animation_rootlayout.getChildCount() > 0) {
@@ -139,8 +153,22 @@ public class FindFragment extends BaseFragment implements View.OnClickListener {
                             if (tag != null && tag.equals("1")) {
                                 continue;
                             }
+
                             FrameLayout.LayoutParams lp = (FrameLayout.LayoutParams) view.getLayoutParams();
-                            lp.topMargin = lp.topMargin - 2;
+                            lp.topMargin = lp.topMargin - 5;
+                            if (lp.topMargin > height / 3) {
+                                if (lp.width < maxWidth) {
+                                    lp.width = lp.width + 1;
+                                    lp.height = lp.height + 1;
+                                }
+                            } else {
+                                if (lp.width > maxWidth / 2) {
+                                    lp.width = lp.width - 1;
+                                    lp.height = lp.height - 1;
+                                }
+                            }
+
+
                             view.setLayoutParams(lp);
                             if (lp.topMargin <= 0) {
                                 animation_rootlayout.removeView(view);
@@ -148,12 +176,13 @@ public class FindFragment extends BaseFragment implements View.OnClickListener {
                         }
                     }
                     animation_rootlayout.invalidate();
-                    mHandler.sendEmptyMessageDelayed(2, 50);
+                    mHandler.sendEmptyMessageDelayed(2, 20);
                     break;
             }
             super.dispatchMessage(msg);
         }
     };
+
 
     private void initView() {
         titleView = (TitleView) mRootView.findViewById(R.id.title);
@@ -181,7 +210,7 @@ public class FindFragment extends BaseFragment implements View.OnClickListener {
                 if (animation_rootlayout != null && animation_rootlayout.getChildCount() == 0) {
                     mHandler.sendEmptyMessage(1);
                 } else {
-                    mHandler.sendEmptyMessageDelayed(1, 10000);
+                    mHandler.sendEmptyMessageDelayed(1, boomTime);
                 }
                 mHandler.sendEmptyMessage(2);
             } else {
@@ -215,7 +244,7 @@ public class FindFragment extends BaseFragment implements View.OnClickListener {
 
         LinearLayout relativeLayout = (LinearLayout) LayoutInflater.from(mContext).inflate(R.layout.find_pop_layout, null);
         PopupWindow popupWindow = new PopupWindow(relativeLayout,
-                width*2/3, ViewGroup.LayoutParams.WRAP_CONTENT);
+                width * 2 / 3, ViewGroup.LayoutParams.WRAP_CONTENT);
 
         popupWindow.setFocusable(true);
         popupWindow.setOutsideTouchable(true);
@@ -230,10 +259,10 @@ public class FindFragment extends BaseFragment implements View.OnClickListener {
         relativeLayout.measure(w, h);
         int height = relativeLayout.getMeasuredHeight();
         int width = relativeLayout.getMeasuredWidth();
-        int x= location[0]+50;
-        int y=location[1] - height-50;
-        if(y<100){
-            y=100;
+        int x = location[0] + 50;
+        int y = location[1] - height - 50;
+        if (y < 100) {
+            y = 100;
         }
         popupWindow.showAtLocation(v, Gravity.NO_GRAVITY, x, y);
         popupWindow.setOnDismissListener(new PopupWindow.OnDismissListener() {
