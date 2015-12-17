@@ -83,8 +83,7 @@ public class ClassifyFragment extends BaseFragment implements CycleImageLayout.I
 
 		// 设置顶部布局
 		mTitle.setTitle(getString(R.string.classify_title));
-		mTitle.setLeftVisiable(true);
-		mTitle.setLeftClickListener(new TitleLeftOnClickListener());
+		mTitle.setLeftVisiable(false);
 
 		initData();
 
@@ -134,17 +133,5 @@ public class ClassifyFragment extends BaseFragment implements CycleImageLayout.I
 			default:
 				break;
 		}
-	}
-
-	/**
-	 * 顶部布局--左按钮事件监听
-	 */
-	public class TitleLeftOnClickListener implements View.OnClickListener {
-
-		@Override
-		public void onClick(View v) {
-
-		}
-
 	}
 }
