@@ -46,6 +46,7 @@ import java.util.Map;
  * @data: on 15/11/25 14:52
  */
 
+@TargetApi(Build.VERSION_CODES.HONEYCOMB)
 public class BigClassifyActivity extends BaseActivity implements Animator.AnimatorListener {
     private static final String LTAG = BigClassifyActivity.class.getSimpleName();
     /** 上下文 **/
