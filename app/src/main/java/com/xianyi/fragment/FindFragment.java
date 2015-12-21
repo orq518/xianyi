@@ -7,7 +7,6 @@ import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,7 +16,6 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationSet;
 import android.view.animation.LinearInterpolator;
 import android.view.animation.TranslateAnimation;
-import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -25,18 +23,12 @@ import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.xianyi.activity.BigClassifyActivity;
-import com.xianyi.adapter.ClassifyMainListAdapter;
-import com.xianyi.bean.ClassifyMainListBean;
-import com.xianyi.customviews.TitleView;
-import com.xianyi.customviews.mylist.MyListView;
-import com.xianyi.customviews.residelayout.FindTab2Layout;
+import com.xianyi.customviews.FindTab2Layout;
+import com.xianyi.customviews.residelayout.CircleImageView;
 import com.xianyi.utils.LogUtil;
 import com.xianyi.R;
 
-import java.util.ArrayList;
 import java.util.Random;
 
 
@@ -67,7 +59,8 @@ public class FindFragment extends BaseFragment implements View.OnClickListener {
     int AnimationTime1 = 800;//动画时间
     FrameLayout mainlayout;
     FrameLayout tab1_layout;
-    FindTab2Layout tab2_layout;
+    FrameLayout tab2_layout;
+    PopupWindow popupWindow;
     int mainwidth, mainheight;
     /**
      * 气球最大
@@ -197,7 +190,9 @@ public class FindFragment extends BaseFragment implements View.OnClickListener {
 
     private void initView() {
         tab1_layout= (FrameLayout) LayoutInflater.from(mContext).inflate(R.layout.fragment_layout_find_tab1, null);
-        tab2_layout= new FindTab2Layout(mContext);
+        tab2_layout= (FrameLayout) LayoutInflater.from(mContext).inflate(R.layout.fragment_layout_find_tab2, null);
+        FindTab2Layout findTab2Layout= new FindTab2Layout(mContext);
+        tab2_layout.addView(findTab2Layout);
         tv_num = (TextView) mRootView.findViewById(R.id.tv_num);
         title_left = (TextView) mRootView.findViewById(R.id.title_left);
         title_right = (TextView) mRootView.findViewById(R.id.title_right);
@@ -236,7 +231,7 @@ public class FindFragment extends BaseFragment implements View.OnClickListener {
                 }
                 break;
             case 1:
-                LogUtil.d("点右");
+//                LogUtil.d("点右");
                 title_left.setBackgroundResource(R.drawable.title_corner_left_normal);
                 title_right.setBackgroundResource(R.drawable.title_corner_right_selected);
                 curTab = index;
@@ -301,7 +296,7 @@ public void startQiqiuAnimation(boolean isstart){
 
         }
     }
-    PopupWindow popupWindow;
+
     private void showPopUp(final View view) {
 
         LinearLayout relativeLayout = (LinearLayout) LayoutInflater.from(mContext).inflate(R.layout.find_pop_layout, null);

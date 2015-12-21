@@ -1,16 +1,24 @@
-package com.xianyi.customviews.residelayout;
+package com.xianyi.customviews;
+
+/**
+ * The author 欧瑞强 on 2015/12/21.
+ * todo
+ */
 
 import android.content.Context;
 import android.os.Message;
-import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.xianyi.R;
-import com.xianyi.activity.BigClassifyActivity;
 import com.xianyi.adapter.ClassifyMainListAdapter;
 import com.xianyi.bean.ClassifyMainListBean;
 import com.xianyi.customviews.mylist.MyListView;
@@ -21,7 +29,7 @@ import java.util.ArrayList;
  * The author 欧瑞强 on 2015/12/18.
  * todo
  */
-public class FindTab2Layout extends FrameLayout {
+public  class FindTab2Layout extends FrameLayout {
     /*************** 主列表 ***************/
     /**
      * listView
@@ -30,7 +38,7 @@ public class FindTab2Layout extends FrameLayout {
     /**
      * 适配器
      **/
-    private ClassifyMainListAdapter adapter;
+    private MyAdapter adapter;
     /**
      * 数据源
      **/
@@ -64,18 +72,19 @@ public class FindTab2Layout extends FrameLayout {
      */
     private void initMainList() {
         mListView = new MyListView(mContext);
-        this.addView(mListView);
+        LayoutParams params=new LayoutParams(LayoutParams.MATCH_PARENT,LayoutParams.MATCH_PARENT);
+        this.addView(mListView,params);
         mListView.setDivider(mContext.getResources().getDrawable(R.drawable.listview_divider_line));
         mListView.setDividerHeight(2);
         mListView.setVerticalScrollBarEnabled(true);
         setData();
 
-        // 设置listview可以加载、刷新
+//        // 设置listview可以加载、刷新
         mListView.setPullLoadEnable(true);
         mListView.setPullRefreshEnable(true);
-        adapter = new ClassifyMainListAdapter(mContext, bankList);
+        adapter = new MyAdapter(mContext);
         mListView.setAdapter(adapter);
-
+//
         // listview单击
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -179,5 +188,74 @@ public class FindTab2Layout extends FrameLayout {
         ClassifyMainListBean bModel5 = new ClassifyMainListBean();
         bModel5.type = "03";
         bankList.add(bModel5);
+    }
+    public class MyAdapter extends BaseAdapter {
+
+        private LayoutInflater mInflater;
+
+
+        public MyAdapter(Context context){
+            this.mInflater = LayoutInflater.from(context);
+        }
+        @Override
+        public int getCount() {
+            // TODO Auto-generated method stub
+            return bankList.size();
+        }
+
+        @Override
+        public Object getItem(int arg0) {
+            // TODO Auto-generated method stub
+            return null;
+        }
+
+        @Override
+        public long getItemId(int arg0) {
+            // TODO Auto-generated method stub
+            return arg0;
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+
+            ViewHolder holder = null;
+            if (convertView == null) {
+
+                holder=new ViewHolder();
+
+                convertView = mInflater.inflate(R.layout.find_tab2_list_item, null);
+//                holder.img = (ImageView)convertView.findViewById(R.id.img);
+//                holder.title = (TextView)convertView.findViewById(R.id.title);
+//                holder.info = (TextView)convertView.findViewById(R.id.info);
+//                holder.viewBtn = (Button)convertView.findViewById(R.id.view_btn);
+                convertView.setTag(holder);
+
+            }else {
+
+                holder = (ViewHolder)convertView.getTag();
+            }
+
+
+//            holder.img.setBackgroundResource((Integer)mData.get(position).get("img"));
+//            holder.title.setText((String)mData.get(position).get("title"));
+//            holder.info.setText((String)mData.get(position).get("info"));
+//
+//            holder.viewBtn.setOnClickListener(new View.OnClickListener() {
+//
+//                @Override
+//                public void onClick(View v) {
+//                }
+//            });
+
+
+            return convertView;
+        }
+
+    }
+    public final class ViewHolder{
+        public ImageView img;
+        public TextView title;
+        public TextView info;
+        public Button viewBtn;
     }
 }
