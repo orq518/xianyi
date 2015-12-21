@@ -13,6 +13,7 @@ import com.xianyi.customviews.residelayout.SlidingMenu;
 import com.xianyi.fragment.BaseFragment;
 import com.xianyi.fragment.ClassifyFragment;
 import com.xianyi.fragment.FindFragment;
+import com.xianyi.fragment.IntegralFragment;
 import com.xianyi.utils.LogUtil;
 
 import java.util.ArrayList;
@@ -34,7 +35,7 @@ public class MainActivity extends BaseActivity {
     private ClassifyFragment mHomeFragment0;
     private FindFragment mHomeFragment1;
     private FindFragment mHomeFragment2;
-    private FindFragment mHomeFragment3;
+    private IntegralFragment mHomeFragment3;
     private FragmentManager mFragmentManager;
 
     BaseFragment curFragment;
@@ -53,6 +54,7 @@ public class MainActivity extends BaseActivity {
     public void initFragment() {
         mHomeFragment0 = new ClassifyFragment();
         mHomeFragment1 = new FindFragment();
+        mHomeFragment3 = new IntegralFragment();
 
     }
 
@@ -73,7 +75,7 @@ public class MainActivity extends BaseActivity {
                     transaction.show(mHomeFragment0);
                 }
                 setFragmentVerisiable(mHomeFragment0, 0);
-                curFragment=mHomeFragment0;
+                curFragment = mHomeFragment0;
                 break;
             case HOME_TAB_INDEX_1:
                 hideFragments(transaction);
@@ -88,6 +90,17 @@ public class MainActivity extends BaseActivity {
                 break;
             case HOME_TAB_INDEX_2:
             case HOME_TAB_INDEX_3:
+                hideFragments(transaction);
+                if (null == mHomeFragment3) {
+                    mHomeFragment3 = new IntegralFragment();
+                    transaction.add(R.id.center_layout, mHomeFragment3, "0");
+                } else {
+                    transaction.show(mHomeFragment3);
+                }
+                setFragmentVerisiable(mHomeFragment3, 0);
+                curFragment = mHomeFragment3;
+                break;
+
             default:
                 break;
         }
@@ -131,7 +144,7 @@ public class MainActivity extends BaseActivity {
                                 mHomeFragment1.setVisible(false);
                             }
                             if(mHomeFragment3!=null) {
-                                mHomeFragment1.setVisible(false);
+                                mHomeFragment3.setVisible(false);
                             }
                             break;
                         case 1:
