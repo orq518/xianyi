@@ -2,6 +2,8 @@ package com.xianyi.activity;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
@@ -23,6 +25,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends BaseActivity {
     private SlidingMenu mMenu;
+    Context mContext;
     Handler mHandler = new Handler() {
     };
 
@@ -48,7 +51,7 @@ public class MainActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        mContext=this;
         initTabMenuDrawable();
         mMenu = (SlidingMenu) findViewById(R.id.id_menu);
         tab0 = (TextView) findViewById(R.id.tab0);
@@ -256,7 +259,9 @@ public class MainActivity extends BaseActivity {
                 onTabSelected(0);
             } else if (tag.equals("tab1")) {
                 onTabSelected(1);
-            } else if (tag.equals("tab2")) {
+            } else if (tag.equals("tab2")) {//发布
+                Intent mIntent=new Intent(mContext,PublishActivity.class);
+                startActivity(mIntent);
 
             } else if (tag.equals("tab3")) {
                 onTabSelected(2);
