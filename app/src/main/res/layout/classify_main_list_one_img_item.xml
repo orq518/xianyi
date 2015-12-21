@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/classify_all_class_right_listselect"
     android:paddingLeft="20dp"
     android:paddingRight="20dp">
 
@@ -20,7 +21,6 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:src="@drawable/bg_chat_dis_active"/>
-
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -90,7 +90,7 @@
         android:id="@+id/im_main_list_one"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/btn_record_game"
+        android:src="@drawable/mainlist_one"
         android:scaleType="fitXY"
         android:layout_marginTop="10dp"/>
 
