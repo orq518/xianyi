@@ -32,4 +32,8 @@
         <attr name="src" />
     </declare-styleable>
 
-</resources>
+    <declare-styleable name="HelloGallery">
+        <attr name="android:galleryItemBackground"/>
+    </declare-styleable>
+
+    </resources>

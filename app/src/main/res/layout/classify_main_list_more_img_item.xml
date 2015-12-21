@@ -86,13 +86,16 @@
 
     </LinearLayout>
 
-    <!--&lt;!&ndash; 图片 &ndash;&gt;-->
-    <!--<Gridiew-->
-        <!--android:id="@+id/im_main_list_more"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_marginTop="10dp"/>-->
-
+    <!-- 图片 -->
+    <com.xianyi.customviews.AlignLeftGallery
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/gallery_main_list_more"
+        android:layout_width="1280dp"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:spacing="5dp"
+        android:layout_marginTop="10dp"
+        />
     <!-- 描述 -->
     <TextView
         android:id="@+id/gv_main_list_more_description"
@@ -124,7 +127,7 @@
 
         <!-- 收藏 -->
         <Button
-            android:id="@+id/bt_main_list_cmore_ollect"
+            android:id="@+id/bt_main_list_more_collect"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="39"
