@@ -4,131 +4,251 @@
     android:layout_height="match_parent"
     android:background="#0000" >
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:orientation="vertical" >
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp">
 
-            <ImageView
-                android:id="@+id/one"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
-                android:src="@drawable/tab_publish" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/dimen_20"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/dimen_10">
 
-            <TextView
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/menu_face"/>
+
+                <TextView
+                    android:id="@+id/tv_menu_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dimen_5"
+                    android:text="火星上的猪"
+                    android:textColor="@color/white"
+                    android:textSize="22sp"
+                    android:layout_marginTop="15dp"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.6dp"
+                android:background="@color/white"/>
+
+            <LinearLayout
+                android:id="@+id/ly_my_collect"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="20dp"
-                android:layout_toRightOf="@id/one"
-                android:text="第1个Item"
-                android:textColor="#f0f0f0"
-                android:textSize="20sp" />
-        </RelativeLayout>
+                android:clickable="true"
+                android:background="@drawable/left_menu_bg_selector"
+                android:gravity="center_vertical"
+                android:paddingBottom="@dimen/dimen_20"
+                android:paddingLeft="@dimen/dimen_20"
+                android:paddingTop="@dimen/dimen_20">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
+                <ImageView
+                    android:id="@+id/im_my_collect"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/menu_im_my_collect_normal"/>
 
-            <ImageView
-                android:id="@+id/two"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
-                android:src="@drawable/tab_publish" />
+                <TextView
+                    android:id="@+id/tv_my_collect"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dimen_10"
+                    android:text="我的收藏"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/textsize_16"/>
 
-            <TextView
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ly_my_xianyi"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="20dp"
-                android:layout_toRightOf="@id/two"
-                android:text="第2个Item"
-                android:textColor="#f0f0f0"
-                android:textSize="20sp" />
-        </RelativeLayout>
+                android:clickable="true"
+                android:gravity="center_vertical"
+                android:background="@drawable/left_menu_bg_selector"
+                android:paddingBottom="@dimen/dimen_20"
+                android:paddingLeft="@dimen/dimen_20"
+                android:paddingTop="@dimen/dimen_10">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
+                <ImageView
+                    android:id="@+id/im_my_xianyi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/menu_im_xianyi_normal"/>
 
-            <ImageView
-                android:id="@+id/three"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
-                android:src="@drawable/tab_publish" />
+                <TextView
+                    android:id="@+id/tv_my_xianyi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dimen_10"
+                    android:text="我的闲易"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/textsize_16"/>
 
-            <TextView
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ly_trade"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="20dp"
-                android:layout_toRightOf="@id/three"
-                android:text="第3个Item"
-                android:textColor="#f0f0f0"
-                android:textSize="20sp" />
-        </RelativeLayout>
+                android:clickable="true"
+                android:background="@drawable/left_menu_bg_selector"
+                android:gravity="center_vertical"
+                android:paddingBottom="@dimen/dimen_20"
+                android:paddingLeft="@dimen/dimen_20"
+                android:paddingTop="@dimen/dimen_10">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
+                <ImageView
+                    android:id="@+id/im_trade"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/menu_im_trade_normal"/>
 
-            <ImageView
-                android:id="@+id/four"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
-                android:src="@drawable/tab_publish" />
+                <TextView
+                    android:id="@+id/tv_trade"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dimen_10"
+                    android:text="交易管理"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/textsize_16"/>
 
-            <TextView
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ly_browse_history"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="20dp"
-                android:layout_toRightOf="@id/four"
-                android:text="第一个Item"
-                android:textColor="#f0f0f0"
-                android:textSize="20sp" />
-        </RelativeLayout>
+                android:clickable="true"
+                android:background="@drawable/left_menu_bg_selector"
+                android:gravity="center_vertical"
+                android:paddingBottom="@dimen/dimen_20"
+                android:paddingLeft="@dimen/dimen_20"
+                android:paddingTop="@dimen/dimen_10">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
+                <ImageView
+                    android:id="@+id/im_browse_history"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/menu_im_browse_history_normal"/>
 
-            <ImageView
-                android:id="@+id/five"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
-                android:src="@drawable/tab_publish" />
+                <TextView
+                    android:id="@+id/tv_browse_history"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dimen_10"
+                    android:text="浏览历史"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/textsize_16"/>
 
-            <TextView
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ly_shop"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="20dp"
-                android:layout_toRightOf="@id/five"
-                android:text="第5个Item"
-                android:textColor="#f0f0f0"
-                android:textSize="20sp" />
-        </RelativeLayout>
-    </LinearLayout>
+                android:clickable="true"
+                android:background="@drawable/left_menu_bg_selector"
+                android:gravity="center_vertical"
+                android:paddingBottom="@dimen/dimen_20"
+                android:paddingLeft="@dimen/dimen_20"
+                android:paddingTop="@dimen/dimen_10">
+
+                <ImageView
+                    android:id="@+id/im_shop"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/menu_im_coins_shop_normal"/>
+
+                <TextView
+                    android:id="@+id/tv_shop"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dimen_10"
+                    android:text="积分商城"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/textsize_16"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.6dp"
+                android:background="@color/white"/>
+
+            <LinearLayout
+                android:id="@+id/ly_account_management"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:gravity="center_vertical"
+                android:background="@drawable/left_menu_bg_selector"
+                android:paddingBottom="@dimen/dimen_20"
+                android:paddingLeft="@dimen/dimen_20"
+                android:paddingTop="@dimen/dimen_20">
+
+                <ImageView
+                    android:id="@+id/im_account_management"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/menu_im_account_management_normal"/>
+
+                <TextView
+                    android:id="@+id/tv_account_management"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dimen_10"
+                    android:text="账号管理"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/textsize_16"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ly_setting"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:background="@drawable/left_menu_bg_selector"
+                android:gravity="center_vertical"
+                android:paddingBottom="@dimen/dimen_10"
+                android:paddingLeft="@dimen/dimen_20"
+                android:paddingTop="@dimen/dimen_10">
+
+                <ImageView
+                    android:id="@+id/im_setting"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/menu_im_setting_normal"/>
+
+                <TextView
+                    android:id="@+id/tv_setting"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dimen_10"
+                    android:text="设置"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/textsize_16"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
 
 </RelativeLayout>
