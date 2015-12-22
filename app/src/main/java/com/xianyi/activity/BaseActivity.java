@@ -39,6 +39,7 @@ public abstract class BaseActivity extends FragmentActivity implements OnClickLi
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if ((keyCode == KeyEvent.KEYCODE_BACK)) {
+            onBack();
         }
         return super.onKeyDown(keyCode, event);
     }

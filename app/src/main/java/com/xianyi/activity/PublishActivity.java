@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -37,6 +38,7 @@ public class PublishActivity extends BaseActivity implements IRecordFinish {
     private TitleView mTitleView;
     MediaAdapter adapter;
     GridView add_detail_gridview;
+    TextView fenlei_info, zuodiansha_info;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +46,7 @@ public class PublishActivity extends BaseActivity implements IRecordFinish {
         setContentView(R.layout.activity_publish_layout);
         mContext = this;
         mTitleView = (TitleView) findViewById(R.id.title);
-        mTitleView.setTitle("");
+        mTitleView.setTitle("发布闲置");
         mTitleView.setLeftClickListener(new TitleLeftOnClickListener());
         add_detail_gridview = (GridView) findViewById(R.id.add_detail_gridview);
         adapter = new MediaAdapter(this);
@@ -68,12 +70,22 @@ public class PublishActivity extends BaseActivity implements IRecordFinish {
                 } else if (meidaType.type.equals("4")) {//添加语音
 //                    RecordMediaPlayer player = RecordMediaPlayer.getInstance();
 //                    player.play(meidaType.pathString);
-
                     RecordTools recordTools = new RecordTools(mContext, PublishActivity.this);
                     recordTools.showVoiceDialog();
                 }
             }
         });
+        add_detail_gridview.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                MeidaType meidaType = (MeidaType) adapter.getItem(position);
+                meidaType.isShowDeleteed = true;
+                adapter.notifyDataSetChanged();
+                return true;
+            }
+        });
+        fenlei_info= (TextView) findViewById(R.id.fenlei_info);
+        zuodiansha_info= (TextView) findViewById(R.id.zuodiansha_info);
         initPicData();
     }
 
@@ -89,7 +101,18 @@ public class PublishActivity extends BaseActivity implements IRecordFinish {
 
     @Override
     public void onClick(View v) {
-
+        switch (v.getId()) {
+            case R.id.fenlei:
+                Intent intent = new Intent(mContext, PublishSelectTypeActivity.class);
+                intent.putExtra("from","type");
+                startActivityForResult(intent, SELECTTYPE);
+                break;
+            case R.id.zuodiansha:
+                Intent mIntent = new Intent(mContext, PublishSelectTypeActivity.class);
+                mIntent.putExtra("from","want");
+                startActivityForResult(mIntent, TOGET);
+                break;
+        }
     }
 
     @Override
@@ -108,11 +131,14 @@ public class PublishActivity extends BaseActivity implements IRecordFinish {
     }
 
     final int PICKPHOTO = 1;
-
+    final int SELECTTYPE = 2;
+    final int TOGET = 3;
+    String selectedData;
+    String huandiansha;
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
-        switch (resultCode) {
+        switch (requestCode) {
             case PICKPHOTO:
                 if (data != null) {
                     LogUtil.d("ouou", "#####path:" + data.getStringExtra("path"));
@@ -130,6 +156,36 @@ public class PublishActivity extends BaseActivity implements IRecordFinish {
                         }
                     }
                 }
+                break;
+            case SELECTTYPE:
+
+                if (data != null && resultCode == RESULT_OK) {
+                    selectedData = data.getStringExtra("data");
+                    LogUtil.d("###111selectedData:"+selectedData);
+                    if(!TextUtils.isEmpty(selectedData)){
+                        fenlei_info.setText(selectedData);
+                    }else{
+                        fenlei_info.setText("");
+                    }
+
+
+                }
+
+                break;
+            case TOGET:
+
+                if (data != null && resultCode == RESULT_OK) {
+                    huandiansha = data.getStringExtra("data");
+                    LogUtil.d("###huandiansha:"+huandiansha);
+                    if(!TextUtils.isEmpty(huandiansha)){
+                        zuodiansha_info.setText(huandiansha);
+                    }else{
+                        zuodiansha_info.setText("");
+                    }
+
+
+                }
+
                 break;
             default:
                 break;
@@ -225,33 +281,42 @@ public class PublishActivity extends BaseActivity implements IRecordFinish {
             RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) viewHolder.play.getLayoutParams();
             LogUtil.d("##params.width:" + params.width);
             params.height = (width - 100) / 5;
-            viewHolder.delete.setTag(meidaType.pathString);
+            if (meidaType.isShowDeleteed) {
+                viewHolder.delete.setVisibility(View.VISIBLE);
+                viewHolder.delete.setTag(meidaType.pathString);
 
-//            viewHolder.delete.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View v) {
-//                    String tag = (String) v.getTag();
-//                    int index = -1;
-//                    MeidaType curType = null;
-//                    for (int i = 0; i < meidaTypeList.size(); i++) {
-//                        if (tag.equals(meidaTypeList.get(i).pathString)) {
-//                            curType = meidaTypeList.get(i);
-//                            index = i;
-//
-//                            break;
-//                        }
-//                    }
-//                    if (curType != null && index >= 0 && curType.type.equals("2")) {
-//                        RecordMediaPlayer player = RecordMediaPlayer.getInstance();
-//                        player.deleteFile(curType.pathString);
-//                    }
-//                    meidaTypeList.remove(index);
-//                    adapter.notifyDataSetChanged();
-//
-//
-//                }
-//            });
+                viewHolder.delete.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        String tag = (String) v.getTag();
+                        int index = -1;
+                        MeidaType curType = null;
+                        for (int i = 0; i < meidaTypeList.size(); i++) {
+                            if (tag.equals(meidaTypeList.get(i).pathString)) {
+                                curType = meidaTypeList.get(i);
+                                index = i;
 
+                                break;
+                            }
+                        }
+                        if (curType != null && index >= 0 && curType.type.equals("2")) {
+                            RecordMediaPlayer player = RecordMediaPlayer.getInstance();
+                            player.deleteFile(curType.pathString);
+                            MeidaType meidaType1 = meidaTypeList.get(index);
+                            meidaType1.isShowDeleteed = false;
+                            meidaType1.type = "4";
+                            adapter.notifyDataSetChanged();
+                            return;
+                        }
+                        meidaTypeList.remove(index);
+                        adapter.notifyDataSetChanged();
+
+
+                    }
+                });
+            } else {
+                viewHolder.delete.setVisibility(View.GONE);
+            }
             return convertView;
         }
 
@@ -270,6 +335,7 @@ public class PublishActivity extends BaseActivity implements IRecordFinish {
         String type;
         Bitmap bitmap;
         String pathString;
+        boolean isShowDeleteed;
     }
 
 }

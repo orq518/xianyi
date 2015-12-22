@@ -46,6 +46,14 @@
             android:theme="@style/MyDialogStyleBottom"
             android:label="@string/app_name" >
         </activity>
+        <activity
+            android:name=".activity.PublishSelectTypeActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name=".activity.SelectType2Activity"
+            android:label="@string/app_name" >
+        </activity>
     </application>
     <!--权限-->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
