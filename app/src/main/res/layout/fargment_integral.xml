@@ -1,0 +1,117 @@
+<!-- 首页 -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+    <!-- 顶部标题 -->
+    <com.xianyi.customviews.TitleView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:fitsSystemWindows="true"/>
+
+    <!-- 内容 -->
+    <ScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:background="@color/app_bg"
+        android:layout_below="@id/title">
+
+        <LinearLayout
+            android:id="@+id/scroll_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.xianyi.customviews.CycleImageLayout
+                android:id="@+id/ad_view"
+                android:layout_width="match_parent"
+                android:layout_height="157dp"
+                android:background="#11000000"
+                />
+
+            <!-- 分享 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/integral_tellfriend">
+
+            </LinearLayout>
+
+            <!-- 起居用品 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginTop="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <!-- 做任务 -->
+                        <ImageView
+                            android:id="@+id/iv_task"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/integral_record_task"
+                            android:layout_weight="1"/>
+
+                        <!-- 做游戏 -->
+                        <ImageView
+                            android:id="@+id/iv_game"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/integral_record_game"
+                            android:layout_weight="1"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="10dp">
+
+                        <!-- 奖励 -->
+                        <ImageView
+                            android:id="@+id/iv_gift"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/intrgral_record_gift"
+                            android:layout_weight="1"/>
+
+                        <!-- 商城 -->
+                        <ImageView
+                            android:id="@+id/iv_shop"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/intrgral_record_shop"
+                            android:layout_weight="1"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>
