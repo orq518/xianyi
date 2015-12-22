@@ -13,7 +13,7 @@ import android.widget.Toast;
 import com.xianyi.R;
 import com.xianyi.bean.ClassifyMainListBean;
 import com.xianyi.customviews.AlignLeftGallery;
-import com.xianyi.customviews.CircleImageView;
+import com.xianyi.customviews.residelayout.CircleImageView;
 
 import java.util.ArrayList;
 
