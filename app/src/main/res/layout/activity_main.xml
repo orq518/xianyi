@@ -12,12 +12,15 @@
         android:layout_height="fill_parent"
         android:orientation="horizontal">
 
+        <!-- 侧面导航栏 -->
         <include layout="@layout/layout_menu"/>
 
+        <!-- 底部导航栏 -->
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/white">
+
             <TextView
                 android:id="@+id/bottom_tv"
                 android:layout_width="wrap_content"
@@ -30,6 +33,7 @@
                 android:layout_height="fill_parent"
                 android:layout_above="@id/bottom_tv">
             </FrameLayout>
+
             <RelativeLayout
                 android:id="@+id/bottom"
                 android:layout_width="wrap_content"
@@ -56,7 +60,7 @@
                         android:layout_weight="1"
                         android:clickable="true"
                         android:drawablePadding="3dp"
-                        android:drawableTop="@drawable/tab_sort_normal"
+                        android:drawableTop="@drawable/menu_im"
                         android:gravity="center_horizontal"
                         android:onClick="onClick"
                         android:tag="tab0"
@@ -123,6 +127,7 @@
                 </LinearLayout>
 
             </RelativeLayout>
+
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

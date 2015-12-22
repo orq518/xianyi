@@ -21,7 +21,7 @@
             android:drawableLeft="@drawable/left_back_selector"
             android:drawablePadding="5dp"
             android:gravity="center_vertical"
-            android:paddingLeft="5dp"
+            android:paddingLeft="15dp"
             android:paddingRight="2dp"
             android:text=""
             android:textColor="@color/white"

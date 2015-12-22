@@ -2,6 +2,7 @@ package com.xianyi.activity;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
+import android.content.Intent;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
@@ -10,8 +11,10 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.xianyi.R;
@@ -24,7 +27,7 @@ import com.xianyi.utils.LogUtil;
 
 import java.util.ArrayList;
 
-public class MainActivity extends BaseActivity {
+public class MainActivity extends BaseActivity implements View.OnClickListener, View.OnTouchListener{
     private SlidingMenu mMenu;
     Context mContext;
     Handler mHandler = new Handler() {
@@ -61,9 +64,12 @@ public class MainActivity extends BaseActivity {
         tab3 = (TextView) findViewById(R.id.tab3);
         tab4 = (TextView) findViewById(R.id.tab4);
 
+        mMenu = (SlidingMenu) findViewById(R.id.id_menu);
 
         mFragmentManager = getSupportFragmentManager();
         onTabSelected(0);
+
+        initLeftMenu();
     }
 
     Drawable drawable_tab0_normal, drawable_tab1_normal, drawable_tab3_normal, drawable_tab4_normal;
@@ -91,6 +97,16 @@ public class MainActivity extends BaseActivity {
         mMenu.toggle();
     }
 
+    public void initLeftMenu() {
+        findViewById(R.id.ly_my_collect).setOnTouchListener(this);
+        findViewById(R.id.ly_my_xianyi).setOnTouchListener(this);
+        findViewById(R.id.ly_trade).setOnTouchListener(this);
+        findViewById(R.id.ly_browse_history).setOnTouchListener(this);
+        findViewById(R.id.ly_shop).setOnTouchListener(this);
+        findViewById(R.id.ly_account_management).setOnTouchListener(this);
+        findViewById(R.id.ly_setting).setOnTouchListener(this);;
+    }
+
 
     public void onTabSelected(int index) {
         FragmentTransaction transaction = mFragmentManager.beginTransaction();
@@ -106,6 +122,7 @@ public class MainActivity extends BaseActivity {
                 setFragmentVerisiable(mHomeFragment0, 0);
                 curFragment = mHomeFragment0;
                 break;
+
             case HOME_TAB_INDEX_1:
                 hideFragments(transaction);
                 if (null == mHomeFragment1) {
@@ -117,6 +134,7 @@ public class MainActivity extends BaseActivity {
                 setFragmentVerisiable(mHomeFragment1, 1);
                 curFragment = mHomeFragment1;
                 break;
+
             case HOME_TAB_INDEX_2:
             case HOME_TAB_INDEX_3:
                 hideFragments(transaction);
@@ -196,6 +214,7 @@ public class MainActivity extends BaseActivity {
             mHandler = new Handler() {
             };
         }
+
         mHandler.postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -218,6 +237,7 @@ public class MainActivity extends BaseActivity {
                                 mHomeFragment3.setVisible(false);
                             }
                             break;
+
                         case 1:
                             if(mHomeFragment0!=null) {
                                 mHomeFragment0.setVisible(false);
@@ -232,6 +252,7 @@ public class MainActivity extends BaseActivity {
                                 mHomeFragment3.setVisible(false);
                             }
                             break;
+
                         case 2:
                             if(mHomeFragment0!=null) {
                                 mHomeFragment0.setVisible(false);
@@ -246,6 +267,7 @@ public class MainActivity extends BaseActivity {
                                 mHomeFragment3.setVisible(false);
                             }
                             break;
+
                         case 3:
                             if(mHomeFragment0!=null) {
                                 mHomeFragment0.setVisible(false);
@@ -276,14 +298,157 @@ public class MainActivity extends BaseActivity {
             } else if (tag.equals("tab2")) {//发布
                 Intent mIntent=new Intent(mContext,PublishActivity.class);
                 startActivity(mIntent);
-
             } else if (tag.equals("tab3")) {
                 onTabSelected(2);
             } else if (tag.equals("tab4")) {
                 onTabSelected(3);
             }
         }
+    }
 
+    float moveXY;
+    float lastX = 0.0f;
+    float lastY = 0.0f;
+    boolean isNeedUp;
+
+    @Override
+    public boolean onTouch(View v, MotionEvent event) {
+        switch (event.getAction()) {
+            case MotionEvent.ACTION_DOWN:
+                isNeedUp = true;
+                lastX = event.getX();
+                lastY = event.getY();
+                leftMenuTouch(v, true);
+                break;
+
+            case MotionEvent.ACTION_MOVE:
+                float cx = event.getX();
+                float cy = event.getY();
+                moveXY = Math.abs(cx - lastX) + Math.abs(cy - lastY);
+                LogUtil.d("moveXY:"+moveXY);
+                if (moveXY > 30) {
+                    leftMenuTouch(v, false);
+                    isNeedUp = false;
+                }
+                break;
+
+            case MotionEvent.ACTION_UP:
+                if (isNeedUp) {
+                    leftMenuTouch(v, false);
+                }
+                break;
+        }
+        return false;
+    }
+
+    public void leftMenuTouch(View v, boolean isPressed) {
+        if (isPressed) {
+            switch (v.getId()) {
+                case R.id.ly_my_collect:
+                    ((ImageView) (v.findViewById(R.id.im_my_collect))).setImageResource(R.drawable.menu_im_my_collect);
+                    ((TextView) (v.findViewById(R.id.tv_my_collect))).setTextColor(getResources().getColor(R.color.menu_pass_text_bg));
+                    break;
+                case R.id.ly_my_xianyi:
+                    ((ImageView) (v.findViewById(R.id.im_my_xianyi))).setImageResource(R.drawable.menu_im_xianyi);
+                    ((TextView) (v.findViewById(R.id.tv_my_xianyi))).setTextColor(getResources().getColor(R.color.menu_pass_text_bg));
+                    break;
+                case R.id.ly_trade:
+                    ((ImageView) (v.findViewById(R.id.im_trade))).setImageResource(R.drawable.menu_im_trade);
+                    ((TextView) (v.findViewById(R.id.tv_trade))).setTextColor(getResources().getColor(R.color.menu_pass_text_bg));
+                    break;
+                case R.id.ly_browse_history:
+                    ((ImageView) (v.findViewById(R.id.im_browse_history))).setImageResource(R.drawable.menu_im_browse_history);
+                    ((TextView) (v.findViewById(R.id.tv_browse_history))).setTextColor(getResources().getColor(R.color.menu_pass_text_bg));
+                    break;
+                case R.id.ly_shop:
+                    ((ImageView) (v.findViewById(R.id.im_shop))).setImageResource(R.drawable.menu_im_coins_shop);
+                    ((TextView) (v.findViewById(R.id.tv_shop))).setTextColor(getResources().getColor(R.color.menu_pass_text_bg));
+                    break;
+                case R.id.ly_account_management:
+                    ((ImageView) (v.findViewById(R.id.im_account_management))).setImageResource(R.drawable.menu_im_account_management);
+                    ((TextView) (v.findViewById(R.id.tv_account_management))).setTextColor(getResources().getColor(R.color.menu_pass_text_bg));
+                    break;
+                case R.id.ly_setting:
+                    ((ImageView) (v.findViewById(R.id.im_setting))).setImageResource(R.drawable.menu_im_setting);
+                    ((TextView) (v.findViewById(R.id.tv_setting))).setTextColor(getResources().getColor(R.color.menu_pass_text_bg));
+                    break;
+            }
+        } else {
+            switch (v.getId()) {
+                case R.id.ly_my_collect:
+                    ((ImageView) (v.findViewById(R.id.im_my_collect))).setImageResource(R.drawable.menu_im_my_collect_normal);
+                    ((TextView) (v.findViewById(R.id.tv_my_collect))).setTextColor(getResources().getColor(R.color.white));
+                    break;
+                case R.id.ly_my_xianyi:
+                    ((ImageView) (v.findViewById(R.id.im_my_xianyi))).setImageResource(R.drawable.menu_im_xianyi_normal);
+                    ((TextView) (v.findViewById(R.id.tv_my_xianyi))).setTextColor(getResources().getColor(R.color.white));
+                    break;
+                case R.id.ly_trade:
+                    ((ImageView) (v.findViewById(R.id.im_trade))).setImageResource(R.drawable.menu_im_trade_normal);
+                    ((TextView) (v.findViewById(R.id.tv_trade))).setTextColor(getResources().getColor(R.color.white));
+                    break;
+                case R.id.ly_browse_history:
+                    ((ImageView) (v.findViewById(R.id.im_browse_history))).setImageResource(R.drawable.menu_im_browse_history_normal);
+                    ((TextView) (v.findViewById(R.id.tv_browse_history))).setTextColor(getResources().getColor(R.color.white));
+                    break;
+                case R.id.ly_shop:
+                    ((ImageView) (v.findViewById(R.id.im_shop))).setImageResource(R.drawable.menu_im_coins_shop_normal);
+                    ((TextView) (v.findViewById(R.id.tv_shop))).setTextColor(getResources().getColor(R.color.white));
+                    break;
+                case R.id.ly_account_management:
+                    ((ImageView) (v.findViewById(R.id.im_account_management))).setImageResource(R.drawable.menu_im_account_management_normal);
+                    ((TextView) (v.findViewById(R.id.tv_account_management))).setTextColor(getResources().getColor(R.color.white));
+                    break;
+                case R.id.ly_setting:
+                    ((ImageView) (v.findViewById(R.id.im_setting))).setImageResource(R.drawable.menu_im_setting_normal);
+                    ((TextView) (v.findViewById(R.id.tv_setting))).setTextColor(getResources().getColor(R.color.white));
+                    break;
+            }
+            leftMenuClick(v);
+        }
+
+    }
+
+    public void leftMenuClick(View v) {
+        Intent intent;
+        switch (v.getId()) {
+            case R.id.ly_my_collect://我的收藏
+                intent = new Intent(MainActivity.this, MyCollectActivity.class);
+                startActivity(intent);
+                break;
+
+            case R.id.ly_my_xianyi://我的闲易
+                intent = new Intent(MainActivity.this, MyXianZhiActivity.class);
+                startActivity(intent);
+                break;
+
+            case R.id.ly_trade://交易管理
+
+                break;
+
+            case R.id.ly_browse_history://浏览历史
+                intent = new Intent(MainActivity.this, HistoryActivity.class);
+                startActivity(intent);
+                break;
+
+            case R.id.ly_shop://积分商城
+
+                break;
+
+            case R.id.ly_account_management://账号管理
+
+                break;
+
+            case R.id.ly_setting://设置
+//                intent = new Intent(MainActivity.this, ADSListActivity.class);
+//                intent.putExtra("category", "1");
+//                startActivity(intent);
+                break;
+
+            default:
+                break;
+
+        }
     }
 
     @Override

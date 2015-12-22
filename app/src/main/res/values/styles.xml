@@ -38,10 +38,34 @@
     </style>
     <style name="login_btn_style">
         <item name="android:layout_width">200dp</item>
-        <item name="android:layout_height">80dp</item>
+        <item name="android:layout_height">60dp</item>
         <item name="android:textColor">@color/white</item>
         <item name="android:textSize">20sp</item>
         <item name="android:background">@drawable/login_btn</item>
+    </style>
+
+    <style name="setpw_btn_style">
+        <item name="android:layout_width">140dp</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:background">@drawable/setpw_btn</item>
+    </style>
+
+    <style name="edit_btn_style">
+        <item name="android:layout_width">70dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:textColor">@color/classify_text_gray</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:background">@drawable/edit_btn</item>
+    </style>
+
+    <style name="del_btn_style">
+        <item name="android:layout_width">70dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:background">@drawable/del_btn</item>
     </style>
 
 </resources>

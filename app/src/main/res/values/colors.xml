@@ -5,6 +5,7 @@
     <color name="black">#ff000000</color>
     <color name="gray">#959595</color>
     <color name="green">#29c245</color>
+    <color name="red">#ec4a4a</color>
     <color name="title_bg">#ffffffff</color>
     <color name="dark_gray">#333333</color>
     <color name="app_bg">#f5f5f9</color>
@@ -21,6 +22,7 @@
     <color name="title_bg_color">#eb986e</color>
 
     <color name="login_btn_color">#856fd8</color>
+    <color name="menu_pass_text_bg">#ead8c2</color>
 
     <color name="classify_title_class_bg_color">#ead8c2</color>
     <color name="classify_text_gray">#707070</color>
@@ -32,6 +34,8 @@
     <!-- 透明色 -->
     <color name="fuxk_settle_black_mark">#55000000</color>
     <color name="toast_bg">#99000000</color><!-- 60%透明色 -->
+    <color name="toast_bg_white">#55ffffff</color><!-- 60%透明色 -->
+    <color name="touming_bg">#00000000</color><!-- 60%透明色 -->
 
     <!-- 分割线 -->
     <color name="fuxk_base_divide_line_color">#dcdcdc</color>

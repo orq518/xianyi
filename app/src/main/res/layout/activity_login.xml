@@ -35,7 +35,7 @@
                 <EditText
                     android:id="@+id/et_phone"
                     android:layout_width="fill_parent"
-                    android:layout_height="58dp"
+                    android:layout_height="50dp"
                     android:background="@drawable/bg_edittext"
                     android:drawableLeft="@drawable/login_phone"
                     android:drawablePadding="15dp"
@@ -44,13 +44,15 @@
                     android:textSize="15dp"
                     android:singleLine="true"
                     android:hint="手机号码"
-                    android:layout_marginTop="50dp"
+                    android:layout_marginTop="30dp"
                     android:layout_marginBottom="20dp"
                     android:layout_marginLeft="40dp"
                     android:layout_marginRight="40dp"
                     android:inputType="number"
                     android:completionThreshold="1"
-                    android:maxLength="11"/>
+                    android:maxLength="11"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"/>
 
                 <!-- 验证码 -->
                 <RelativeLayout
@@ -67,7 +69,7 @@
                     <EditText
                         android:id="@+id/et_code"
                         android:layout_width="fill_parent"
-                        android:layout_height="58dp"
+                        android:layout_height="50dp"
                         android:background="@drawable/bg_edittext"
                         android:drawableLeft="@drawable/login_code"
                         android:drawablePadding="15dp"
@@ -77,12 +79,14 @@
                         android:singleLine="true"
                         android:hint="验证码"
                         android:maxLength="20"
-                        android:inputType="textPassword"/>
+                        android:inputType="textPassword"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true"/>
 
                     <TextView
                         android:id="@+id/tv_get_verify_code_again_resetpw"
                         android:layout_width="80dp"
-                        android:layout_height="58dp"
+                        android:layout_height="48dp"
                         android:layout_alignParentRight="true"
                         android:layout_centerVertical="true"
                         android:text="获取"
