@@ -1,16 +1,9 @@
 package com.xianyi.activity;
 
-import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.drawable.Drawable;
-import android.os.Build;
 import android.os.Bundle;
-import android.os.Handler;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,14 +11,11 @@ import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.xianyi.R;
 import com.xianyi.customviews.TitleView;
-import com.xianyi.customviews.residelayout.SlidingMenu;
-import com.xianyi.fragment.BaseFragment;
-import com.xianyi.fragment.ClassifyFragment;
-import com.xianyi.fragment.FindFragment;
 import com.xianyi.interfaces.IRecordFinish;
 import com.xianyi.utils.LogUtil;
 import com.xianyi.utils.PictureUtil;
@@ -47,7 +37,6 @@ public class PublishActivity extends BaseActivity implements IRecordFinish {
     private TitleView mTitleView;
     MediaAdapter adapter;
     GridView add_detail_gridview;
-    private List<MeidaType> meidaTypeList = new ArrayList<MeidaType>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,7 +52,7 @@ public class PublishActivity extends BaseActivity implements IRecordFinish {
         add_detail_gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                MeidaType meidaType = meidaTypeList.get(position);
+                MeidaType meidaType = (MeidaType) adapter.getItem(position);
                 if (meidaType.type.equals("1")) {//图片
                     Intent intent = new Intent(PublishActivity.this, PicLookActivity.class);
                     intent.putExtra("picpath", meidaType.pathString);
@@ -93,8 +82,8 @@ public class PublishActivity extends BaseActivity implements IRecordFinish {
         meidaType_pic.type = "3";
         MeidaType meidaType_voice = new MeidaType();
         meidaType_voice.type = "4";
-        meidaTypeList.add(meidaType_pic);
-        meidaTypeList.add(meidaType_voice);
+        adapter.getData().add(meidaType_pic);
+        adapter.getData().add(meidaType_voice);
         adapter.notifyDataSetChanged();
     }
 
@@ -111,9 +100,15 @@ public class PublishActivity extends BaseActivity implements IRecordFinish {
 
     @Override
     public void RecondSuccess(String voicePath) {
+        MeidaType meidaType = adapter.getData().get(adapter.getData().size() - 1);
+        meidaType.type = "2";
+        meidaType.pathString = voicePath;
+        adapter.notifyDataSetChanged();
 
     }
+
     final int PICKPHOTO = 1;
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
@@ -130,7 +125,7 @@ public class PublishActivity extends BaseActivity implements IRecordFinish {
                             meidaType.type = "1";
                             meidaType.bitmap = image;
                             meidaType.pathString = picPath;
-                            meidaTypeList.add(0,meidaType);
+                            adapter.getData().add(0, meidaType);
                             adapter.notifyDataSetChanged();
                         }
                     }
@@ -141,6 +136,7 @@ public class PublishActivity extends BaseActivity implements IRecordFinish {
 
         }
     }
+
     /**
      * 顶部布局--左按钮事件监听
      */
@@ -156,10 +152,24 @@ public class PublishActivity extends BaseActivity implements IRecordFinish {
     //自定义适配器
     class MediaAdapter extends BaseAdapter {
         private LayoutInflater inflater;
+        int width;
+        List<MeidaType> meidaTypeList = new ArrayList<MeidaType>();
 
         public MediaAdapter(Context context) {
             super();
             inflater = LayoutInflater.from(context);
+            int[] screenSize = Utils.getScreenDispaly(mContext);
+            width = screenSize[0];
+        }
+
+        public void setData(List<MeidaType> meidaTypeList) {
+            meidaTypeList.clear();
+            meidaTypeList.addAll(meidaTypeList);
+            notifyDataSetChanged();
+        }
+
+        public List<MeidaType> getData() {
+            return meidaTypeList;
         }
 
         @Override
@@ -198,16 +208,23 @@ public class PublishActivity extends BaseActivity implements IRecordFinish {
             if (meidaType.type.equals("1")) {//图片
                 viewHolder.play.setImageBitmap(meidaType.bitmap);
                 viewHolder.tv_info.setVisibility(View.GONE);
+                viewHolder.play.setScaleType(ImageView.ScaleType.FIT_XY);
             } else if (meidaType.type.equals("2")) {//语音
                 viewHolder.play.setImageResource(R.drawable.voice_play);
                 viewHolder.tv_info.setVisibility(View.GONE);
+                viewHolder.play.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
             } else if (meidaType.type.equals("3")) {//添加图片
                 viewHolder.play.setImageResource(R.drawable.btn_addpic);
                 viewHolder.tv_info.setVisibility(View.VISIBLE);
+                viewHolder.play.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
             } else if (meidaType.type.equals("4")) {//添加语音
                 viewHolder.play.setImageResource(R.drawable.btn_record);
                 viewHolder.tv_info.setVisibility(View.VISIBLE);
+                viewHolder.play.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
             }
+            RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) viewHolder.play.getLayoutParams();
+            LogUtil.d("##params.width:" + params.width);
+            params.height = (width - 100) / 5;
             viewHolder.delete.setTag(meidaType.pathString);
 
 //            viewHolder.delete.setOnClickListener(new View.OnClickListener() {

@@ -5,11 +5,11 @@
                 android:background="@drawable/btn_board_gray1">
     <ImageView
         android:id="@+id/play"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
         android:layout_margin="@dimen/dimen_5"
         android:layout_centerInParent="true"
-        android:scaleType="centerInside"
+        android:scaleType="fitXY"
         android:src="@drawable/btn_addpic"/>
     <ImageView
         android:id="@+id/delete"
@@ -21,9 +21,9 @@
         android:id="@+id/info_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/play"
         android:layout_centerHorizontal="true"
         android:text="添加"
+        android:layout_alignParentBottom="true"
         android:textColor="@color/gray"
         android:textSize="12dp"
     />

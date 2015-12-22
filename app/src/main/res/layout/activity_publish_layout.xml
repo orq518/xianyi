@@ -57,7 +57,7 @@
                       android:background="@drawable/btn_board_gray"
                       android:drawableRight="@drawable/icon_more"
                       android:text="换点啥"/>
-            <GridView
+            <com.xianyi.customviews.MyGridview
                 android:id="@+id/add_detail_gridview"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
@@ -66,7 +66,7 @@
                 android:layout_alignParentBottom="true"
                 android:numColumns="4">
 
-            </GridView>
+            </com.xianyi.customviews.MyGridview>
             <!-- 注册 -->
             <Button
                 android:id="@+id/btn_publish"

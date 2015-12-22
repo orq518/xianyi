@@ -24,6 +24,9 @@ public class RecordMediaPlayer {
 
 
     public void play(String path) {
+        if(mediaPlayer==null){
+            mediaPlayer = new MediaPlayer();
+        }
         if(mediaPlayer.isPlaying()){
             stop();
         }
