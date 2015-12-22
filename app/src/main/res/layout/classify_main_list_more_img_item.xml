@@ -16,7 +16,7 @@
         android:orientation="horizontal">
 
         <!-- 头像 -->
-        <com.xianyi.customviews.CircleImageView
+        <com.xianyi.customviews.residelayout.CircleImageView
             android:id="@+id/im_main_list_more_icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

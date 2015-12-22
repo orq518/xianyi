@@ -1,4 +1,4 @@
-package com.xianyi.customviews;
+package com.xianyi.customviews.residelayout;
 
 
 import android.content.Context;
@@ -13,8 +13,20 @@ import android.graphics.Shader;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
+import android.os.Message;
 import android.util.AttributeSet;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.Toast;
+
+import com.xianyi.R;
+import com.xianyi.adapter.ClassifyMainListAdapter;
+import com.xianyi.bean.ClassifyMainListBean;
+import com.xianyi.customviews.mylist.MyListView;
+
+import java.util.ArrayList;
 
 public class CircleImageView extends ImageView {
 
@@ -236,4 +248,5 @@ public class CircleImageView extends ImageView {
 		mBitmapShader.setLocalMatrix(mShaderMatrix);
 	}
 
+	
 }

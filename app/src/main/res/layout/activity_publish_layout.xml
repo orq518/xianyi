@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/classify_title_class_bg_color"
+    android:orientation="vertical">
+    <!-- 顶部标题 -->
+    <com.xianyi.customviews.TitleView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"/>
+    <ScrollView android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:orientation="vertical"
+                      android:paddingLeft="@dimen/dimen_20"
+                      android:paddingRight="@dimen/dimen_20">
+            <EditText android:layout_width="fill_parent"
+                      android:layout_height="100dp"
+                      android:layout_marginBottom="10dp"
+                      android:layout_marginTop="10dp"
+                      android:background="@drawable/btn_board_gray"
+                      android:gravity="top|left"
+                      android:hint="输入宝贝介绍文字"
+                      android:padding="@dimen/dimen_5"
+                      android:textSize="@dimen/textsize_15"/>
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <EditText android:layout_width="fill_parent"
+                          android:layout_height="wrap_content"
+                          android:layout_marginRight="5dp"
+                          android:layout_weight="1"
+                          android:background="@drawable/btn_board_gray"
+                          android:hint="输入原价"
+                          android:inputType="numberDecimal"
+                          android:padding="@dimen/dimen_10"
+                          android:textSize="@dimen/textsize_15"/>
+                <EditText android:layout_width="fill_parent"
+                          android:layout_height="wrap_content"
+                          android:layout_marginLeft="5dp"
+                          android:layout_weight="1"
+                          android:background="@drawable/btn_board_gray"
+                          android:hint="输入转让价格"
+                          android:inputType="numberDecimal"
+                          android:padding="@dimen/dimen_10"
+                          android:textSize="@dimen/textsize_15"/>
+            </LinearLayout>
+            <RelativeLayout
+                android:id="@+id/fenlei"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_board_gray"
+                android:clickable="true"
+                android:onClick="onClick">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="分类"/>
+                <TextView
+                    android:id="@+id/fenlei_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="5dp"
+                    android:drawableRight="@drawable/icon_more"
+                    android:text=""/>
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/zuodiansha"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_board_gray"
+                android:clickable="true"
+                android:onClick="onClick">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="换点啥"/>
+                <TextView
+                    android:id="@+id/zuodiansha_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="5dp"
+                    android:drawableRight="@drawable/icon_more"
+                    android:text=""/>
+            </RelativeLayout>
+            <com.xianyi.customviews.MyGridview
+                android:id="@+id/add_detail_gridview"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="@dimen/dimen_20"
+                android:listSelector="#00000000"
+                android:numColumns="4">
+
+            </com.xianyi.customviews.MyGridview>
+            <!-- 注册 -->
+            <Button
+                android:id="@+id/btn_publish"
+                style="@style/btn_bule_borad_pink"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:text="发布"
+                android:textColor="@color/white"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

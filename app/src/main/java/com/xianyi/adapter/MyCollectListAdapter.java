@@ -10,13 +10,9 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.xianyi.R;
-import com.xianyi.bean.ClassifyMainListBean;
 import com.xianyi.bean.MyCollectListBean;
-import com.xianyi.customviews.AlignLeftGallery;
-import com.xianyi.customviews.CircleImageView;
 
 import java.util.ArrayList;
 

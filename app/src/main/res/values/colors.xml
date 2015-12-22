@@ -18,7 +18,7 @@
     <color name="loading_transparent">#01000000</color>
     <color name="stay_tuned">#cecece</color>
     <color name="common_item_pass">#d9d9d9</color>
-
+    <color name="no_bg_color">#00000000</color>
     <color name="title_bg_color">#eb986e</color>
 
     <color name="login_btn_color">#856fd8</color>
