@@ -1,0 +1,32 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/dimen_15"
+    android:background="@color/classify_title_class_bg_color">
+    <!-- 头像 -->
+    <com.xianyi.customviews.residelayout.CircleImageView
+        android:id="@+id/topview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/pic_tongyi"/>
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:text="机场"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/topview"
+        android:textColor="@color/dark_gray"
+        android:layout_marginBottom="5dp"
+        android:textSize="18sp"/>
+    <ImageView
+        android:id="@+id/delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/my_collcet_btn_delete"/>
+</RelativeLayout>
