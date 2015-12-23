@@ -143,8 +143,7 @@
                 android:text="18"
                 android:layout_toRightOf="@id/im_my_xianzhi_warn"
                 android:gravity="center"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"/>
+                android:layout_marginLeft="5dp"/>
 
             <!-- 文案 -->
             <TextView
@@ -155,7 +154,7 @@
                 android:textColor="@color/classify_text_gray"
                 android:text="人向你发起了交易申请"
                 android:gravity="center"
-                android:layout_marginRight="20dp"
+                android:layout_marginLeft="5dp"
                 android:layout_toRightOf="@id/tv_my_xianzhi_num"/>
 
             <!-- 时间 -->

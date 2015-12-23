@@ -1,0 +1,27 @@
+<!-- 我的交易页 -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#f7f3f0">
+
+    <!-- 顶部标题 -->
+    <com.xianyi.customviews.TitleView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:fitsSystemWindows="true"/>
+
+    <!-- 列表 -->
+    <com.xianyi.customviews.mylist.MyListView
+        android:id="@+id/listview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:cacheColorHint="#00000000"
+        android:divider="@null"
+        android:background="@color/gray_bg"
+        android:layout_below="@+id/title">
+    </com.xianyi.customviews.mylist.MyListView>
+
+</RelativeLayout>

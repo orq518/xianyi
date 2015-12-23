@@ -60,7 +60,7 @@
                         android:layout_weight="1"
                         android:clickable="true"
                         android:drawablePadding="3dp"
-                        android:drawableTop="@drawable/menu_im"
+                        android:drawableTop="@drawable/tab_sort_normal"
                         android:gravity="center_horizontal"
                         android:onClick="onClick"
                         android:tag="tab0"
@@ -135,7 +135,7 @@
                 android:layout_marginBottom="10dp"
                 android:layout_marginLeft="10dp"
                 android:onClick="toggleMenu"
-                android:background="@drawable/tab_sort_normal"/>
+                android:background="@drawable/menu_im"/>
 
         </RelativeLayout>
 

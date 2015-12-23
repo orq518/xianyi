@@ -60,79 +60,79 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener{
      * 显示数据
      */
     private void showView() {
-        // 设置手机号
-        mETPhone.addTextChangedListener(new TextWatcher() {
-
-            @Override
-            public void afterTextChanged(Editable arg0) {
-                // TODO Auto-generated method stub
-                String data = getData(mETPhone);
-                if (!Utils.isEmpty(data)) {
-                    mPhone = data;
-                }
-
-            }
-
-            @Override
-            public void beforeTextChanged(CharSequence arg0, int arg1,
-                                          int arg2, int arg3) {
-                // TODO Auto-generated method stub
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence arg0, int arg1, int arg2,
-                                      int arg3) {
-
-                String phone = getData(mETPhone);
-                String code = getData(mETCode);
-
-                if (!Utils.isEmpty(phone) && phone.length() > 10
-                        && !Utils.isEmpty(code) && code.length() > 5) {
-                    setNextBtnState(true);
-                } else {
-                    setNextBtnState(false);
-                }
-
-            }
-        });
-
-        // 设置手机号
-        mETCode.addTextChangedListener(new TextWatcher() {
-
-            @Override
-            public void afterTextChanged(Editable arg0) {
-                // TODO Auto-generated method stub
-                String data = getData(mETCode);
-                if (!Utils.isEmpty(data)) {
-                    mCode = data;
-                }
-
-            }
-
-            @Override
-            public void beforeTextChanged(CharSequence arg0, int arg1,
-                                          int arg2, int arg3) {
-                // TODO Auto-generated method stub
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence arg0, int arg1, int arg2,
-                                      int arg3) {
-
-                String phone = getData(mETPhone);
-                String code = getData(mETCode);
-
-                if (!Utils.isEmpty(phone) && phone.length() > 10
-                        && !Utils.isEmpty(code) && code.length() > 5) {
-                    setNextBtnState(true);
-                } else {
-                    setNextBtnState(false);
-                }
-
-            }
-        });
+//        // 设置手机号
+//        mETPhone.addTextChangedListener(new TextWatcher() {
+//
+//            @Override
+//            public void afterTextChanged(Editable arg0) {
+//                // TODO Auto-generated method stub
+//                String data = getData(mETPhone);
+//                if (!Utils.isEmpty(data)) {
+//                    mPhone = data;
+//                }
+//
+//            }
+//
+//            @Override
+//            public void beforeTextChanged(CharSequence arg0, int arg1,
+//                                          int arg2, int arg3) {
+//                // TODO Auto-generated method stub
+//
+//            }
+//
+//            @Override
+//            public void onTextChanged(CharSequence arg0, int arg1, int arg2,
+//                                      int arg3) {
+//
+//                String phone = getData(mETPhone);
+//                String code = getData(mETCode);
+//
+//                if (!Utils.isEmpty(phone) && phone.length() > 10
+//                        && !Utils.isEmpty(code) && code.length() > 5) {
+//                    setNextBtnState(true);
+//                } else {
+//                    setNextBtnState(false);
+//                }
+//
+//            }
+//        });
+//
+//        // 设置手机号
+//        mETCode.addTextChangedListener(new TextWatcher() {
+//
+//            @Override
+//            public void afterTextChanged(Editable arg0) {
+//                // TODO Auto-generated method stub
+//                String data = getData(mETCode);
+//                if (!Utils.isEmpty(data)) {
+//                    mCode = data;
+//                }
+//
+//            }
+//
+//            @Override
+//            public void beforeTextChanged(CharSequence arg0, int arg1,
+//                                          int arg2, int arg3) {
+//                // TODO Auto-generated method stub
+//
+//            }
+//
+//            @Override
+//            public void onTextChanged(CharSequence arg0, int arg1, int arg2,
+//                                      int arg3) {
+//
+//                String phone = getData(mETPhone);
+//                String code = getData(mETCode);
+//
+//                if (!Utils.isEmpty(phone) && phone.length() > 10
+//                        && !Utils.isEmpty(code) && code.length() > 5) {
+//                    setNextBtnState(true);
+//                } else {
+//                    setNextBtnState(false);
+//                }
+//
+//            }
+//        });
     }
 
     /**
