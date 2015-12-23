@@ -254,9 +254,11 @@ public class MyXianZhiActivity extends BaseActivity implements View.OnClickListe
             // 0-人数,无时间，1－姓名
             if("1".equals(bankList.get(position).getType())){
                 tv_my_xianzhi_time.setVisibility(View.GONE);
+                tv_my_xianzhi_num.setTextColor(getResources().getColor(R.color.classify_text_orange));
             }else{
                 tv_my_xianzhi_time.setVisibility(View.VISIBLE);
                 tv_my_xianzhi_time.setText(bankList.get(position).getTime());
+                tv_my_xianzhi_num.setTextColor(getResources().getColor(R.color.red));
             }
         }
 

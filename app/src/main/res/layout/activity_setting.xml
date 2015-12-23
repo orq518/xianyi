@@ -1,0 +1,362 @@
+<!-- 服务类表页 -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f7f3f0"
+    android:orientation="vertical">
+
+    <!-- 顶部标题 -->
+    <com.xianyi.customviews.TitleView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:fitsSystemWindows="true"/>
+
+    <ScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:layout_below="@id/title">
+
+        <LinearLayout
+            android:id="@+id/scroll_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <!-- 个人资料 -->
+            <RelativeLayout
+                android:id="@+id/ly_personal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingRight="@dimen/dimen_15"
+                android:paddingLeft="@dimen/dimen_15"
+                android:paddingTop="7dp"
+                android:paddingBottom="@dimen/dimen_15"
+                android:background="@drawable/setting_item_bg"
+                android:layout_marginBottom="2dp">
+
+                <ImageView
+                    android:id="@+id/im_personal_left"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/setting_personal_left"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="@dimen/dimen_5"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_item_key"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="个人资料"
+                    android:textSize="@dimen/main_text_size"
+                    android:textColor="@color/gray"
+                    android:layout_toRightOf="@id/im_personal_left"
+                    android:paddingTop="8dp"
+                    android:paddingLeft="@dimen/dimen_15"/>
+
+
+                <ImageView
+                    android:id="@+id/iv_item_arrow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/setting_btn_more"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginLeft="@dimen/dimen_5"
+                    />
+
+            </RelativeLayout>
+
+            <!-- 分享给朋友 -->
+            <RelativeLayout
+                android:id="@+id/ly_share"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingRight="@dimen/dimen_15"
+                android:paddingLeft="@dimen/dimen_15"
+                android:paddingTop="7dp"
+                android:paddingBottom="@dimen/dimen_15"
+                android:background="@drawable/setting_item_bg"
+                android:layout_marginBottom="15dp">
+
+                <ImageView
+                    android:id="@+id/im_share_left"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/setting_share_left"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="@dimen/dimen_5"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_share_key"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="分享给朋友"
+                    android:textSize="@dimen/main_text_size"
+                    android:textColor="@color/gray"
+                    android:layout_toRightOf="@id/im_share_left"
+                    android:paddingTop="8dp"
+                    android:paddingLeft="@dimen/dimen_15"/>
+
+
+                <ImageView
+                    android:id="@+id/iv_share_arrow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/setting_btn_more"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginLeft="@dimen/dimen_5"
+                    />
+
+            </RelativeLayout>
+
+            <!-- 给个好评 -->
+            <RelativeLayout
+                android:id="@+id/ly_haoping"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingRight="@dimen/dimen_15"
+                android:paddingLeft="@dimen/dimen_15"
+                android:paddingTop="7dp"
+                android:paddingBottom="@dimen/dimen_15"
+                android:background="@drawable/setting_item_bg"
+                android:layout_marginBottom="2dp">
+
+                <ImageView
+                    android:id="@+id/im_haoping_left"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/setting_haoping_left"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="@dimen/dimen_5"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_haoping_key"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="给个好评"
+                    android:textSize="@dimen/main_text_size"
+                    android:textColor="@color/gray"
+                    android:layout_toRightOf="@id/im_haoping_left"
+                    android:paddingTop="8dp"
+                    android:paddingLeft="@dimen/dimen_15"/>
+
+
+                <ImageView
+                    android:id="@+id/iv_haoping_arrow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/setting_btn_more"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginLeft="@dimen/dimen_5"
+                    />
+
+            </RelativeLayout>
+
+            <!-- 意见反馈 -->
+            <RelativeLayout
+                android:id="@+id/ly_feedback"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingRight="@dimen/dimen_15"
+                android:paddingLeft="@dimen/dimen_15"
+                android:paddingTop="7dp"
+                android:paddingBottom="@dimen/dimen_15"
+                android:background="@drawable/setting_item_bg"
+                android:layout_marginBottom="15dp">
+
+                <ImageView
+                    android:id="@+id/im_feedback_left"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/setting_feedback_left"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="@dimen/dimen_5"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_feedback_key"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="意见反馈"
+                    android:textSize="@dimen/main_text_size"
+                    android:textColor="@color/gray"
+                    android:layout_toRightOf="@id/im_feedback_left"
+                    android:paddingTop="8dp"
+                    android:paddingLeft="@dimen/dimen_15"/>
+
+
+                <ImageView
+                    android:id="@+id/iv_feedback_arrow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/setting_btn_more"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginLeft="@dimen/dimen_5"
+                    />
+
+            </RelativeLayout>
+
+            <!-- 版本更新 -->
+            <RelativeLayout
+                android:id="@+id/ly_version_update"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingRight="@dimen/dimen_15"
+                android:paddingLeft="@dimen/dimen_15"
+                android:paddingTop="7dp"
+                android:paddingBottom="@dimen/dimen_15"
+                android:background="@drawable/setting_item_bg"
+                android:layout_marginBottom="2dp">
+
+                <ImageView
+                    android:id="@+id/im_version_update_left"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/setting_version_update_left"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="@dimen/dimen_5"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_version_update_key"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="版本更新"
+                    android:textSize="@dimen/main_text_size"
+                    android:textColor="@color/gray"
+                    android:layout_toRightOf="@id/im_version_update_left"
+                    android:paddingTop="8dp"
+                    android:paddingLeft="@dimen/dimen_15"/>
+
+
+                <ImageView
+                    android:id="@+id/iv_version_update_arrow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/setting_btn_more"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginLeft="@dimen/dimen_5"
+                    />
+
+            </RelativeLayout>
+
+            <!-- 关于我们 -->
+            <RelativeLayout
+                android:id="@+id/ly_about"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingRight="@dimen/dimen_15"
+                android:paddingLeft="@dimen/dimen_15"
+                android:paddingTop="7dp"
+                android:paddingBottom="@dimen/dimen_15"
+                android:background="@drawable/setting_item_bg"
+                android:layout_marginBottom="2dp">
+
+                <ImageView
+                    android:id="@+id/im_about_left"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/setting_about_left"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="@dimen/dimen_5"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_about_key"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="关于我们"
+                    android:textSize="@dimen/main_text_size"
+                    android:textColor="@color/gray"
+                    android:layout_toRightOf="@id/im_about_left"
+                    android:paddingTop="8dp"
+                    android:paddingLeft="@dimen/dimen_15"/>
+
+
+                <ImageView
+                    android:id="@+id/iv_about_arrow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/setting_btn_more"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginLeft="@dimen/dimen_5"
+                    />
+
+            </RelativeLayout>
+
+            <!-- 清除缓存 -->
+            <RelativeLayout
+                android:id="@+id/ly_cache"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingRight="@dimen/dimen_15"
+                android:paddingLeft="@dimen/dimen_15"
+                android:paddingTop="7dp"
+                android:paddingBottom="@dimen/dimen_15"
+                android:background="@drawable/setting_item_bg"
+                android:layout_marginBottom="30dp">
+
+                <ImageView
+                    android:id="@+id/im_cache_left"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/setting_cache_left"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="@dimen/dimen_5"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_cache"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="清除缓存"
+                    android:textSize="@dimen/main_text_size"
+                    android:textColor="@color/gray"
+                    android:layout_toRightOf="@id/im_cache_left"
+                    android:paddingTop="8dp"
+                    android:paddingLeft="@dimen/dimen_15"/>
+
+
+                <ImageView
+                    android:id="@+id/iv_cache_arrow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/setting_btn_more"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginLeft="@dimen/dimen_5"
+                    />
+
+            </RelativeLayout>
+
+            <!-- 退出登录 -->
+            <Button
+                android:id="@+id/out"
+                style="@style/out_btn_style"
+                android:text="退出登录"
+                android:layout_gravity="center_horizontal" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

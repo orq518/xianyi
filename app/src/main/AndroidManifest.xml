@@ -43,12 +43,23 @@
             android:label="@string/app_name" >
         </activity>
 
+        <!-- 我的交易 -->
+        <activity
+            android:name=".activity.MyTradeActivity"
+            android:label="@string/app_name" >
+        </activity>
+
         <!-- 我的浏览历史 -->
         <activity
             android:name=".activity.HistoryActivity"
             android:label="@string/app_name" >
         </activity>
 
+        <!-- 设置 -->
+        <activity
+            android:name=".activity.SettingActivity"
+            android:label="@string/app_name" >
+        </activity>
 
         <!-- 大类别列表页 -->
         <activity
