@@ -24,7 +24,7 @@
             <TextView
                 android:id="@+id/bottom_tv"
                 android:layout_width="wrap_content"
-                android:layout_height="50dp"
+                android:layout_height="45dp"
                 android:layout_alignParentBottom="true"/>
 
             <FrameLayout
@@ -33,24 +33,27 @@
                 android:layout_height="fill_parent"
                 android:layout_above="@id/bottom_tv">
             </FrameLayout>
-
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="62dp"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/tab_pulish_bg"/>
             <RelativeLayout
                 android:id="@+id/bottom"
                 android:layout_width="wrap_content"
-                android:layout_height="62dp"
+                android:layout_height="60dp"
                 android:layout_alignParentBottom="true">
 
-                <TextView
+               <!-- <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/tab_pulish_bg"/>
+                    android:background="@drawable/tab_pulish_bg"/>-->
 
                 <LinearLayout
                     android:id="@+id/tab_text_layout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignParentBottom="true"
-                    android:layout_marginBottom="5dp"
                     android:orientation="horizontal">
 
                     <TextView
@@ -58,6 +61,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:paddingTop="5dp"
                         android:clickable="true"
                         android:drawablePadding="3dp"
                         android:drawableTop="@drawable/tab_sort_normal"
@@ -72,6 +76,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:paddingTop="5dp"
                         android:clickable="true"
                         android:drawablePadding="3dp"
                         android:drawableTop="@drawable/tab_find_normal"
@@ -102,6 +107,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:clickable="true"
+                        android:paddingTop="5dp"
                         android:drawablePadding="3dp"
                         android:drawableTop="@drawable/tab_message_normal"
                         android:gravity="center_horizontal"
@@ -115,6 +121,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:paddingTop="5dp"
                         android:clickable="true"
                         android:drawablePadding="3dp"
                         android:drawableTop="@drawable/tab_score_normal"
@@ -125,7 +132,6 @@
                         android:textColor="@color/title_gray"/>
 
                 </LinearLayout>
-
             </RelativeLayout>
 
             <Button
@@ -136,6 +142,7 @@
                 android:layout_marginLeft="10dp"
                 android:onClick="toggleMenu"
                 android:background="@drawable/menu_im"/>
+
 
         </RelativeLayout>
 

@@ -59,7 +59,7 @@
                     android:id="@+id/liuyan"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
+                    android:layout_marginLeft="10dp"
                     android:layout_marginTop="10dp"
                     android:layout_toRightOf="@id/im_my_xianzhi_icon"
                     android:text="留言"
@@ -98,6 +98,7 @@
                     android:layout_marginTop="20dp"
                     android:layout_toRightOf="@id/im_my_xianzhi_icon"
                     android:text="\@火星上的猪：450换吗？"
+                    android:layout_marginLeft="10dp"
                     android:textColor="@color/classify_text_gray"
                     android:textSize="16sp"/>
             </RelativeLayout>
