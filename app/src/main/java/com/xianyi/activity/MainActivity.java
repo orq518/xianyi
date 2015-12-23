@@ -429,13 +429,14 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
                 startActivity(intent);
                 break;
 
-            case R.id.ly_my_xianyi://我的闲易
+            case R.id.ly_my_xianyi://我的闲置
                 intent = new Intent(MainActivity.this, MyXianZhiActivity.class);
                 startActivity(intent);
                 break;
 
             case R.id.ly_trade://交易管理
-
+                intent = new Intent(MainActivity.this, MyTradeActivity.class);
+                startActivity(intent);
                 break;
 
             case R.id.ly_browse_history://浏览历史
@@ -444,17 +445,18 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
                 break;
 
             case R.id.ly_shop://积分商城
-
+                mMenu.toggle();
+                onTabSelected(HOME_TAB_INDEX_3);
                 break;
 
             case R.id.ly_account_management://账号管理
-
+                intent = new Intent(MainActivity.this, SetPasswordActivity.class);
+                startActivity(intent);
                 break;
 
             case R.id.ly_setting://设置
-//                intent = new Intent(MainActivity.this, ADSListActivity.class);
-//                intent.putExtra("category", "1");
-//                startActivity(intent);
+                intent = new Intent(MainActivity.this, SettingActivity.class);
+                startActivity(intent);
                 break;
 
             default:
