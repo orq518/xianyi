@@ -450,6 +450,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
                 break;
 
             case R.id.ly_account_management://账号管理
+                mMenu.toggle();
                 intent = new Intent(MainActivity.this, SetPasswordActivity.class);
                 startActivity(intent);
                 break;

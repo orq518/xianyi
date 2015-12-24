@@ -199,6 +199,8 @@ public class BigClassifyActivity extends BaseActivity implements Animator.Animat
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
 
+                Intent intent = new Intent(BigClassifyActivity.this, DetailsActivity.class);
+                startActivity(intent);
             }
         });
 
