@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:paddingTop="20dp"
-    android:background="#f7f3f0">
+    android:background="@color/orange_bg">
 
     <!-- item -->
     <LinearLayout
@@ -51,7 +51,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:background="#f7f3f0"
+                android:background="@color/orange_bg"
                 android:layout_marginTop="15dp">
 
                 <!-- 头像 -->

@@ -7,7 +7,8 @@
     android:orientation="vertical"
     android:paddingBottom="0dp"
     android:paddingLeft="10dp"
-    android:paddingRight="10dp">
+    android:paddingRight="10dp"
+    android:descendantFocusability="blocksDescendants">
 
     <!-- 头像，价钱等 -->
     <LinearLayout
@@ -20,7 +21,7 @@
             android:id="@+id/im_main_list_more_icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/bg_chat_dis_active"
+            android:src="@drawable/pic_face"
             android:layout_marginTop="10dp"/>
 
         <LinearLayout

@@ -1,0 +1,946 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:layout_marginBottom="50dp">
+
+        <LinearLayout
+            android:id="@+id/scroll_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/orange_bg">
+
+            <!-- 图片 -->
+            <ImageView
+                android:id="@+id/im_details_icom"
+                android:layout_width="match_parent"
+                android:layout_height="340dp"
+                android:src="@drawable/pic_product"
+                android:scaleType="fitXY"
+                android:visibility="visible"/>
+
+            <!-- 提醒 -->
+            <RelativeLayout
+                android:id="@+id/ly_warn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp">
+
+                <!-- 文案 -->
+                <TextView
+                    android:id="@+id/tv_my_details_tip2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:textColor="@color/classify_text_gray"
+                    android:text="的交易请求"
+                    android:gravity="center"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_alignParentRight="true"/>
+
+                <!-- 名字 -->
+                <TextView
+                    android:id="@+id/tv_my_details_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:textColor="@color/purple"
+                    android:text="魔蝎座的摩斯"
+                    android:layout_toLeftOf="@id/tv_my_details_tip2"
+                    android:gravity="center"
+                    android:layout_marginLeft="5dp"/>
+
+
+                <!-- 文案 -->
+                <TextView
+                    android:id="@+id/tv_my_details_tip1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:textColor="@color/classify_text_gray"
+                    android:text="已接受"
+                    android:gravity="center"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toLeftOf="@id/tv_my_details_name"/>
+
+                <ImageView
+                    android:id="@+id/im_my_details_warn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/my_xianzhi_warn"
+                    android:layout_toLeftOf="@id/tv_my_details_tip1"/>
+
+
+
+            </RelativeLayout>
+
+            <!-- 主体:头像、价钱等 -->
+            <LinearLayout
+                android:id="@+id/ly_details_main"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@color/white"
+                android:layout_marginTop="10dp"
+                android:paddingTop="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp">
+
+                <!-- 头像 -->
+                <com.xianyi.customviews.residelayout.CircleImageView
+                    android:id="@+id/im_details_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/pic_face"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="10dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <!-- 新价钱 -->
+                        <TextView
+                            android:id="@+id/gv_details_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="16sp"
+                            android:textColor="@color/purple"
+                            android:text="六月的香草冰淇凌"
+                            android:layout_alignParentLeft="true"/>
+
+                        <!-- 成交笔数-->
+                        <TextView
+                            android:id="@+id/gv_details_trade_num"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="14sp"
+                            android:textColor="@color/classify_text_gray"
+                            android:text="成功成交10笔"
+                            android:layout_marginRight="10dp"
+                            android:layout_alignParentRight="true"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="5dp">
+
+                        <!-- 新价钱 -->
+                        <TextView
+                            android:id="@+id/gv_details_price_now"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="18sp"
+                            android:textColor="@color/classify_text_orange"
+                            android:text="￥350"
+                            android:layout_alignParentLeft="true"/>
+
+                        <!-- 旧价钱 -->
+                        <TextView
+                            android:id="@+id/gv_details_price_old"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="16sp"
+                            android:textColor="@color/classify_text_gray"
+                            android:text="￥450"
+                            android:layout_marginLeft="10dp"
+                            android:layout_toRightOf="@id/gv_details_price_now"/>
+
+                        <!-- 时间 -->
+                        <TextView
+                            android:id="@+id/gv_details_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="14sp"
+                            android:textColor="@color/classify_text_gray"
+                            android:text="2小时前"
+                            android:layout_marginRight="10dp"
+                            android:layout_alignParentRight="true"/>
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- 地址 -->
+            <LinearLayout
+                android:id="@+id/ly_details_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@color/white"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:textColor="@color/classify_text_gray"
+                    android:text="所在圈："
+                    android:drawableLeft="@drawable/icon_address"/>
+
+                <TextView
+                    android:id="@+id/gv_details_address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:textColor="@color/classify_text_orange"
+                    android:text="胜古北理&#160;&#160;安华西里&#160;&#160;青年湖北里&#160;&#160;和平西里\n天通苑北里&#160;&#160;回龙观西里"/>
+
+            </LinearLayout>
+
+            <!-- 描述 -->
+            <TextView
+                android:id="@+id/gv_details_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="@color/classify_text_gray"
+                android:text="Pouch婴儿推车婴儿车宝宝手推车童车高景观 避震轻便可躺可坐。特别的好看有品质，牛仔 的深蓝色，也特别大气，我之前还在纠结红"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="10dp"
+                android:background="@color/white"/>
+
+            <!-- 收起 -->
+            <RelativeLayout
+                android:id="@+id/ly_details_shou"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@color/white"
+                android:paddingBottom="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="20dp">
+
+                <TextView
+                    android:id="@+id/tv_details_shou"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:textColor="@color/classify_text_gray"
+                    android:text="收起"
+                    android:drawableRight="@drawable/btn_up"
+                    android:layout_alignParentRight="true"
+                    android:drawablePadding="10dp"/>
+
+            </RelativeLayout>
+
+            <!-- 想要 -->
+            <LinearLayout
+                android:id="@+id/ly_details_want"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/orange_bg"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:visibility="visible">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@color/orange_bg"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="50dp"
+                        android:layout_height="30dp"
+                        android:textSize="14sp"
+                        android:textColor="@color/classify_text_gray"
+                        android:background="#ead8c2"
+                        android:text="想要"
+                        android:gravity="center"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:background="@color/orange_bg"
+                    android:gravity="center"
+                    android:layout_marginTop="10dp">
+
+                    <!-- 新生礼盒 -->
+                    <LinearLayout
+                        android:id="@+id/ly_details_new_gift"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:background="@color/orange_bg"
+                        android:gravity="center"
+                        android:layout_weight="1">
+
+                        <com.xianyi.customviews.residelayout.CircleImageView
+                            android:id="@+id/im_details_new_gift"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/classify_gift_box"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="14sp"
+                            android:textColor="@color/gray"
+                            android:text="新生礼盒"
+                            android:gravity="center"
+                            android:layout_marginTop="5dp"/>
+
+                    </LinearLayout>
+
+                    <!-- 哈衣 -->
+                    <LinearLayout
+                        android:id="@+id/ly_details_hayi"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:background="@color/orange_bg"
+                        android:gravity="center"
+                        android:layout_weight="1">
+
+                        <com.xianyi.customviews.residelayout.CircleImageView
+                            android:id="@+id/im_details_hayi"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/classify_ha_yi"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="14sp"
+                            android:textColor="@color/gray"
+                            android:text="哈衣"
+                            android:gravity="center"
+                            android:layout_marginTop="5dp"/>
+
+                    </LinearLayout>
+
+                    <!-- 外套 -->
+                    <LinearLayout
+                        android:id="@+id/ly_details_wt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:background="@color/orange_bg"
+                        android:gravity="center"
+                        android:layout_weight="1">
+
+                        <com.xianyi.customviews.residelayout.CircleImageView
+                            android:id="@+id/im_details_wt"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/classify_coat"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="14sp"
+                            android:textColor="@color/gray"
+                            android:text="外套"
+                            android:gravity="center"
+                            android:layout_marginTop="5dp"/>
+
+                    </LinearLayout>
+
+                    <!-- 羽绒 -->
+                    <LinearLayout
+                        android:id="@+id/ly_details_yr"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:background="@color/orange_bg"
+                        android:gravity="center"
+                        android:layout_weight="1">
+
+                        <com.xianyi.customviews.residelayout.CircleImageView
+                            android:id="@+id/im_details_yr"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/classify_eiderdown"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="14sp"
+                            android:textColor="@color/gray"
+                            android:text="羽绒"
+                            android:gravity="center"
+                            android:layout_marginTop="5dp"/>
+
+                    </LinearLayout>
+
+                    <!-- 套装 -->
+                    <LinearLayout
+                        android:id="@+id/ly_details_tz"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:background="@color/orange_bg"
+                        android:gravity="center"
+                        android:layout_weight="1">
+
+                        <com.xianyi.customviews.residelayout.CircleImageView
+                            android:id="@+id/im_details_tz"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/classify_suit"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="14sp"
+                            android:textColor="@color/gray"
+                            android:text="套装"
+                            android:gravity="center"
+                            android:layout_marginTop="5dp"/>
+
+                    </LinearLayout>
+
+                    <!-- 鞋靴 -->
+                    <LinearLayout
+                        android:id="@+id/ly_details_shoe"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:background="@color/orange_bg"
+                        android:gravity="center"
+                        android:layout_weight="1">
+
+                        <com.xianyi.customviews.residelayout.CircleImageView
+                            android:id="@+id/im_details_shoe"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/classify_children_shoes"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="14sp"
+                            android:textColor="@color/gray"
+                            android:text="鞋靴"
+                            android:gravity="center"
+                            android:layout_marginTop="5dp"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:background="@color/orange_bg"
+                    android:gravity="center"
+                    android:layout_marginTop="10dp">
+
+                    <!-- 新生礼盒 -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:background="@color/orange_bg"
+                        android:gravity="center"
+                        android:layout_weight="1">
+
+                        <com.xianyi.customviews.residelayout.CircleImageView
+                            android:id="@+id/im_details_new_gifts"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/classify_gift_box"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="14sp"
+                            android:textColor="@color/gray"
+                            android:text="新生礼盒"
+                            android:gravity="center"
+                            android:layout_marginTop="5dp"/>
+
+                    </LinearLayout>
+
+                    <!-- 哈衣 -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:background="@color/orange_bg"
+                        android:gravity="center"
+                        android:layout_weight="1">
+
+                        <com.xianyi.customviews.residelayout.CircleImageView
+                            android:id="@+id/im_details_hayis"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/classify_ha_yi"/>
+
+                        <TextView
+                            android:id="@+id/ly_details_birthday"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="14sp"
+                            android:textColor="@color/gray"
+                            android:text="哈衣"
+                            android:gravity="center"
+                            android:layout_marginTop="5dp"/>
+
+                    </LinearLayout>
+
+                    <!-- 外套 -->
+                    <LinearLayout
+                        android:id="@+id/ly_details_wts"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:background="@color/orange_bg"
+                        android:gravity="center"
+                        android:layout_weight="1">
+
+                        <com.xianyi.customviews.residelayout.CircleImageView
+                            android:id="@+id/im_details_wts"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/classify_coat"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="14sp"
+                            android:textColor="@color/gray"
+                            android:text="外套"
+                            android:gravity="center"
+                            android:layout_marginTop="5dp"/>
+
+                    </LinearLayout>
+
+                    <!-- 羽绒 -->
+                    <LinearLayout
+                        android:id="@+id/ly_details_yrs"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:background="@color/orange_bg"
+                        android:gravity="center"
+                        android:layout_weight="1">
+
+                        <com.xianyi.customviews.residelayout.CircleImageView
+                            android:id="@+id/im_details_yrs"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/classify_eiderdown"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="14sp"
+                            android:textColor="@color/gray"
+                            android:text="羽绒"
+                            android:gravity="center"
+                            android:layout_marginTop="5dp"/>
+
+                    </LinearLayout>
+
+                    <!-- 套装 -->
+                    <LinearLayout
+                        android:id="@+id/ly_details_tzs"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:background="@color/orange_bg"
+                        android:gravity="center"
+                        android:layout_weight="1">
+
+                        <com.xianyi.customviews.residelayout.CircleImageView
+                            android:id="@+id/im_details_tzs"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/classify_suit"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="14sp"
+                            android:textColor="@color/gray"
+                            android:text="套装"
+                            android:gravity="center"
+                            android:layout_marginTop="5dp"/>
+
+                    </LinearLayout>
+
+                    <!-- 鞋靴 -->
+                    <LinearLayout
+                        android:id="@+id/ly_details_shoes"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:background="@color/orange_bg"
+                        android:gravity="center"
+                        android:layout_weight="1">
+
+                        <com.xianyi.customviews.residelayout.CircleImageView
+                            android:id="@+id/im_details_shoes"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/classify_children_shoes"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="14sp"
+                            android:textColor="@color/gray"
+                            android:text="鞋靴"
+                            android:gravity="center"
+                            android:layout_marginTop="5dp"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!-- 收起 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@color/orange_bg"
+                    android:gravity="center"
+                    android:layout_marginTop="10dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/classify_text_gray"
+                        android:src="@drawable/btn_down"
+                        android:gravity="center"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- 聊天 -->
+            <LinearLayout
+                android:id="@+id/ly_details_chat_main"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@color/white"
+                android:layout_marginTop="10dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="10dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <!-- 头像 -->
+                        <com.xianyi.customviews.residelayout.CircleImageView
+                            android:id="@+id/im_details_chat_icon"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:src="@drawable/pic_face"
+                            android:layout_alignParentLeft="true"/>
+
+                        <!-- 新价钱 -->
+                        <TextView
+                            android:id="@+id/gv_details_chat_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="14sp"
+                            android:textColor="@color/classify_text_gray"
+                            android:text="小明的妈妈忙死了"
+                            android:layout_toRightOf="@id/im_details_chat_icon"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="5dp"/>
+
+                        <!-- 时间-->
+                        <TextView
+                            android:id="@+id/gv_details_chat_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="14sp"
+                            android:textColor="@color/classify_text_gray"
+                            android:text="3分钟前"
+                            android:layout_marginRight="10dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginTop="5dp"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="5dp">
+
+                        <!-- 聊天内容 -->
+                        <TextView
+                            android:id="@+id/gv_details_chat_context"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="14sp"
+                            android:textColor="@color/classify_text_gray"
+                            android:text="我有一双9成新滚轴滑冰鞋，想换吗？"
+                            android:layout_marginLeft="35dp"/>
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- 聊天回复 -->
+            <LinearLayout
+                android:id="@+id/ly_details_chat_reply"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@color/white"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="10dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="10dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <!-- 头像 -->
+                        <com.xianyi.customviews.residelayout.CircleImageView
+                            android:id="@+id/im_details_chat_reply_icons"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:src="@drawable/pic_face"
+                            android:layout_alignParentLeft="true"/>
+
+                        <!-- 新价钱 -->
+                        <TextView
+                            android:id="@+id/gv_details_chat_reply_names"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="14sp"
+                            android:textColor="@color/classify_text_gray"
+                            android:text="小明的妈妈忙死了"
+                            android:layout_toRightOf="@id/im_details_chat_reply_icons"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="5dp"/>
+
+                        <!-- 时间-->
+                        <TextView
+                            android:id="@+id/gv_details_chat_reply_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="14sp"
+                            android:textColor="@color/classify_text_gray"
+                            android:text="3分钟前"
+                            android:layout_marginRight="10dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginTop="5dp"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="5dp">
+
+                        <!-- 聊天内容 -->
+                        <TextView
+                            android:id="@+id/gv_details_chat_reply_context"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="14sp"
+                            android:textColor="@color/classify_text_gray"
+                            android:text="我有一双9成新滚轴滑冰鞋，想换吗？"
+                            android:layout_marginLeft="35dp"/>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginLeft="40dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_below="@id/gv_details_chat_reply_context">
+
+                            <!-- 头像 -->
+                            <com.xianyi.customviews.residelayout.CircleImageView
+                                android:id="@+id/im_details_chat_reply_icon"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:src="@drawable/pic_face"
+                                android:layout_alignParentLeft="true"/>
+
+                            <!-- 新价钱 -->
+                            <TextView
+                                android:id="@+id/gv_details_chat_reply_name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="14sp"
+                                android:textColor="@color/classify_text_gray"
+                                android:text="回复：好的！"
+                                android:layout_toRightOf="@id/im_details_chat_reply_icon"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginTop="5dp"/>
+
+                            <!-- 时间-->
+                            <TextView
+                                android:id="@+id/gv_details_chat_reply_times"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="14sp"
+                                android:textColor="@color/classify_text_gray"
+                                android:text="8小时前"
+                                android:layout_marginRight="10dp"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginTop="5dp"/>
+
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <!-- 浮层按钮 -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingTop="20dp"
+        android:visibility="visible">
+
+        <ImageView
+            android:id="@+id/im_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/detail_return"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"/>
+
+        <ImageView
+            android:id="@+id/im_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/details_share"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"/>
+
+        <ImageView
+            android:id="@+id/im_share"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/details_message"
+            android:layout_below="@id/im_message"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="240dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"/>
+
+        <LinearLayout
+            android:id="@+id/ly_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="horizontal"
+            android:background="#dfdad4"
+            android:layout_alignParentBottom="true"
+            android:padding="1dp">
+
+            <Button
+                android:id="@+id/bt_like"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="18"
+                android:drawableLeft="@drawable/menu_im_my_collect"
+                android:background="@drawable/like_btn"
+                android:layout_weight="1.5"
+                android:textColor="@color/classify_text_orange"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:layout_marginRight="1dp"/>
+
+            <Button
+                android:id="@+id/bt_turn"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="10"
+                android:layout_gravity="right"
+                android:drawableLeft="@drawable/tab_turn"
+                android:background="@drawable/like_btn"
+                android:layout_weight="1.5"
+                android:textColor="@color/classify_text_orange"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:layout_marginRight="1dp"/>
+
+            <Button
+                android:id="@+id/bt_itake"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="我要了"
+                android:layout_gravity="center_horizontal"
+                android:drawableLeft="@drawable/tab_itake"
+                android:background="@drawable/itake_btn"
+                android:layout_weight="1"
+                android:textColor="@color/white"
+                android:paddingLeft="60dp"
+                android:paddingRight="50dp"/>
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/im_gotop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/btn_gotop"
+            android:layout_above="@id/ly_bottom"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"/>
+
+    </RelativeLayout>
+
+</FrameLayout>
