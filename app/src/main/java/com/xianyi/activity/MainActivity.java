@@ -24,6 +24,7 @@ import com.xianyi.fragment.ClassifyFragment;
 import com.xianyi.fragment.FindFragment;
 import com.xianyi.fragment.IntegralFragment;
 import com.xianyi.fragment.MessageFragment;
+import com.xianyi.localalbum.ui.DynamicPost;
 import com.xianyi.utils.LogUtil;
 
 import java.util.ArrayList;
@@ -310,6 +311,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
             } else if (tag.equals("tab2")) {//发布
                 Intent mIntent=new Intent(mContext,PublishActivity.class);
                 startActivity(mIntent);
+//                Intent mIntent=new Intent(mContext,DynamicPost.class);
+//                startActivity(mIntent);
+
             } else if (tag.equals("tab3")) {
                 onTabSelected(2);
             } else if (tag.equals("tab4")) {

@@ -3,6 +3,7 @@
     package="com.xianyi" >
 
     <application
+        android:name=".AppContext"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
@@ -11,6 +12,7 @@
         <!-- 登录页 -->
         <activity
             android:name=".activity.LoginActivity"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -97,7 +99,16 @@
             android:name=".activity.DetailsActivity"
             android:label="@string/app_name" >
         </activity>
-
+        <activity android:name=".localalbum.ui.DynamicPost">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".localalbum.ui.LocalAlbum"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait" />
+        <activity android:name=".localalbum.ui.LocalAlbumDetail" />
     </application>
 
     <!--权限-->
