@@ -23,6 +23,7 @@ import com.xianyi.fragment.BaseFragment;
 import com.xianyi.fragment.ClassifyFragment;
 import com.xianyi.fragment.FindFragment;
 import com.xianyi.fragment.IntegralFragment;
+import com.xianyi.fragment.MessageFragment;
 import com.xianyi.utils.LogUtil;
 
 import java.util.ArrayList;
@@ -44,7 +45,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
 
     private ClassifyFragment mHomeFragment0;
     private FindFragment mHomeFragment1;
-    private FindFragment mHomeFragment2;
+    private MessageFragment mHomeFragment2;
     private IntegralFragment mHomeFragment3;
     private FragmentManager mFragmentManager;
 
@@ -89,6 +90,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
     public void initFragment() {
         mHomeFragment0 = new ClassifyFragment();
         mHomeFragment1 = new FindFragment();
+        mHomeFragment2=new MessageFragment();
         mHomeFragment3 = new IntegralFragment();
 
     }
@@ -136,15 +138,25 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
                 break;
 
             case HOME_TAB_INDEX_2:
+                hideFragments(transaction);
+                if (null == mHomeFragment2) {
+                    mHomeFragment2=new MessageFragment();
+                    transaction.add(R.id.center_layout, mHomeFragment2, "2");
+                } else {
+                    transaction.show(mHomeFragment2);
+                }
+                setFragmentVerisiable(mHomeFragment2, 2);
+                curFragment = mHomeFragment2;
+                break;
             case HOME_TAB_INDEX_3:
                 hideFragments(transaction);
                 if (null == mHomeFragment3) {
                     mHomeFragment3 = new IntegralFragment();
-                    transaction.add(R.id.center_layout, mHomeFragment3, "0");
+                    transaction.add(R.id.center_layout, mHomeFragment3, "3");
                 } else {
                     transaction.show(mHomeFragment3);
                 }
-                setFragmentVerisiable(mHomeFragment3, 0);
+                setFragmentVerisiable(mHomeFragment3, 3);
                 curFragment = mHomeFragment3;
                 break;
 
@@ -231,7 +243,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
                                 mHomeFragment1.setVisible(false);
                             }
                             if(mHomeFragment2!=null) {
-                                mHomeFragment1.setVisible(false);
+                                mHomeFragment2.setVisible(false);
                             }
                             if(mHomeFragment3!=null) {
                                 mHomeFragment3.setVisible(false);

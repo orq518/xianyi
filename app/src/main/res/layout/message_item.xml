@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="#f7f3f0"
+              android:orientation="vertical"
+              android:paddingTop="20dp">
+
+    <!-- item -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:paddingBottom="5dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="5dp">
+
+        <com.xianyi.customviews.mylist.SwipeLayout
+            android:id="@+id/swipe"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/ll_menu"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@android:color/white"
+                android:gravity="center">
+                <!-- 删除 -->
+                <Button
+                    android:id="@+id/delete"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@color/red"
+                    android:padding="15dp"
+                    android:text="删除"
+                    android:textColor="@color/white"/>
+
+            </LinearLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <!-- 头像 -->
+                <ImageView
+                    android:id="@+id/im_my_xianzhi_icon"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/pic_product"/>
+                <!-- 新价钱 -->
+                <TextView
+                    android:id="@+id/liuyan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_toRightOf="@id/im_my_xianzhi_icon"
+                    android:text="留言"
+                    android:textColor="@color/black"
+                    android:textSize="19sp"/>
+
+                <TextView
+                    android:id="@+id/redpoint"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_toRightOf="@id/liuyan"
+                    android:background="@drawable/redpoint"
+                    android:gravity="center"
+                    android:text="3"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"/>
+                <TextView
+                    android:id="@+id/tv_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="10dp"
+                    android:text="3小时前"
+                    android:textColor="@color/gray"
+                    android:textSize="16sp"/>
+                <!-- 内容 -->
+                <TextView
+                    android:id="@+id/tv_my_xianzhi_context"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/im_my_xianzhi_icon"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_toRightOf="@id/im_my_xianzhi_icon"
+                    android:text="\@火星上的猪：450换吗？"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="@color/classify_text_gray"
+                    android:textSize="16sp"/>
+            </RelativeLayout>
+
+
+        </com.xianyi.customviews.mylist.SwipeLayout>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>
