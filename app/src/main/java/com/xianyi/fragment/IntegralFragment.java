@@ -10,7 +10,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.xianyi.R;
-import com.xianyi.activity.BigClassifyActivity;
 import com.xianyi.customviews.CycleImageLayout;
 import com.xianyi.customviews.TitleView;
 import com.xianyi.utils.BannerManager;

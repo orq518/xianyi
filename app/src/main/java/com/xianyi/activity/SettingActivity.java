@@ -95,11 +95,14 @@ public class SettingActivity extends BaseActivity implements View.OnClickListene
     @Override
     public void onClick(View v) {
         super.onClick(v);
+        Intent intent;
         switch (v.getId()) {
             // 个人资料
             case R.id.ly_personal:
-
+                intent = new Intent(SettingActivity.this, PersonalActivity.class);
+                startActivity(intent);
                 break;
+
             // 分享给朋友
             case R.id.ly_share:
 

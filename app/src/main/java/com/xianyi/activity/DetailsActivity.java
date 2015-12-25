@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.xianyi.R;
@@ -21,6 +22,14 @@ public class DetailsActivity extends BaseActivity implements View.OnClickListene
     private static final String LTAG = DetailsActivity.class.getSimpleName();
     /** 上下文 **/
     private Context mContext;
+    /** 返回 **/
+    private ImageView mBack;
+    /** 消息 **/
+    private ImageView mMessage;
+    /** 分享 **/
+    private ImageView mShare;
+    /** 置顶 **/
+    private ImageView mTop;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +41,15 @@ public class DetailsActivity extends BaseActivity implements View.OnClickListene
     }
 
     public void initViews() {
+        mBack =(ImageView) findViewById(R.id.im_back);
+        mMessage =(ImageView) findViewById(R.id.im_message);
+        mShare =(ImageView) findViewById(R.id.im_share);
+        mTop =(ImageView) findViewById(R.id.im_gotop);
+
+        mBack.setOnClickListener(this);
+        mMessage.setOnClickListener(this);
+        mShare.setOnClickListener(this);
+        mTop.setOnClickListener(this);
 
         showView();
     }
@@ -57,6 +75,23 @@ public class DetailsActivity extends BaseActivity implements View.OnClickListene
     public void onClick(View v) {
         super.onClick(v);
         switch (v.getId()) {
+            // 返回
+            case R.id.im_back:
+                finish();
+                break;
+            // 消息
+            case R.id.im_message:
+
+                break;
+            // 分享
+            case R.id.im_share:
+
+                break;
+            // 置顶
+            case R.id.im_gotop:
+
+                break;
+
             // 收藏
             case R.id.bt_like:
 

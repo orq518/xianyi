@@ -65,7 +65,7 @@
 
         <!-- 大类别列表页 -->
         <activity
-            android:name=".activity.BigClassifyActivity"
+            android:name=".activity.BigListActivity"
             android:label="@string/app_name" >
         </activity>
 
@@ -99,6 +99,19 @@
             android:name=".activity.DetailsActivity"
             android:label="@string/app_name" >
         </activity>
+
+        <!-- 大类别页 -->
+        <activity
+            android:name=".activity.ClassifyActivity"
+            android:label="@string/app_name" >
+        </activity>
+
+        <!-- 个人资料页 -->
+        <activity
+            android:name=".activity.PersonalActivity"
+            android:label="@string/app_name" >
+        </activity>
+
         <activity android:name=".localalbum.ui.DynamicPost">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

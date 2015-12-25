@@ -40,15 +40,15 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * ${todo}<大类别列表页>
+ * ${todo}<大列表页>
  *
  * @author lht
  * @data: on 15/11/25 14:52
  */
 
 @TargetApi(Build.VERSION_CODES.HONEYCOMB)
-public class BigClassifyActivity extends BaseActivity implements Animator.AnimatorListener {
-    private static final String LTAG = BigClassifyActivity.class.getSimpleName();
+public class BigListActivity extends BaseActivity implements Animator.AnimatorListener {
+    private static final String LTAG = BigListActivity.class.getSimpleName();
     /** 上下文 **/
     private Context mContext;
     /** 顶部布局 **/
@@ -141,13 +141,31 @@ public class BigClassifyActivity extends BaseActivity implements Animator.Animat
         }
     };
 
+    /** 大类别 **/
+    private String type; //0-婴童服饰,1-起居用品,2-童趣玩具,3-文体教具,4-妈咪专享
+    /** 小类别 **/
+    private String classify; //1-12
+
+    private String[] string0 = new String[]{
+            "婴童服饰","起居用品","童趣玩具","文体教具","妈咪专享"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_big_classify);
+        setContentView(R.layout.activity_big_list);
         mContext = this;
 
+        initDate();
+
         initViews();
+    }
+
+    public void initDate() {
+        // 接收数据
+        Intent intent = getIntent();
+        if (intent != null) {
+            type = intent.getStringExtra("type");
+            classify = intent.getStringExtra("classify");
+        }
     }
 
     public void initViews() {
@@ -176,7 +194,138 @@ public class BigClassifyActivity extends BaseActivity implements Animator.Animat
      * 初始化主列表
      */
     private void initTitle() {
-        mTitleView.setTitle("");
+        if("0".equals(type)){
+            if("1".equals(classify)){
+                mTitleView.setTitle(getResources().getStringArray(R.array.array1)[0]);
+            }else if("2".equals(classify)){
+                mTitleView.setTitle(getResources().getStringArray(R.array.array1)[1]);
+            }else if("3".equals(classify)){
+                mTitleView.setTitle(getResources().getStringArray(R.array.array1)[2]);
+            }else if("4".equals(classify)){
+                mTitleView.setTitle(getResources().getStringArray(R.array.array1)[3]);
+            }else if("5".equals(classify)){
+                mTitleView.setTitle(getResources().getStringArray(R.array.array1)[4]);
+            }else if("6".equals(classify)){
+                mTitleView.setTitle(getResources().getStringArray(R.array.array1)[5]);
+            }else if("7".equals(classify)){
+                mTitleView.setTitle(getResources().getStringArray(R.array.array1)[6]);
+            }else if("8".equals(classify)){
+                mTitleView.setTitle(getResources().getStringArray(R.array.array1)[7]);
+            }else if("9".equals(classify)){
+                mTitleView.setTitle(getResources().getStringArray(R.array.array1)[8]);
+            }else if("10".equals(classify)){
+                mTitleView.setTitle(getResources().getStringArray(R.array.array1)[9]);
+            }else if("11".equals(classify)){
+                mTitleView.setTitle(getResources().getStringArray(R.array.array1)[10]);
+            }else if("12".equals(classify)){
+                mTitleView.setTitle(getResources().getStringArray(R.array.array1)[11]);
+            }
+        }else if("1".equals(type)){
+            if("1".equals(classify)){
+                mTitleView.setTitle(getResources().getStringArray(R.array.array2)[0]);
+            }else if("2".equals(classify)){
+                mTitleView.setTitle(getResources().getStringArray(R.array.array2)[1]);
+            }else if("3".equals(classify)){
+                mTitleView.setTitle(getResources().getStringArray(R.array.array2)[2]);
+            }else if("4".equals(classify)){
+                mTitleView.setTitle(getResources().getStringArray(R.array.array2)[3]);
+            }else if("5".equals(classify)){
+                mTitleView.setTitle(getResources().getStringArray(R.array.array2)[4]);
+            }else if("6".equals(classify)){
+                mTitleView.setTitle(getResources().getStringArray(R.array.array2)[5]);
+            }else if("7".equals(classify)){
+                mTitleView.setTitle(getResources().getStringArray(R.array.array2)[6]);
+            }else if("8".equals(classify)){
+                mTitleView.setTitle(getResources().getStringArray(R.array.array2)[7]);
+            }else if("9".equals(classify)){
+                mTitleView.setTitle(getResources().getStringArray(R.array.array2)[8]);
+            }else if("10".equals(classify)){
+                mTitleView.setTitle(getResources().getStringArray(R.array.array2)[9]);
+            }else if("11".equals(classify)){
+                mTitleView.setTitle(getResources().getStringArray(R.array.array2)[10]);
+            }else if("12".equals(classify)){
+                mTitleView.setTitle(getResources().getStringArray(R.array.array2)[11]);
+            }
+        }else if("2".equals(type)){
+            if("1".equals(classify)){
+                mTitleView.setTitle(getResources().getStringArray(R.array.array3)[0]);
+            }else if("2".equals(classify)){
+                mTitleView.setTitle(getResources().getStringArray(R.array.array3)[1]);
+            }else if("3".equals(classify)){
+                mTitleView.setTitle(getResources().getStringArray(R.array.array3)[2]);
+            }else if("4".equals(classify)){
+                mTitleView.setTitle(getResources().getStringArray(R.array.array3)[3]);
+            }else if("5".equals(classify)){
+                mTitleView.setTitle(getResources().getStringArray(R.array.array3)[4]);
+            }else if("6".equals(classify)){
+                mTitleView.setTitle(getResources().getStringArray(R.array.array3)[5]);
+            }else if("7".equals(classify)){
+                mTitleView.setTitle(getResources().getStringArray(R.array.array3)[6]);
+            }else if("8".equals(classify)){
+                mTitleView.setTitle(getResources().getStringArray(R.array.array3)[7]);
+            }else if("9".equals(classify)){
+                mTitleView.setTitle(getResources().getStringArray(R.array.array3)[8]);
+            }else if("10".equals(classify)){
+                mTitleView.setTitle(getResources().getStringArray(R.array.array3)[9]);
+            }else if("11".equals(classify)){
+                mTitleView.setTitle(getResources().getStringArray(R.array.array3)[10]);
+            }else if("12".equals(classify)){
+                mTitleView.setTitle(getResources().getStringArray(R.array.array3)[11]);
+            }
+        }else if("3".equals(type)){
+            if("1".equals(classify)){
+                mTitleView.setTitle(getResources().getStringArray(R.array.array4)[0]);
+            }else if("2".equals(classify)){
+                mTitleView.setTitle(getResources().getStringArray(R.array.array4)[1]);
+            }else if("3".equals(classify)){
+                mTitleView.setTitle(getResources().getStringArray(R.array.array4)[2]);
+            }else if("4".equals(classify)){
+                mTitleView.setTitle(getResources().getStringArray(R.array.array4)[3]);
+            }else if("5".equals(classify)){
+                mTitleView.setTitle(getResources().getStringArray(R.array.array4)[4]);
+            }else if("6".equals(classify)){
+                mTitleView.setTitle(getResources().getStringArray(R.array.array4)[5]);
+            }else if("7".equals(classify)){
+                mTitleView.setTitle(getResources().getStringArray(R.array.array4)[6]);
+            }else if("8".equals(classify)){
+                mTitleView.setTitle(getResources().getStringArray(R.array.array4)[7]);
+            }else if("9".equals(classify)){
+                mTitleView.setTitle(getResources().getStringArray(R.array.array4)[8]);
+            }else if("10".equals(classify)){
+                mTitleView.setTitle(getResources().getStringArray(R.array.array4)[9]);
+            }else if("11".equals(classify)){
+                mTitleView.setTitle(getResources().getStringArray(R.array.array4)[10]);
+            }else if("12".equals(classify)){
+                mTitleView.setTitle(getResources().getStringArray(R.array.array4)[11]);
+            }
+        }else if("4".equals(type)){
+            if("1".equals(classify)){
+                mTitleView.setTitle(getResources().getStringArray(R.array.array5)[0]);
+            }else if("2".equals(classify)){
+                mTitleView.setTitle(getResources().getStringArray(R.array.array5)[1]);
+            }else if("3".equals(classify)){
+                mTitleView.setTitle(getResources().getStringArray(R.array.array5)[2]);
+            }else if("4".equals(classify)){
+                mTitleView.setTitle(getResources().getStringArray(R.array.array5)[3]);
+            }else if("5".equals(classify)){
+                mTitleView.setTitle(getResources().getStringArray(R.array.array5)[4]);
+            }else if("6".equals(classify)){
+                mTitleView.setTitle(getResources().getStringArray(R.array.array5)[5]);
+            }else if("7".equals(classify)){
+                mTitleView.setTitle(getResources().getStringArray(R.array.array5)[6]);
+            }else if("8".equals(classify)){
+                mTitleView.setTitle(getResources().getStringArray(R.array.array5)[7]);
+            }else if("9".equals(classify)){
+                mTitleView.setTitle(getResources().getStringArray(R.array.array5)[8]);
+            }else if("10".equals(classify)){
+                mTitleView.setTitle(getResources().getStringArray(R.array.array5)[9]);
+            }else if("11".equals(classify)){
+                mTitleView.setTitle(getResources().getStringArray(R.array.array5)[10]);
+            }else if("12".equals(classify)){
+                mTitleView.setTitle(getResources().getStringArray(R.array.array5)[11]);
+            }
+        }
+
         mTitleView.setLeftClickListener(new TitleLeftOnClickListener());
     }
 
@@ -199,7 +348,7 @@ public class BigClassifyActivity extends BaseActivity implements Animator.Animat
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
 
-                Intent intent = new Intent(BigClassifyActivity.this, DetailsActivity.class);
+                Intent intent = new Intent(BigListActivity.this, DetailsActivity.class);
                 startActivity(intent);
             }
         });
@@ -215,7 +364,7 @@ public class BigClassifyActivity extends BaseActivity implements Animator.Animat
                     @Override
                     public void run() {
                         mListView.stopRefresh();
-                        Toast.makeText(BigClassifyActivity.this, "refresh",
+                        Toast.makeText(BigListActivity.this, "refresh",
                                 Toast.LENGTH_SHORT).show();
                         mHandler.sendEmptyMessage(MSG_REFRESH);
                     }
@@ -229,7 +378,7 @@ public class BigClassifyActivity extends BaseActivity implements Animator.Animat
                     @Override
                     public void run() {
                         mListView.stopLoadMore();
-                        Toast.makeText(BigClassifyActivity.this, "loadMore",
+                        Toast.makeText(BigListActivity.this, "loadMore",
                                 Toast.LENGTH_SHORT).show();
                         mHandler.sendEmptyMessage(MSG_LOADMORE);
                     }
@@ -274,7 +423,7 @@ public class BigClassifyActivity extends BaseActivity implements Animator.Animat
      * 适配全部分类，左列表
      */
     private void initAllClassLeftListAdapter() {
-        leftAdapter = new ClassifyAllLeftListAdapter(BigClassifyActivity.this,
+        leftAdapter = new ClassifyAllLeftListAdapter(BigListActivity.this,
                 mAllList, R.layout.classify_left_list_item, true);
         leftAdapter.setSelectItem(0);
         mLeftlist.setAdapter(leftAdapter);
@@ -286,7 +435,7 @@ public class BigClassifyActivity extends BaseActivity implements Animator.Animat
      * @param array
      */
     private void initAllClassRightListAdapter(String[] array) {
-        rightAdapter = new ClassifyAllRightAdapter(BigClassifyActivity.this,
+        rightAdapter = new ClassifyAllRightAdapter(BigListActivity.this,
                 array, R.layout.classify_right_list_item);
         mRightlist.setAdapter(rightAdapter);
         rightAdapter.notifyDataSetChanged();

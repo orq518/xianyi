@@ -75,7 +75,7 @@
                             <ImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:src="@drawable/classify_gift_box"
+                                android:src="@drawable/pic_1"
                                 />
 
                             <TextView
@@ -102,7 +102,7 @@
                             <ImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:src="@drawable/classify_ha_yi"/>
+                                android:src="@drawable/pic_2"/>
 
                             <TextView
                                 android:layout_width="match_parent"
@@ -130,7 +130,7 @@
                             <ImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:src="@drawable/classify_coat"/>
+                                android:src="@drawable/pic_3"/>
 
                             <TextView
                                 android:layout_width="match_parent"
@@ -164,7 +164,7 @@
                             <ImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:src="@drawable/classify_eiderdown"
+                                android:src="@drawable/pic_4"
                                 />
 
                             <TextView
@@ -190,7 +190,7 @@
                             <ImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:src="@drawable/classify_suit"
+                                android:src="@drawable/pic_5"
                                 />
 
                             <TextView
@@ -218,7 +218,7 @@
                             <ImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:src="@drawable/classify_children_shoes"
+                                android:src="@drawable/pic_6"
                                 />
 
                             <TextView
@@ -277,7 +277,7 @@
                             <ImageView
                                 android:layout_width="90dp"
                                 android:layout_height="48dp"
-                                android:src="@drawable/classify_baby_bed"
+                                android:src="@drawable/pic_7"
                                 />
 
                             <TextView
@@ -304,7 +304,7 @@
                             <ImageView
                                 android:layout_width="90dp"
                                 android:layout_height="48dp"
-                                android:src="@drawable/classify_baby_bed"/>
+                                android:src="@drawable/pic_8"/>
 
                             <TextView
                                 android:layout_width="match_parent"
@@ -332,7 +332,7 @@
                             <ImageView
                                 android:layout_width="90dp"
                                 android:layout_height="48dp"
-                                android:src="@drawable/classify_baby_bed"/>
+                                android:src="@drawable/pic_9"/>
 
                             <TextView
                                 android:layout_width="match_parent"
@@ -366,7 +366,7 @@
                             <ImageView
                                 android:layout_width="90dp"
                                 android:layout_height="48dp"
-                                android:src="@drawable/classify_baby_bed"
+                                android:src="@drawable/pic_10"
                                 />
 
                             <TextView
@@ -392,7 +392,7 @@
                             <ImageView
                                 android:layout_width="90dp"
                                 android:layout_height="48dp"
-                                android:src="@drawable/classify_baby_bed"
+                                android:src="@drawable/pic_11"
                                 />
 
                             <TextView
@@ -420,7 +420,7 @@
                             <ImageView
                                 android:layout_width="90dp"
                                 android:layout_height="48dp"
-                                android:src="@drawable/classify_baby_bed"
+                                android:src="@drawable/pic_12"
                                 />
 
                             <TextView
@@ -479,7 +479,7 @@
                             <ImageView
                                 android:layout_width="90dp"
                                 android:layout_height="48dp"
-                                android:src="@drawable/classify_baby_bed"
+                                android:src="@drawable/pic_13"
                                 />
 
                             <TextView
@@ -506,7 +506,7 @@
                             <ImageView
                                 android:layout_width="90dp"
                                 android:layout_height="48dp"
-                                android:src="@drawable/classify_baby_bed"/>
+                                android:src="@drawable/pic_14"/>
 
                             <TextView
                                 android:layout_width="match_parent"
@@ -534,7 +534,7 @@
                             <ImageView
                                 android:layout_width="90dp"
                                 android:layout_height="48dp"
-                                android:src="@drawable/classify_baby_bed"/>
+                                android:src="@drawable/pic_15"/>
 
                             <TextView
                                 android:layout_width="match_parent"
@@ -568,7 +568,7 @@
                             <ImageView
                                 android:layout_width="90dp"
                                 android:layout_height="48dp"
-                                android:src="@drawable/classify_baby_bed"
+                                android:src="@drawable/pic_16"
                                 />
 
                             <TextView
@@ -594,7 +594,7 @@
                             <ImageView
                                 android:layout_width="90dp"
                                 android:layout_height="48dp"
-                                android:src="@drawable/classify_baby_bed"
+                                android:src="@drawable/pic_17"
                                 />
 
                             <TextView
@@ -622,7 +622,7 @@
                             <ImageView
                                 android:layout_width="90dp"
                                 android:layout_height="48dp"
-                                android:src="@drawable/classify_baby_bed"
+                                android:src="@drawable/pic_18"
                                 />
 
                             <TextView
@@ -681,7 +681,7 @@
                             <ImageView
                                 android:layout_width="90dp"
                                 android:layout_height="48dp"
-                                android:src="@drawable/classify_baby_bed"
+                                android:src="@drawable/pic_19"
                                 />
 
                             <TextView
@@ -708,7 +708,7 @@
                             <ImageView
                                 android:layout_width="90dp"
                                 android:layout_height="48dp"
-                                android:src="@drawable/classify_baby_bed"/>
+                                android:src="@drawable/pic_20"/>
 
                             <TextView
                                 android:layout_width="match_parent"
@@ -736,7 +736,7 @@
                             <ImageView
                                 android:layout_width="90dp"
                                 android:layout_height="48dp"
-                                android:src="@drawable/classify_baby_bed"/>
+                                android:src="@drawable/pic_21"/>
 
                             <TextView
                                 android:layout_width="match_parent"
@@ -770,7 +770,7 @@
                             <ImageView
                                 android:layout_width="90dp"
                                 android:layout_height="48dp"
-                                android:src="@drawable/classify_baby_bed"
+                                android:src="@drawable/pic_22"
                                 />
 
                             <TextView
@@ -796,7 +796,7 @@
                             <ImageView
                                 android:layout_width="90dp"
                                 android:layout_height="48dp"
-                                android:src="@drawable/classify_baby_bed"
+                                android:src="@drawable/pic_23"
                                 />
 
                             <TextView
@@ -824,7 +824,7 @@
                             <ImageView
                                 android:layout_width="90dp"
                                 android:layout_height="48dp"
-                                android:src="@drawable/classify_baby_bed"
+                                android:src="@drawable/pic_24"
                                 />
 
                             <TextView
@@ -884,7 +884,7 @@
                             <ImageView
                                 android:layout_width="90dp"
                                 android:layout_height="48dp"
-                                android:src="@drawable/classify_baby_bed"
+                                android:src="@drawable/pic_25"
                                 />
 
                             <TextView
@@ -911,7 +911,7 @@
                             <ImageView
                                 android:layout_width="90dp"
                                 android:layout_height="48dp"
-                                android:src="@drawable/classify_baby_bed"/>
+                                android:src="@drawable/pic_26"/>
 
                             <TextView
                                 android:layout_width="match_parent"
@@ -939,7 +939,7 @@
                             <ImageView
                                 android:layout_width="90dp"
                                 android:layout_height="48dp"
-                                android:src="@drawable/classify_baby_bed"/>
+                                android:src="@drawable/pic_27"/>
 
                             <TextView
                                 android:layout_width="match_parent"
@@ -973,7 +973,7 @@
                             <ImageView
                                 android:layout_width="90dp"
                                 android:layout_height="48dp"
-                                android:src="@drawable/classify_baby_bed"
+                                android:src="@drawable/pic_28"
                                 />
 
                             <TextView
@@ -999,7 +999,7 @@
                             <ImageView
                                 android:layout_width="90dp"
                                 android:layout_height="48dp"
-                                android:src="@drawable/classify_baby_bed"
+                                android:src="@drawable/pic_29"
                                 />
 
                             <TextView
@@ -1027,7 +1027,7 @@
                             <ImageView
                                 android:layout_width="90dp"
                                 android:layout_height="48dp"
-                                android:src="@drawable/classify_baby_bed"
+                                android:src="@drawable/pic_30"
                                 />
 
                             <TextView

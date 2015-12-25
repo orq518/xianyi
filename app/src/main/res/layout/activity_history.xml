@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#f7f3f0">
+    android:background="@color/orange_bg">
 
     <!-- 顶部标题 -->
     <com.xianyi.customviews.TitleView
