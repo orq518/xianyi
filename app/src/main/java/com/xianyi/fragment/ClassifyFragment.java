@@ -3,7 +3,6 @@ package com.xianyi.fragment;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,7 +10,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.xianyi.R;
-import com.xianyi.activity.BigClassifyActivity;
+import com.xianyi.activity.BigListActivity;
+import com.xianyi.activity.ClassifyActivity;
 import com.xianyi.customviews.CycleImageLayout;
 import com.xianyi.customviews.TitleView;
 import com.xianyi.utils.BannerManager;
@@ -38,6 +38,14 @@ public class ClassifyFragment extends BaseFragment implements CycleImageLayout.I
 	private BannerManager mBannerManager;
 	/** 婴童服饰 **/
 	private ImageView mImBabyClothes;
+	/** 起居用品 **/
+	private ImageView mImLivingThings;
+	/** 童趣玩具 **/
+	private ImageView mImToy;
+	/** 文体教具 **/
+	private ImageView mImTeaching;
+	/** 妈咪专享 **/
+	private ImageView mImMommy;
 
 	@Override
 	public String getFragmentName() {
@@ -80,6 +88,10 @@ public class ClassifyFragment extends BaseFragment implements CycleImageLayout.I
 		mTitle = (TitleView) mRootView.findViewById(R.id.title);
 		mBannerView = (CycleImageLayout) mRootView.findViewById(R.id.ad_view);
 		mImBabyClothes = (ImageView) mRootView.findViewById(R.id.iv_baby_clothes);
+		mImLivingThings = (ImageView) mRootView.findViewById(R.id.iv_living_things);
+		mImToy = (ImageView) mRootView.findViewById(R.id.iv_toy);
+		mImTeaching = (ImageView) mRootView.findViewById(R.id.iv_teaching);
+		mImMommy = (ImageView) mRootView.findViewById(R.id.iv_mommy);
 
 		// 设置顶部布局
 		mTitle.setTitle(getString(R.string.classify_title));
@@ -88,6 +100,10 @@ public class ClassifyFragment extends BaseFragment implements CycleImageLayout.I
 		initData();
 
 		mImBabyClothes.setOnClickListener(this);
+		mImLivingThings.setOnClickListener(this);
+		mImToy.setOnClickListener(this);
+		mImTeaching.setOnClickListener(this);
+		mImMommy.setOnClickListener(this);
 	}
 
 	@Override
@@ -124,11 +140,38 @@ public class ClassifyFragment extends BaseFragment implements CycleImageLayout.I
 		switch (v.getId()) {
 			// 婴童服饰
 			case R.id.iv_baby_clothes:
-				intent = new Intent(mContext, BigClassifyActivity.class);
-				intent.putExtra("searchtype", 0);
+				intent = new Intent(mContext, ClassifyActivity.class);
+				intent.putExtra("type", "0");
 				startActivity(intent);
 				break;
 
+			// 起居用品
+			case R.id.iv_living_things:
+				intent = new Intent(mContext, ClassifyActivity.class);
+				intent.putExtra("type", "1");
+				startActivity(intent);
+				break;
+
+			// 童趣玩具
+			case R.id.iv_toy:
+				intent = new Intent(mContext, ClassifyActivity.class);
+				intent.putExtra("type", "2");
+				startActivity(intent);
+				break;
+
+			// 文体教具
+			case R.id.iv_teaching:
+				intent = new Intent(mContext, ClassifyActivity.class);
+				intent.putExtra("type", "3");
+				startActivity(intent);
+				break;
+
+			// 妈咪专享
+			case R.id.iv_mommy:
+				intent = new Intent(mContext, ClassifyActivity.class);
+				intent.putExtra("type", "4");
+				startActivity(intent);
+				break;
 
 			default:
 				break;

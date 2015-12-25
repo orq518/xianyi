@@ -101,6 +101,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
     }
 
     public void initLeftMenu() {
+        findViewById(R.id.im_menu_icon).setOnClickListener(this);
         findViewById(R.id.ly_my_collect).setOnTouchListener(this);
         findViewById(R.id.ly_my_xianyi).setOnTouchListener(this);
         findViewById(R.id.ly_trade).setOnTouchListener(this);
@@ -319,6 +320,15 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
             } else if (tag.equals("tab4")) {
                 onTabSelected(3);
             }
+        }
+        Intent intents;
+        switch (v.getId()) {
+            case R.id.im_menu_icon://个人资料
+                intents = new Intent(MainActivity.this, PersonalActivity.class);
+                startActivity(intents);
+                break;
+            default:
+                break;
         }
     }
 

@@ -1,0 +1,249 @@
+<!-- 分类页 -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/orange_bg"
+    android:orientation="vertical">
+
+    <!-- 顶部标题 -->
+    <com.xianyi.customviews.TitleView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:fitsSystemWindows="true"/>
+
+    <ScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:layout_below="@id/title">
+
+        <LinearLayout
+            android:id="@+id/scroll_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="15dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/tv_classify1"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:text="新生儿礼盒"
+                    android:textColor="@color/gray"
+                    android:textSize="@dimen/textsize_14"
+                    android:background="@color/white"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/pic1_1"/>
+
+                <TextView
+                    android:id="@+id/tv_classify2"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:text="哈衣"
+                    android:textColor="@color/gray"
+                    android:textSize="@dimen/textsize_14"
+                    android:background="@color/white"
+                    android:gravity="center"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="2dp"
+                    android:drawableTop="@drawable/pic1_2"
+                    android:padding="10dp"/>
+
+                <TextView
+                    android:id="@+id/tv_classify3"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:text="外套"
+                    android:textColor="@color/gray"
+                    android:textSize="@dimen/textsize_14"
+                    android:background="@color/white"
+                    android:gravity="center"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/pic1_3"
+                    android:padding="10dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp">
+
+                <TextView
+                    android:id="@+id/tv_classify4"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:text="羽绒"
+                    android:textColor="@color/gray"
+                    android:textSize="@dimen/textsize_14"
+                    android:background="@color/white"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/pic1_4"/>
+
+                <TextView
+                    android:id="@+id/tv_classify5"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:text="套装"
+                    android:textColor="@color/gray"
+                    android:textSize="@dimen/textsize_14"
+                    android:background="@color/white"
+                    android:gravity="center"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="2dp"
+                    android:drawableTop="@drawable/pic1_5"
+                    android:padding="10dp"/>
+
+                <TextView
+                    android:id="@+id/tv_classify6"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:text="童鞋"
+                    android:textColor="@color/gray"
+                    android:textSize="@dimen/textsize_14"
+                    android:background="@color/white"
+                    android:gravity="center"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/pic1_6"
+                    android:padding="10dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginBottom="2dp">
+
+                <TextView
+                    android:id="@+id/tv_classify7"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:text="袜子"
+                    android:textColor="@color/gray"
+                    android:textSize="@dimen/textsize_14"
+                    android:background="@color/white"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/pic1_7"/>
+
+                <TextView
+                    android:id="@+id/tv_classify8"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:text="帽子"
+                    android:textColor="@color/gray"
+                    android:textSize="@dimen/textsize_14"
+                    android:background="@color/white"
+                    android:gravity="center"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="2dp"
+                    android:drawableTop="@drawable/pic1_8"
+                    android:padding="10dp"/>
+
+                <TextView
+                    android:id="@+id/tv_classify9"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:text="泳装/泳裤"
+                    android:textColor="@color/gray"
+                    android:textSize="@dimen/textsize_14"
+                    android:background="@color/white"
+                    android:gravity="center"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/pic1_9"
+                    android:padding="10dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/tv_classify10"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:text="牛仔"
+                    android:textColor="@color/gray"
+                    android:textSize="@dimen/textsize_14"
+                    android:background="@color/white"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/pic1_10"/>
+
+                <TextView
+                    android:id="@+id/tv_classify11"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:text="连衣裙"
+                    android:textColor="@color/gray"
+                    android:textSize="@dimen/textsize_14"
+                    android:background="@color/white"
+                    android:gravity="center"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="2dp"
+                    android:drawableTop="@drawable/pic1_11"
+                    android:padding="10dp"/>
+
+                <TextView
+                    android:id="@+id/tv_classify12"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:text="内衣裤"
+                    android:textColor="@color/gray"
+                    android:textSize="@dimen/textsize_14"
+                    android:background="@color/white"
+                    android:gravity="center"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/pic1_12"
+                    android:padding="10dp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

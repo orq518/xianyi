@@ -12,6 +12,93 @@
         <item>我要抢单</item>
     </string-array>
 
+    <!-- 类别 -->
+    <string-array name="array0">
+        <item>婴童服饰</item>
+        <item>起居用品</item>
+        <item>童趣玩具</item>
+        <item>文体教具</item>
+        <item>妈咪专享</item>
+    </string-array>
 
+    <!-- 婴童服饰 -->
+    <string-array name="array1">
+        <item>新生儿礼盒</item>
+        <item>哈衣</item>
+        <item>外套</item>
+        <item>羽绒</item>
+        <item>套装</item>
+        <item>童鞋</item>
+        <item>袜子</item>
+        <item>帽子</item>
+        <item>泳装/泳裤</item>
+        <item>牛仔</item>
+        <item>连衣裙</item>
+        <item>内衣裤</item>
+    </string-array>
+
+    <!-- 起居用品 -->
+    <string-array name="array2">
+        <item>婴儿推车</item>
+        <item>奶瓶</item>
+        <item>婴儿床</item>
+        <item>纸尿布</item>
+        <item>沐浴毛毯</item>
+        <item>安全座椅</item>
+        <item>学步车</item>
+        <item>婴儿睡袋</item>
+        <item>婴儿餐椅</item>
+        <item>暖奶器</item>
+        <item>爬行垫</item>
+        <item>婴儿澡盆</item>
+    </string-array>
+
+    <!-- 童趣玩具 -->
+    <string-array name="array3">
+        <item>游泳池</item>
+        <item>积木</item>
+        <item>摇铃</item>
+        <item>毛绒玩具</item>
+        <item>电动玩具</item>
+        <item>智能玩具</item>
+        <item>婴儿健身架</item>
+        <item>拼图</item>
+        <item>故事机</item>
+        <item>轨道车</item>
+        <item>游戏屋</item>
+        <item>沙滩玩具</item>
+    </string-array>
+
+    <!-- 文体教具 -->
+    <string-array name="array4">
+        <item>自行车</item>
+        <item>路滑鞋</item>
+        <item>滑板车</item>
+        <item>幼教卡/盘</item>
+        <item>绘本/图书</item>
+        <item>画板/画架</item>
+        <item>学生书包</item>
+        <item>电子琴</item>
+        <item>跳绳</item>
+        <item>游泳圈</item>
+        <item>玩具球</item>
+        <item>儿童画笔</item>
+    </string-array>
+
+    <!-- 妈咪专享 -->
+    <string-array name="array5">
+        <item>防辐射服</item>
+        <item>孕妇装</item>
+        <item>洗护保养</item>
+        <item>营养保养</item>
+        <item>待产包</item>
+        <item>妈咪包</item>
+        <item>婴儿背带</item>
+        <item>束腹装</item>
+        <item>托腹裤</item>
+        <item>产褥垫</item>
+        <item>护腰枕</item>
+        <item>孕纹防护霜</item>
+    </string-array>
 
 </resources>

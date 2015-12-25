@@ -1,0 +1,297 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:id="@+id/scroll_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="@color/orange_bg">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:background="@drawable/persnal_bg">
+
+                <!-- 返回 -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:orientation="vertical"
+                    android:paddingTop="20dp"
+                    android:visibility="visible">
+
+                    <ImageView
+                        android:id="@+id/im_back"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/left_back_selector"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"/>
+
+
+
+                </RelativeLayout>
+
+                <!-- 头像 -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/dimen_20"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="@dimen/dimen_10">
+
+                    <!-- 头像 -->
+                    <com.xianyi.customviews.residelayout.CircleImageView
+                        android:id="@+id/im_details_icon"
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        android:src="@drawable/pic_face"/>
+
+                    <TextView
+                        android:id="@+id/tv_menu_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dimen_5"
+                        android:text="火星上的猪"
+                        android:textColor="@color/white"
+                        android:textSize="22sp"
+                        android:layout_marginTop="15dp"/>
+
+                </LinearLayout>
+
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:background="@color/orange_bg">
+
+                <!-- 地址 -->
+                <LinearLayout
+                    android:id="@+id/ly_details_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:background="@color/white"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:layout_marginBottom="2dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        android:textColor="@color/classify_text_gray"
+                        android:text="所在圈："/>
+
+                    <TextView
+                        android:id="@+id/gv_details_address"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        android:textColor="@color/classify_text_orange"
+                        android:text="胜古北理&#160;&#160;安华西里&#160;&#160;青年湖北里&#160;&#160;和平西里\n天通苑北里&#160;&#160;回龙观西里"/>
+
+                </LinearLayout>
+
+                <!-- 积分 -->
+                <RelativeLayout
+                    android:id="@+id/ly_personal_integral"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="@dimen/dimen_15"
+                    android:paddingLeft="@dimen/dimen_15"
+                    android:paddingTop="7dp"
+                    android:paddingBottom="@dimen/dimen_15"
+                    android:background="@drawable/setting_item_bg"
+                    >
+
+                    <TextView
+                        android:id="@+id/tv_personal_integral_key"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="积&#160;&#160;&#160;分："
+                        android:textSize="@dimen/main_text_size"
+                        android:textColor="@color/gray"
+                        android:paddingTop="8dp"/>
+
+                    <TextView
+                        android:id="@+id/tv_personal_integral"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="680"
+                        android:textSize="@dimen/main_text_size"
+                        android:textColor="@color/gray"
+                        android:paddingTop="8dp"
+                        android:layout_toRightOf="@id/tv_personal_integral_key"/>
+
+                    <ImageView
+                        android:id="@+id/iv_personal_integral_item_arrow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/setting_btn_more"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginLeft="@dimen/dimen_5"
+                        android:visibility="gone"/>
+
+
+
+                </RelativeLayout>
+
+                <!-- ta的闲置 -->
+                <RelativeLayout
+                    android:id="@+id/ly_personal_xianzhi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="@dimen/dimen_15"
+                    android:paddingLeft="@dimen/dimen_15"
+                    android:paddingTop="7dp"
+                    android:paddingBottom="@dimen/dimen_15"
+                    android:background="@drawable/setting_item_bg"
+                    android:layout_marginBottom="2dp"
+                    android:layout_marginTop="15dp">
+
+                    <TextView
+                        android:id="@+id/tv_personal_xianzhi_key"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ta的闲置"
+                        android:textSize="@dimen/main_text_size"
+                        android:textColor="@color/gray"
+                        android:paddingTop="8dp"/>
+
+                    <ImageView
+                        android:id="@+id/iv_personal_xianzhi_item_arrow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/setting_btn_more"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginLeft="@dimen/dimen_5"
+                        />
+
+                    <TextView
+                        android:id="@+id/tv_personal_xianzhi_num"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="23"
+                        android:textSize="@dimen/main_text_size"
+                        android:textColor="@color/gray"
+                        android:paddingTop="8dp"
+                        android:paddingLeft="@dimen/dimen_15"
+                        android:layout_toLeftOf="@id/iv_personal_xianzhi_item_arrow"/>
+
+                </RelativeLayout>
+
+                <!-- ta的交易 -->
+                <RelativeLayout
+                    android:id="@+id/ly_personal_trade"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="@dimen/dimen_15"
+                    android:paddingLeft="@dimen/dimen_15"
+                    android:paddingTop="7dp"
+                    android:paddingBottom="@dimen/dimen_15"
+                    android:background="@drawable/setting_item_bg"
+                    android:layout_marginBottom="2dp">
+
+                    <TextView
+                        android:id="@+id/tv_personal_trade_item_key"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ta的交易"
+                        android:textSize="@dimen/main_text_size"
+                        android:textColor="@color/gray"
+                        android:paddingTop="8dp"/>
+
+
+                    <ImageView
+                        android:id="@+id/iv_personal_trade_item_arrow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/setting_btn_more"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginLeft="@dimen/dimen_5"
+                        />
+
+                    <TextView
+                        android:id="@+id/tv_personal_trade__num"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="26"
+                        android:textSize="@dimen/main_text_size"
+                        android:textColor="@color/gray"
+                        android:paddingTop="8dp"
+                        android:paddingLeft="@dimen/dimen_15"
+                        android:layout_toLeftOf="@id/iv_personal_trade_item_arrow"/>
+
+                </RelativeLayout>
+
+                <!-- ta的收藏 -->
+                <RelativeLayout
+                    android:id="@+id/ly_personal_collect"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="@dimen/dimen_15"
+                    android:paddingLeft="@dimen/dimen_15"
+                    android:paddingTop="7dp"
+                    android:paddingBottom="@dimen/dimen_15"
+                    android:background="@drawable/setting_item_bg">
+
+                    <TextView
+                        android:id="@+id/tv_personal_collect_item_key"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ta的收藏"
+                        android:textSize="@dimen/main_text_size"
+                        android:textColor="@color/gray"
+                        android:paddingTop="8dp"/>
+
+
+                    <ImageView
+                        android:id="@+id/iv_personal_collect_item_arrow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/setting_btn_more"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginLeft="@dimen/dimen_5"
+                        />
+
+                    <TextView
+                        android:id="@+id/tv_personal_collect_num"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="16"
+                        android:textSize="@dimen/main_text_size"
+                        android:textColor="@color/gray"
+                        android:paddingTop="8dp"
+                        android:paddingLeft="@dimen/dimen_15"
+                        android:layout_toLeftOf="@id/iv_personal_collect_item_arrow"/>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>
