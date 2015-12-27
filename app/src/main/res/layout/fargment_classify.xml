@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/white">
+    android:background="@color/app_bg">
 
     <!-- 顶部标题 -->
     <com.xianyi.customviews.TitleView
@@ -33,7 +33,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="157dp"
                 android:background="#11000000"
-                />
+                android:visibility="visible"/>
 
             <!-- 婴童服饰 -->
             <LinearLayout
@@ -151,7 +151,7 @@
 
                         <!-- 羽绒 -->
                         <LinearLayout
-                            android:id="@+id/rl_eiderdown"
+                            android:id="@+id/rl_down"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -170,7 +170,7 @@
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="外衣"
+                                android:text="羽绒"
                                 android:textColor="@color/gray"
                                 android:textSize="@dimen/dimen_15"
                                 android:gravity="center"/>
@@ -196,7 +196,7 @@
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="外衣"
+                                android:text="套装"
                                 android:textColor="@color/gray"
                                 android:textSize="@dimen/dimen_15"
                                 android:gravity="center"/>
@@ -224,7 +224,7 @@
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="外衣"
+                                android:text="童鞋"
                                 android:textColor="@color/gray"
                                 android:textSize="@dimen/dimen_15"
                                 android:gravity="center"/>

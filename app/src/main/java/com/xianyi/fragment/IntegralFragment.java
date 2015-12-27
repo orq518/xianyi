@@ -15,6 +15,8 @@ import com.xianyi.customviews.TitleView;
 import com.xianyi.utils.BannerManager;
 import com.xianyi.utils.LogUtil;
 
+import java.util.ArrayList;
+
 /**
  * ${todo}<积分页>
  *
@@ -34,6 +36,8 @@ public class IntegralFragment extends BaseFragment implements CycleImageLayout.I
     private CycleImageLayout mBannerView;
     /** 广告轮播布局banner管理对象 **/
     private BannerManager mBannerManager;
+    /** 数据 **/
+    private ArrayList<String> imageUrlList;
 
     /** 任务 **/
     private ImageView mImTask;
@@ -93,12 +97,14 @@ public class IntegralFragment extends BaseFragment implements CycleImageLayout.I
         mTitle.setTitle(getString(R.string.integral_title));
         mTitle.setLeftVisiable(false);
 
-        initData();
-
         mImTask.setOnClickListener(this);
         mImgame.setOnClickListener(this);
         mImgift.setOnClickListener(this);
         mImShop.setOnClickListener(this);
+
+        imageUrlList = new ArrayList<String>();
+        initData();
+
     }
 
     @Override
@@ -115,8 +121,7 @@ public class IntegralFragment extends BaseFragment implements CycleImageLayout.I
      * 请求数据
      */
     public void initData() {
-
-
+        mBannerView.setImageResources(setData(), null, this);
     }
 
     @Override
@@ -126,7 +131,7 @@ public class IntegralFragment extends BaseFragment implements CycleImageLayout.I
 
     @Override
     public void onImageClick(int position, View imageView) {
-        mBannerManager.clickImage(position, imageView);
+//        mBannerManager.clickImage(position, imageView);
     }
 
     @Override
@@ -155,4 +160,10 @@ public class IntegralFragment extends BaseFragment implements CycleImageLayout.I
         }
     }
 
+    public ArrayList<String> setData(){
+        for(int i = 0; i < 2; i++){
+            imageUrlList.add("http://api.hongdoulicai.com/assets/images/banner/1.png");
+        }
+        return imageUrlList;
+    }
 }

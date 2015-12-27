@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/white">
+    android:background="@color/orange_bg">
 
     <!-- 顶部标题 -->
     <com.xianyi.customviews.TitleView
@@ -19,7 +19,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fillViewport="true"
-        android:background="@color/app_bg"
+        android:background="@color/orange_bg"
         android:layout_below="@id/title">
 
         <LinearLayout
@@ -28,12 +28,60 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <com.xianyi.customviews.CycleImageLayout
-                android:id="@+id/ad_view"
+            <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="157dp"
-                android:background="#11000000"
-                />
+                android:layout_height="wrap_content">
+
+                <com.xianyi.customviews.CycleImageLayout
+                    android:id="@+id/ad_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="157dp"
+                    android:background="#11000000"
+                    />
+
+                <!-- 签到 -->
+                <FrameLayout
+                    android:layout_width="110dp"
+                    android:layout_height="100dp"
+                    android:orientation="vertical"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginLeft="30dp">
+
+                    <LinearLayout
+                        android:layout_width="110dp"
+                        android:layout_height="70dp"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:layout_marginTop="0dp"
+                        android:background="#e6f3f6">
+
+                        <TextView
+                            android:layout_width="50dp"
+                            android:layout_height="30dp"
+                            android:textSize="26sp"
+                            android:textColor="@color/purple"
+                            android:text="365"
+                            android:gravity="center"/>
+
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/bt_itake"
+                        android:layout_width="70dp"
+                        android:layout_height="35dp"
+                        android:text="签到"
+                        android:layout_gravity="center_horizontal"
+                        android:drawableLeft="@drawable/btn_icon_mark"
+                        android:background="@drawable/itake_btn"
+                        android:layout_weight="1"
+                        android:textColor="@color/white"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:layout_marginTop="55dp"/>
+                </FrameLayout>
+
+
+            </FrameLayout>
 
             <!-- 分享 -->
             <LinearLayout
@@ -46,7 +94,7 @@
 
             </LinearLayout>
 
-            <!-- 起居用品 -->
+            <!--  -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
