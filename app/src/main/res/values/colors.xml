@@ -10,6 +10,7 @@
     <color name="orange_bg">#f7f3f0</color>
     <color name="title_bg">#ffffffff</color>
     <color name="dark_gray">#333333</color>
+    <color name="brown">#eb986e</color>
     <color name="app_bg">#f5f5f9</color>
     <color name="tab_item_default">#fafafa</color>
     <color name="tab_item_selected">#f0f1f2</color>

@@ -80,8 +80,8 @@ public class ClassifyAllBeiJingAdapter extends BaseAdapter {
 		appItem.mPopNum.setText(appInfo.get("pop").toString());
 		appItem.mEnthusiasmNum.setText(appInfo.get("enthusiasm").toString());
 
-		appItem.mIconLeft.setImageResource(R.drawable.baby_clothes);
-		appItem.mIconRight.setImageResource(R.drawable.baby_clothes);
+		appItem.mIconLeft.setImageResource(R.drawable.pic_blog_1);
+		appItem.mIconRight.setImageResource(R.drawable.pic_blog_2);
 
 		return convertView;
 	}

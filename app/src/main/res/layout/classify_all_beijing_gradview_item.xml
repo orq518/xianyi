@@ -71,16 +71,16 @@
 
              <ImageView
                  android:id="@+id/im_left"
-                 android:layout_width="60dp"
-                 android:layout_height="60dp"
-                 android:src="@drawable/classify_all_left_clothes"
+                 android:layout_width="50dp"
+                 android:layout_height="50dp"
+                 android:src="@drawable/pic_blog_3"
                  android:layout_marginRight="10dp"/>
 
              <ImageView
                  android:id="@+id/im_right"
-                 android:layout_width="60dp"
-                 android:layout_height="60dp"
-                 android:src="@drawable/classify_all_left_clothes"/>
+                 android:layout_width="50dp"
+                 android:layout_height="50dp"
+                 android:src="@drawable/pic_blog_1"/>
 
           </LinearLayout>
 
